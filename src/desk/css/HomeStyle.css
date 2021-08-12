@@ -1,0 +1,15 @@
+#sidebar {
+    background: lightgrey;
+    position: absolute;
+    left:0px;
+    right:0px;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#footer {
+    clear: both;
+    background-color: red;
+}
