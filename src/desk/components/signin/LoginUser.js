@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import Header from "../header/Header";
 import Sidebar from "../sidebar/Sidebar";
-import CentralContent from "../home/CentralContent";
+import CentralContent from "../CentralContent";
 import Footer from "../footer/Footer";
 
 class LoginUser extends  Component{

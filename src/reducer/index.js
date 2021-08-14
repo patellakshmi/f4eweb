@@ -4,7 +4,6 @@ const initialState = {
 };
 
 function rootReducer(state = initialState, action) {
-    console.log(state);
     return state;
 };
 

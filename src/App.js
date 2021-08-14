@@ -6,8 +6,9 @@ import DeskApp from "./desk/App";
 class App extends  Component{
 
   render() {
-      if (isMobile) return <MobileApp></MobileApp>;
-      else return <DeskApp></DeskApp>;
+      // if (isMobile) return <MobileApp></MobileApp>;
+      // else return
+      return <DeskApp></DeskApp>;
   }
 
 }

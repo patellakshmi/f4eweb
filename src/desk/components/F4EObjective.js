@@ -10,8 +10,7 @@ class F4EObjective extends  Component{
                         <Card>
                             <Card.Body>React-Bootstrap is a front-end framework that was designed keeping react in mind. Carousel Component provides a way to create a slideshow for our images or text slides with a present full manner in a cyclic way. We can use the following approach in ReactJS to use the react-bootstrap Carousel Component.
                                 React-Bootstrap is a front-end framework that was designed keeping react in mind. Carousel Component provides a way to create a slideshow for our images or text slides with a present full manner in a cyclic way. We can use the following approach in ReactJS to use the react-bootstrap Carousel Component.
-                                React-Bootstrap is a front-end framework that was designed keeping react in mind,React-Bootstrap is a front-end framework that was designed keeping react in mind.
-                                eping.
+                                React-Bootstrap is a front-end framework tha
                             </Card.Body>
                         </Card>
                     </Card.Body>

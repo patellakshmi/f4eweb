@@ -1,5 +1,4 @@
 import {Component} from 'react';
-import F4E from '../../../img/F4E.png';
 import Fight4EduWall from '../../../img/FacebookWall.png';
 import F4EWithName from '../../../img/F4EWithName.png';
 

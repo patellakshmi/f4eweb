@@ -1,17 +1,36 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import Footer from "../footer/Footer";
 import Header from "../header/Header";
 import Sidebar from "../sidebar/Sidebar";
 
 import  "../../css/HomeStyle.css";
-import CEO from "../../../img/ceo.png";
-import CentralContent from "./CentralContent";
+import CentralContent from "../CentralContent";
 import EductionStruct from "../EductionStruct";
-import ImageScroller from "../ImageScroller";
-import Card from "react-bootstrap/Card";
+import AdmissionNotice from "../AdmissionNotice";
+import ResultAndAward from "../ResultAndAward";
+import ExcellentPerformer from "../ExcellentPerformer";
+import ClassesAndTimeTable from "../ClassesAndTimeTable";
+import F4EScholarships from "../F4EScholarships";
+import {
+    ADMISSION_NOTICE,
+    CENTRAL_CONTENT,
+    CLASSES_TIME_TABLE,
+    EXCELLENT_PERFORMER, F4E_SCHOLARSHIPS, GENIUS_OF_MONTH,
+    RESULT_AWARD
+} from "../../constants/ComponentConst";
+import {updateCentralContent} from "../../actions/Actions";
+import GeniusOfMonth from "../GeniusOfMonth";
+
 
 class Home extends  Component{
+
+    constructor(props) {
+        super(props);
+    }
+
     render() {
+        console.log(this.props);
         return (
             <div>
                 <Header/>
@@ -20,7 +39,13 @@ class Home extends  Component{
                         <Sidebar/>
                     </div>
                     <div style={{float:"left"}}>
-                        <CentralContent/>
+                        { this.props.centralContent === F4E_SCHOLARSHIPS && <F4EScholarships/>}
+                        { this.props.centralContent === ADMISSION_NOTICE && <AdmissionNotice/>}
+                        { this.props.centralContent === CENTRAL_CONTENT && <CentralContent/>}
+                        { this.props.centralContent === CLASSES_TIME_TABLE && <ClassesAndTimeTable/>}
+                        { this.props.centralContent === RESULT_AWARD && <ResultAndAward/>}
+                        { this.props.centralContent === GENIUS_OF_MONTH && <GeniusOfMonth/>}
+                        { this.props.centralContent === EXCELLENT_PERFORMER && <ExcellentPerformer/>}
                     </div>
                 </div>
                 <div id={"main-contain"} style={{clear:"both"}}>
@@ -34,4 +59,13 @@ class Home extends  Component{
     }
 }
 
-export default Home;
+const mapDispatchToProps=dispatch=>({
+    updateCentralContent:data=>dispatch(updateCentralContent(data))
+})
+
+const mapStateToProps=state=>({
+      centralContent: state.deskReducer.centralContent,
+      patel:console.log(state)
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(Home);

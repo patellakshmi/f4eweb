@@ -2,27 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cec46672-97a5-460e-a5c3-c83c0f051027" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/F4E.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/desk/components/EductionStruct.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/desk/components/F4EObjective.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/desk/components/ImageScroller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/desk/components/footer/Address.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/desk/components/footer/Footer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/desk/components/header/Header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/desk/components/home/CentralContent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/desk/components/home/Home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/desk/components/sidebar/Sidebar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/desk/components/signin/LoginUser.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/desk/css/FooterStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/desk/css/HomeStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/desk/actions/Actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/desk/components/AdmissionNotice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/desk/components/ClassesAndTimeTable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/desk/components/ExcellentPerformer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/desk/components/F4EScholarships.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/desk/components/GeniusOfMonth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/desk/components/ResultAndAward.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/desk/constants/ComponentConst.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/desk/constants/Constants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/desk/constants/data/DataConstant.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/desk/reducer/deskReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/components/EductionStruct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/EductionStruct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/components/F4EObjective.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/F4EObjective.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/components/ImageScroller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/ImageScroller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/components/footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/footer/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/components/home/CentralContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/CentralContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/components/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/components/sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/sidebar/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/components/signin/LoginUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/signin/LoginUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/F4EWithName.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/F4EWithName.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +73,11 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/desk" />
+      <recent name="$PROJECT_DIR$/src/desk/reducer" />
+      <recent name="$PROJECT_DIR$/src/desk/components" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -93,7 +103,7 @@
       <workItem from="1624445315378" duration="5764000" />
       <workItem from="1625159807105" duration="485000" />
       <workItem from="1628506957118" duration="171000" />
-      <workItem from="1628753745918" duration="15942000" />
+      <workItem from="1628753745918" duration="60194000" />
     </task>
     <servers />
   </component>

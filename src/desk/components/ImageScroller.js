@@ -5,7 +5,7 @@ import Image1 from '../../img/Scroll1.jpg';
 import Image2 from '../../img/Scroll2.jpg';
 import Image3 from '../../img/Scroll3.jpg';
 import Image4 from '../../img/Scroll4.jpg';
-import Card from 'react-bootstrap/Card';
+import Image5 from '../../img/Scroll5.jpg';
 
 
 const images = [
@@ -25,14 +25,14 @@ class ImageScroller extends  Component{
                         <Carousel.Item interval={1500}>
                             <img
                                 className="d-block w-100"
-                                src={Image1}
+                                src={Image2}
                                 alt="Image One"
                             />
                         </Carousel.Item>
                         <Carousel.Item interval={1500}>
                             <img
                                 className="d-block w-100"
-                                src={Image2}
+                                src={Image1}
                                 alt="Image Two"
                             />
                         </Carousel.Item>
@@ -47,6 +47,13 @@ class ImageScroller extends  Component{
                             <img
                                 className="d-block w-100"
                                 src={Image4}
+                                alt="Image Two"
+                            />
+                        </Carousel.Item>
+                        <Carousel.Item interval={1500}>
+                            <img
+                                className="d-block w-100"
+                                src={Image5}
                                 alt="Image Two"
                             />
                         </Carousel.Item>
