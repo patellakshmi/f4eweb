@@ -1,77 +1,109 @@
 import React, {Component} from 'react';
-import {Card} from 'react-bootstrap'
-import {Container,Row,Col} from "react-bootstrap";
-import RTHome from "../../img/ReturnHome.png";
-import {CENTRAL_CONTENT} from "../constants/Constants";
+import {Card, Col, Row} from 'react-bootstrap'
 import Button from "react-bootstrap/Button";
-import PHYSICS1 from "../../img/physics1.png";
-import CHEMISTRY1 from "../../img/chemistry.jpg";
-import MATHS1 from "../../img/maths1.jpg";
-import BIO1 from "../../img/biology.jpg";
 import YOUTUBE from "../../img/youtube.png";
 import UDEMY from "../../img/udemy.png";
 import {Table} from 'react-bootstrap'
-import {DATA} from "../constants/data/DataConstant";
+import {ALL_STD_DATA} from "../constants/data/ALL_STD_DATA";
+import {ELEVENTH_CLASS_DATA} from "../constants/data/ELEVENTH_CLASS_DATA";
+import {TWELFTH_CLASS_DATA} from "../constants/data/TWELFTH_CLASS_DATA";
+import {ALL_STD, EIGHTH, ELEVENTH, NINTH, SEVENTH, SIXTH, TENTH, TWELFTH} from "../constants/ClassLevelConst";
 
-const MAX_ROW = 10;
+
+const MAX_ROW = 5;
+const NUM_OF_COLUMN = 4;
+let NUM_OF_ROWS = 2;
+let NUM_OF_COL_IN_LAST_ROW = 2;
+let DATA = ALL_STD_DATA;
 class EductionStruct extends  Component{
 
     constructor(props) {
         super(props);
         this.state = {
             togglingDetail:false,
-            details: new Array(MAX_ROW)
+            details: new Array(MAX_ROW*NUM_OF_COLUMN)
         };
-        for(let i = 0; i < this.state.details.length;i++){ this.state.details[i] = new Array(4);}
-        for(let i = 0; i < this.state.details.length;i++){
-            for(let j = 0; j < 4; j++){ this.state.details[i][j] = false; }
+        NUM_OF_ROWS = Math.ceil(DATA.length/NUM_OF_COLUMN);
+        NUM_OF_COL_IN_LAST_ROW = DATA.length-(NUM_OF_ROWS-1)*NUM_OF_COLUMN;
+        for(let i = 0; i < MAX_ROW*NUM_OF_COLUMN;i++){ this.state.details[i] = false; }
+    }
+
+    getDataForGivenStd = (std) =>{
+        console.log("getData");
+        switch (std){
+            case ELEVENTH:
+                console.log("ELEVENTH-Section");
+                DATA = ELEVENTH_CLASS_DATA;
+                console.log("SIZE:"+DATA.length);
+                NUM_OF_ROWS = Math.ceil(DATA.length/NUM_OF_COLUMN);
+                NUM_OF_COL_IN_LAST_ROW = DATA.length-(NUM_OF_ROWS-1)*NUM_OF_COLUMN;
+                this.setState({ togglingDetail: !this.state.togglingDetail });
+                break;
+            case TWELFTH:
+                console.log("TWELFTH-section");
+                DATA = ALL_STD_DATA;
+                console.log("SIZE:"+DATA.length);
+                NUM_OF_ROWS = Math.ceil(DATA.length/NUM_OF_COLUMN);
+                NUM_OF_COL_IN_LAST_ROW = DATA.length-(NUM_OF_ROWS-1)*NUM_OF_COLUMN;
+                this.setState({ togglingDetail: !this.state.togglingDetail });
+                break;
+            case ALL_STD:
+                console.log("ALL_STD-section");
+                DATA = ALL_STD_DATA;
+                console.log("SIZE:"+DATA.length);
+                NUM_OF_ROWS = Math.ceil(DATA.length/NUM_OF_COLUMN);
+                NUM_OF_COL_IN_LAST_ROW = DATA.length-(NUM_OF_ROWS-1)*NUM_OF_COLUMN;
+                this.setState({ togglingDetail: !this.state.togglingDetail });
+                break;
+            default:
+                DATA = ALL_STD_DATA;
+
         }
     }
 
     toggleDetailField = (i,j) => {
         console.log("toggleDetailField");
-        this.state.details[i][j] = !this.state.details[i][j];
-        console.log(this.state.details[i][j]);
+        this.state.details[i*NUM_OF_COLUMN+j] = !this.state.details[i*NUM_OF_COLUMN+j];
+        console.log(this.state.details[i*NUM_OF_COLUMN+j]);
         this.setState({ togglingDetail: !this.state.togglingDetail });
-        console.log(DATA[i][j]);
     }
 
     giveAllRow=()=>{
         let rows = [];
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < NUM_OF_ROWS-1; i++) {
             let column = []
             for(let j = 0; j < 4; j++){
                 column.push(
                     <Col xs={3}>
                         <Card>
-                            { !this.state.details[i][j] &&
+                            { !this.state.details[i*NUM_OF_COLUMN+j] &&
                             <img style={{display: 'block', width: 100, height: 150}}
                                  className="d-block w-100"
-                                 src={BIO1}
+                                 src={DATA[i*NUM_OF_COLUMN+j].img}
                                  alt="Image One"
                             />
                             }
                             {
-                                this.state.details[i][j] &&
+                                this.state.details[i*NUM_OF_COLUMN+j] &&
                                 <Card>
                                     <Card.Body>
                                         <Table striped bordered hover style={{fontSize:8, margin:0, height:100}}>
                                             <tbody>
                                             <tr>
                                                 <td>Faculty</td>
-                                                <td>Mr. Anurag Verma</td>
+                                                <td>{DATA[i*NUM_OF_COLUMN+j].details.faculty}</td>
                                             </tr>
                                             <tr>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
+                                                <td>Mode</td>
+                                                <td>{DATA[i*NUM_OF_COLUMN+j].details.mode}</td>
                                             </tr>
                                             <tr>
-                                                <td>Larry the Bird</td>
-                                                <td>@twitter</td>
+                                                <td>Duration ( Times )</td>
+                                                <td>{DATA[i*NUM_OF_COLUMN+j].details.duration+" "+DATA[i*NUM_OF_COLUMN+j].details.durationInTerm+" ("+DATA[i*NUM_OF_COLUMN+j].details.totalTime+" "+DATA[i*NUM_OF_COLUMN+j].details.totalTimeInTerm+")"}</td>
                                             </tr>
                                             <tr>
-                                                <td>Larry the Bird</td>
-                                                <td>@twitter</td>
+                                                <td>Days</td>
+                                                <td>{DATA[i*NUM_OF_COLUMN+j].details.days}</td>
                                             </tr>
                                             </tbody>
                                         </Table>
@@ -79,22 +111,21 @@ class EductionStruct extends  Component{
                                 </Card>
                             }
                             <Card.Body>
-                                <Card.Title>Physics for XII</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted">Advanced understanding</Card.Subtitle>
+                                <Card.Title>{DATA[i*NUM_OF_COLUMN+j].subTitle}</Card.Title>
+                                <Card.Subtitle className="mb-2 text-muted">{DATA[i*NUM_OF_COLUMN+j].subSubTitle}</Card.Subtitle>
                                 <Card.Text style={{fontSize:14}}>
-                                    We believe in basic of physics, by understanding with F4E, student are able to
-                                    crack IIT exam easily.
+                                    {DATA[i*NUM_OF_COLUMN+j].desc}
                                 </Card.Text>
                                 <div id="guide-button">
                                     <Row className="justify-content-xm-center">
                                         <Col xs={3}>
-                                            <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10,width:60, height:20}}>
-                                                <p style={{fontSize:9}}>Off-10%</p>
+                                            <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10,width:70, height:20}}>
+                                                <p style={{fontSize:9}}>{DATA[i*NUM_OF_COLUMN+j].offKeyWord+":"+DATA[i*NUM_OF_COLUMN+j].off+DATA[i*NUM_OF_COLUMN+j].offMode}</p>
                                             </Button>
                                         </Col>
                                         <Col xs={3}>
                                             <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10, width:60, height:20}}>
-                                                <p style={{fontSize:9}}>2400 INR</p>
+                                                <p style={{fontSize:9}}>{DATA[i*NUM_OF_COLUMN+j].fees+" "+DATA[i*NUM_OF_COLUMN+j].currency}</p>
                                             </Button>
                                         </Col>
                                         <Col xs={3}>
@@ -105,7 +136,7 @@ class EductionStruct extends  Component{
                                         <Col xs={3}>
                                             <Row className="justify-content-xm-center">
                                                 <Col xs={6}>
-                                                    <Card.Link href="#">
+                                                    <Card.Link href={DATA[i*NUM_OF_COLUMN+j].udemyUrl}>
                                                         <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
                                                             <img style={{ display: 'block', width: 20, height:20 }}
                                                                  className="d-block w-100"
@@ -116,7 +147,7 @@ class EductionStruct extends  Component{
                                                     </Card.Link>
                                                 </Col>
                                                 <Col xs={6}>
-                                                    <Card.Link href="#">
+                                                    <Card.Link href={DATA[i*NUM_OF_COLUMN+j].youtubeUrl}>
                                                         <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
                                                             <img style={{ width: 20, height:20 }}
                                                                  className="d-block w-100"
@@ -135,9 +166,112 @@ class EductionStruct extends  Component{
                     </Col>
                 );
             }
-            let finalRow = <Row className="justify-content-xm-center">{column}</Row>;
+
+            let finalRow = <Row className="justify-content-xm-center" style={{marginBottom:10}}>{column}</Row>;
             rows.push(finalRow);
         }
+
+        //handling the last row
+        let lastRowColumn = []
+        let i = NUM_OF_ROWS-1;
+        for(let j = 0; j < NUM_OF_COL_IN_LAST_ROW; j++){
+            lastRowColumn.push(
+                <Col xs={3}>
+                    <Card>
+                        {console.log("GettingIndex:"+i*NUM_OF_COLUMN+j)}
+                        { !this.state.details[i*NUM_OF_COLUMN+j] &&
+                        <img style={{display: 'block', width: 100, height: 150}}
+                             className="d-block w-100"
+                             src={DATA[i*NUM_OF_COLUMN+j].img}
+                             alt="Image One"
+                        />
+                        }
+                        {
+                            this.state.details[i*NUM_OF_COLUMN+j] &&
+                            <Card>
+                                <Card.Body>
+                                    <Table striped bordered hover style={{fontSize:8, margin:0, height:100}}>
+                                        <tbody>
+                                        <tr>
+                                            <td>Faculty</td>
+                                            <td>{DATA[i*NUM_OF_COLUMN+j].details.faculty}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mode</td>
+                                            <td>{DATA[i*NUM_OF_COLUMN+j].details.mode}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Duration</td>
+                                            <td>{DATA[i*NUM_OF_COLUMN+j].details.duration+" "+DATA[i*NUM_OF_COLUMN+j].details.durationInTerm+" ("+DATA[i*NUM_OF_COLUMN+j].details.totalTime+" "+DATA[i*NUM_OF_COLUMN+j].details.totalTimeInTerm+")"}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Days</td>
+                                            <td>{DATA[i*NUM_OF_COLUMN+j].details.days}</td>
+                                        </tr>
+                                        </tbody>
+                                    </Table>
+                                </Card.Body>
+                            </Card>
+                        }
+                        <Card.Body>
+                            <Card.Title>{DATA[i*NUM_OF_COLUMN+j].subTitle}</Card.Title>
+                            <Card.Subtitle className="mb-2 text-muted">{DATA[i*NUM_OF_COLUMN+j].subSubTitle}</Card.Subtitle>
+                            <Card.Text style={{fontSize:14}}>
+                                {DATA[i*NUM_OF_COLUMN+j].desc}
+                            </Card.Text>
+                            <div id="guide-button">
+                                <Row className="justify-content-xm-center">
+                                    <Col xs={3}>
+                                        <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10,width:60, height:20}}>
+                                            <p style={{fontSize:9}}>{DATA[i*NUM_OF_COLUMN+j].offKeyWord+":"+DATA[i*NUM_OF_COLUMN+j].off+DATA[i*NUM_OF_COLUMN+j].offMode}</p>
+                                        </Button>
+                                    </Col>
+                                    <Col xs={3}>
+                                        <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10, width:60, height:20}}>
+                                            <p style={{fontSize:9}}>{DATA[i*NUM_OF_COLUMN+j].fees+" "+DATA[i*NUM_OF_COLUMN+j].currency}</p>
+                                        </Button>
+                                    </Col>
+                                    <Col xs={3}>
+                                        <Button variant="info" size="sm" style={{marginLeft:10,marginTop:10, height:20}} onClick={()=>this.toggleDetailField(i,j)}>
+                                            <p style={{fontSize:9}}>Details</p>
+                                        </Button>
+                                    </Col>
+                                    <Col xs={3}>
+                                        <Row className="justify-content-xm-center">
+                                            <Col xs={6}>
+                                                <Card.Link href={DATA[i*NUM_OF_COLUMN+j].udemyUrl}>
+                                                    <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
+                                                        <img style={{ display: 'block', width: 20, height:20 }}
+                                                             className="d-block w-100"
+                                                             src={UDEMY}
+                                                             alt="Image One"
+                                                        />
+                                                    </div>
+                                                </Card.Link>
+                                            </Col>
+                                            <Col xs={6}>
+                                                <Card.Link href={DATA[i*NUM_OF_COLUMN+j].youtubeUrl}>
+                                                    <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
+                                                        <img style={{ width: 20, height:20 }}
+                                                             className="d-block w-100"
+                                                             src={YOUTUBE}
+                                                             alt="Image One"
+                                                        />
+                                                    </div>
+                                                </Card.Link>
+                                            </Col>
+                                        </Row>
+                                    </Col>
+                                </Row>
+                            </div>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            );
+        }
+
+        let lastRow = <Row className="justify-content-xm-center" style={{marginBottom:10}}>{lastRowColumn}</Row>;
+        rows.push(lastRow);
         return rows;
     }
 
@@ -149,25 +283,12 @@ class EductionStruct extends  Component{
                 boxShadow: "2px 2px 5px black", position:"relative",borderRadius:2
             }} >
                 <div id="select-class">
-                    <div style={{float:"right",borderColor:"white", borderRadius:5,borderWidth:1, borderStyle:"solid",marginLeft:2, padding:5}}>
-                        <Button variant="outline-primary" size="sm" style={{marginLeft:0,marginTop:2,marginBottom:5,width:60, height:20}}>
-                            <p style={{fontSize:9}}>All</p>
-                        </Button>
-                        <Button variant="outline-primary" size="sm" style={{marginLeft:5,marginTop:2,marginBottom:5,width:60, height:20}}>
-                            <p style={{fontSize:9}}>XII</p>
-                        </Button>
-                        <Button variant="outline-primary" size="sm" style={{marginLeft:5,marginTop:2,marginBottom:5,width:60, height:20}}>
-                            <p style={{fontSize:9}}>XI</p>
-                        </Button>
-                    </div>
+
                     <div style={{float:"right", borderColor:"white", borderRadius:5, borderWidth:1, borderStyle:"solid",marginRight:2,marginLeft:2, padding:5}}>
-                        <Button variant="outline-primary" size="sm" style={{marginLeft:0,marginTop:2,marginBottom:5,width:60, height:20}}>
-                            <p style={{fontSize:9}}>All</p>
+                        <Button variant="outline-primary" size="sm" style={{marginLeft:5,marginTop:2,marginBottom:5,width:60, height:20}} onClick={()=>this.getDataForGivenStd(ALL_STD)}>
+                            <p style={{fontSize:9}}>ALL</p>
                         </Button>
-                        <Button variant="outline-primary" size="sm" style={{marginLeft:5,marginTop:2,marginBottom:5,width:60, height:20}}>
-                            <p style={{fontSize:9}}>XII</p>
-                        </Button>
-                        <Button variant="outline-primary" size="sm" style={{marginLeft:5,marginTop:2,marginBottom:5,width:60, height:20}}>
+                        <Button variant="outline-primary" size="sm" style={{marginLeft:5,marginTop:2,marginBottom:5,width:60, height:20}} onClick={()=>this.getDataForGivenStd(ELEVENTH)}>
                             <p style={{fontSize:9}}>XI</p>
                         </Button>
                     </div>

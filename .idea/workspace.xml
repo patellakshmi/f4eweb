@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cec46672-97a5-460e-a5c3-c83c0f051027" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/desk/constants/ClassLevelConst.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/desk/constants/data/ALL_STD_DATA.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/desk/constants/data/ELEVENTH_CLASS_DATA.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/desk/constants/data/SEVENTH_CLASS_DATA.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/desk/constants/data/SIXTH_CLASS_DATA.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/desk/constants/data/TWELFTH_CLASS_DATA.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/constants/data/DataConstant.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/constants/data/DataConstant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/components/EductionStruct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/EductionStruct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/constants/data/DataConstant.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +87,7 @@
       <workItem from="1624445315378" duration="5764000" />
       <workItem from="1625159807105" duration="485000" />
       <workItem from="1628506957118" duration="171000" />
-      <workItem from="1628753745918" duration="61147000" />
+      <workItem from="1628753745918" duration="71282000" />
     </task>
     <servers />
   </component>
