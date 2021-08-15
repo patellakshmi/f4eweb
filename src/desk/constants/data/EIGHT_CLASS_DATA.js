@@ -10,9 +10,9 @@ const DATA00 = {
     desc:"Basic subjective maths, core of maths",
     fees:1000,
     currency:"INR",
-    off:"10",
+    off:"8000",
     offKeyWord:"Off",
-    offMode:"%",
+    offMode:" Rs.",
     udemyUrl:"http://google.com",
     youtubeUrl:"http://youtube.com",
     details:{

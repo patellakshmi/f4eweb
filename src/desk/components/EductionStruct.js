@@ -164,7 +164,7 @@ class EductionStruct extends  Component{
                                 <div id="guide-button">
                                     <Row className="justify-content-xm-center">
                                         <Col xs={3}>
-                                            <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10,width:70, height:20}}>
+                                            <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10,width:80, height:20}}>
                                                 <p style={{fontSize:9}}>{DATA[i*NUM_OF_COLUMN+j].offKeyWord+":"+DATA[i*NUM_OF_COLUMN+j].off+DATA[i*NUM_OF_COLUMN+j].offMode}</p>
                                             </Button>
                                         </Col>
@@ -267,7 +267,7 @@ class EductionStruct extends  Component{
                             <div id="guide-button">
                                 <Row className="justify-content-xm-center">
                                     <Col xs={3}>
-                                        <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10,width:60, height:20}}>
+                                        <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10,width:80, height:20}}>
                                             <p style={{fontSize:9}}>{DATA[i*NUM_OF_COLUMN+j].offKeyWord+":"+DATA[i*NUM_OF_COLUMN+j].off+DATA[i*NUM_OF_COLUMN+j].offMode}</p>
                                         </Button>
                                     </Col>

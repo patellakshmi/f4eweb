@@ -6,8 +6,8 @@ import ELECTION from "../../../img/classes/current_affairs/Election.jpg";
 
 const DATA00 = {
     img: ARTICLE_370,
-    subTitle:"Maths",
-    subSubTitle:"F4E-0VI-SBM",
+    subTitle:"ARTICLE 370",
+    subSubTitle:"ART370-O8M",
     desc:"Basic subjective maths, core of maths",
     fees:1000,
     currency:"INR",
@@ -29,8 +29,8 @@ const DATA00 = {
 
 const DATA01 = {
     img: KISAN_ANDOLAN,
-    subTitle:"Adv. Maths",
-    subSubTitle:"F4E-0VI-AVM",
+    subTitle:"KISAN ANDOLAN",
+    subSubTitle:"KISAAN-O8M",
     desc:"Advanced technique and formula, Adv questions",
     fees:1500,
     currency:"INR",
@@ -53,7 +53,7 @@ const DATA01 = {
 const DATA02 = {
     img: CONSTITUTION,
     subTitle:"Science",
-    subSubTitle:"F4E-0VI-SBS",
+    subSubTitle:"CONSTI-O8M",
     desc:"Basic understanding the nature of science.",
     fees:9000,
     currency:"INR",
@@ -75,8 +75,8 @@ const DATA02 = {
 
 const DATA03 = {
     img: COVID,
-    subTitle:"Adv Science",
-    subSubTitle:"F4E-0VI-ADS",
+    subTitle:"COVID",
+    subSubTitle:"COVID19O8M",
     desc:"Adv formula, concept, scientific approach",
     fees:13000,
     currency:"INR",
@@ -98,8 +98,8 @@ const DATA03 = {
 
 const DATA10 = {
     img: ELECTION,
-    subTitle:"Adv Science",
-    subSubTitle:"F4E-0VI-ADS",
+    subTitle:"ELECTION",
+    subSubTitle:"ELECTIOO8M",
     desc:"Adv formula, concept, scientific approach",
     fees:13000,
     currency:"INR",

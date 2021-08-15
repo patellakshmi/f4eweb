@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Card from 'react-bootstrap/Card';
+import {Fight4EducObj} from '../constants/data/Fight4EduObjective';
 
 class F4EObjective extends  Component{
     render() {
@@ -8,9 +9,8 @@ class F4EObjective extends  Component{
                 <Card style={{ width: 770 }}>
                     <Card.Body>
                         <Card>
-                            <Card.Body>React-Bootstrap is a front-end framework that was designed keeping react in mind. Carousel Component provides a way to create a slideshow for our images or text slides with a present full manner in a cyclic way. We can use the following approach in ReactJS to use the react-bootstrap Carousel Component.
-                                React-Bootstrap is a front-end framework that was designed keeping react in mind. Carousel Component provides a way to create a slideshow for our images or text slides with a present full manner in a cyclic way. We can use the following approach in ReactJS to use the react-bootstrap Carousel Component.
-                                React-Bootstrap is a front-end framework tha
+                            <Card.Body style={{textAlign: "justify"}}>
+                                {Fight4EducObj}
                             </Card.Body>
                         </Card>
                     </Card.Body>
