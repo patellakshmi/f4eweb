@@ -1,12 +1,14 @@
-import BIO1 from "../../../img/biology.jpg";
-import CHEM1 from "../../../img/chemistry.jpg";
+import SIXTH_MATHS from "../../../img/classes/sixth/SixthMaths.jpg"
+import ADV_SIXTH_MATHS from "../../../img/classes/sixth/AdvSixthMaths.jpg";
+import SIXTH_SCIENCE from "../../../img/classes/sixth/SixthSciece.jpg";
+import ADV_SIXTH_SCIENCE from "../../../img/classes/sixth/AdvSixthScience.jpg";
 
 const DATA00 = {
-    img: BIO1,
-    subTitle:"Physics",
-    subSubTitle:"Base-Part-I",
-    desc:"We belive you are the best",
-    fees:400,
+    img: SIXTH_MATHS,
+    subTitle:"Maths",
+    subSubTitle:"F4E-0VI-SBM",
+    desc:"Basic subjective maths, core of maths",
+    fees:1000,
     currency:"INR",
     off:"10",
     offKeyWord:"Off",
@@ -14,10 +16,10 @@ const DATA00 = {
     udemyUrl:"http://google.com",
     youtubeUrl:"http://youtube.com",
     details:{
-        faculty:"Mr.Anurag Verma",
-        duration:200,
+        faculty:"Lakshmi S. Patel",
+        duration:125,
         durationInTerm:"Hours",
-        totalTime:40,
+        totalTime:90,
         totalTimeInTerm:"Days",
         mode:"Online",
         days:"SXXXXFS"
@@ -25,19 +27,19 @@ const DATA00 = {
 }
 
 const DATA01 = {
-    img: BIO1,
-    subTitle:"Physics",
-    subSubTitle:"Base-Part-I",
-    desc:"We belive you are the best",
-    fees:400,
+    img: ADV_SIXTH_MATHS,
+    subTitle:"Adv. Maths",
+    subSubTitle:"F4E-0VI-AVM",
+    desc:"Advanced technique and formula, Adv questions",
+    fees:1500,
     currency:"INR",
-    off:"10",
+    off:"5",
     offKeyWord:"Off",
     offMode:"%",
     udemyUrl:"http://google.com",
     youtubeUrl:"http://youtube.com",
     details:{
-        faculty:"Mr.Anurag Verma",
+        faculty:"Anurag Verma",
         duration:200,
         durationInTerm:"Hours",
         totalTime:40,
@@ -48,22 +50,22 @@ const DATA01 = {
 }
 
 const DATA02 = {
-    img: BIO1,
-    subTitle:"Physics",
-    subSubTitle:"Base-Part-I",
-    desc:"We belive you are the best",
-    fees:400,
+    img: SIXTH_SCIENCE,
+    subTitle:"Science",
+    subSubTitle:"F4E-0VI-SBS",
+    desc:"Basic understanding the nature of science.",
+    fees:9000,
     currency:"INR",
-    off:"10",
+    off:"12",
     offKeyWord:"Off",
     offMode:"%",
     udemyUrl:"http://google.com",
     youtubeUrl:"http://youtube.com",
     details:{
-        faculty:"Mr.Anurag Verma",
-        duration:200,
+        faculty:"Anurag Verma",
+        duration:120,
         durationInTerm:"Hours",
-        totalTime:40,
+        totalTime:60,
         totalTimeInTerm:"Days",
         mode:"Online",
         days:"SXXXXFS"
@@ -71,11 +73,11 @@ const DATA02 = {
 }
 
 const DATA03 = {
-    img: BIO1,
-    subTitle:"Physics",
-    subSubTitle:"Base-Part-I",
-    desc:"We belive you are the best",
-    fees:400,
+    img: ADV_SIXTH_SCIENCE,
+    subTitle:"Adv Science",
+    subSubTitle:"F4E-0VI-ADS",
+    desc:"Adv formula, concept, scientific approach",
+    fees:13000,
     currency:"INR",
     off:"10",
     offKeyWord:"Off",
@@ -83,109 +85,17 @@ const DATA03 = {
     udemyUrl:"http://google.com",
     youtubeUrl:"http://youtube.com",
     details:{
-        faculty:"Mr.Anurag Verma",
-        duration:200,
+        faculty:"Lakshmi S Patel",
+        duration:100,
         durationInTerm:"Hours",
-        totalTime:40,
+        totalTime:50,
         totalTimeInTerm:"Days",
         mode:"Online",
         days:"SXXXXFS"
     }
 }
 
-const DATA10 = {
-    img: BIO1,
-    subTitle:"Physics",
-    subSubTitle:"Base-Part-I",
-    desc:"We belive you are the best",
-    fees:400,
-    currency:"INR",
-    off:"10",
-    offKeyWord:"Off",
-    offMode:"%",
-    udemyUrl:"http://google.com",
-    youtubeUrl:"http://youtube.com",
-    details:{
-        faculty:"Mr.Anurag Verma",
-        duration:200,
-        durationInTerm:"Hours",
-        totalTime:40,
-        totalTimeInTerm:"Days",
-        mode:"Online",
-        days:"SXXXXFS"
-    }
-}
-
-const DATA11 = {
-    img: BIO1,
-    subTitle:"Physics",
-    subSubTitle:"Base-Part-I",
-    desc:"We belive you are the best",
-    fees:400,
-    currency:"INR",
-    off:"10",
-    offKeyWord:"Off",
-    offMode:"%",
-    udemyUrl:"http://google.com",
-    youtubeUrl:"http://youtube.com",
-    details:{
-        faculty:"Mr.Anurag Verma",
-        duration:200,
-        durationInTerm:"Hours",
-        totalTime:40,
-        totalTimeInTerm:"Days",
-        mode:"Online",
-        days:"SXXXXFS"
-    }
-}
-
-const DATA12 = {
-    img: BIO1,
-    subTitle:"Physics",
-    subSubTitle:"Base-Part-I",
-    desc:"We belive you are the best",
-    fees:400,
-    currency:"INR",
-    off:"10",
-    offKeyWord:"Off",
-    offMode:"%",
-    udemyUrl:"http://google.com",
-    youtubeUrl:"http://youtube.com",
-    details:{
-        faculty:"Mr.Anurag Verma",
-        duration:200,
-        durationInTerm:"Hours",
-        totalTime:40,
-        totalTimeInTerm:"Days",
-        mode:"Online",
-        days:"SXXXXFS"
-    }
-}
-
-const DATA13 = {
-    img: BIO1,
-    subTitle:"Physics",
-    subSubTitle:"Base-Part-I",
-    desc:"We belive you are the best",
-    fees:400,
-    currency:"INR",
-    off:"10",
-    offKeyWord:"Off",
-    offMode:"%",
-    udemyUrl:"http://google.com",
-    youtubeUrl:"http://youtube.com",
-    details:{
-        faculty:"Mr.Anurag Verma",
-        duration:200,
-        durationInTerm:"Hours",
-        totalTime:40,
-        totalTimeInTerm:"Days",
-        mode:"Online",
-        days:"SXXXXFS"
-    }
-}
 
 export const SIXTH_CLASS_DATA=[
-    DATA00,DATA01,DATA02,DATA03,
-    DATA10,DATA11,DATA12,DATA13
+    DATA00,DATA01,DATA02,DATA03
 ];

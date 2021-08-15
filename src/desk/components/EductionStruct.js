@@ -4,12 +4,25 @@ import Button from "react-bootstrap/Button";
 import YOUTUBE from "../../img/youtube.png";
 import UDEMY from "../../img/udemy.png";
 import {Table} from 'react-bootstrap'
-import {ALL_STD_DATA} from "../constants/data/ALL_STD_DATA";
 import {ELEVENTH_CLASS_DATA} from "../constants/data/ELEVENTH_CLASS_DATA";
 import {TWELFTH_CLASS_DATA} from "../constants/data/TWELFTH_CLASS_DATA";
-import {ALL_STD, EIGHTH, ELEVENTH, NINTH, SEVENTH, SIXTH, TENTH, TWELFTH} from "../constants/ClassLevelConst";
+import {
+    ALL_STD,
+    CURRENT_AFFAIRS,
+    EIGHTH,
+    ELEVENTH,
+    NINTH,
+    SEVENTH,
+    SIXTH,
+    TENTH,
+    TWELFTH
+} from "../constants/ClassLevelConst";
+import {SIXTH_CLASS_DATA} from "../constants/data/SIXTH_CLASS_DATA";
+import {SEVENTH_CLASS_DATA} from "../constants/data/SEVENTH_CLASS_DATA";
+import {EIGHT_CLASS_DATA} from "../constants/data/EIGHT_CLASS_DATA";
+import {CURRENT_AFFAIRS_CLASS_DATA} from "../constants/data/CURRENT_AFFAIRS_CLASS_DATA";
 
-
+let ALL_STD_DATA = ELEVENTH_CLASS_DATA.concat(TWELFTH_CLASS_DATA).concat(SIXTH_CLASS_DATA).concat(SEVENTH_CLASS_DATA).concat(EIGHT_CLASS_DATA);
 const MAX_ROW = 5;
 const NUM_OF_COLUMN = 4;
 let NUM_OF_ROWS = 2;
@@ -31,6 +44,30 @@ class EductionStruct extends  Component{
     getDataForGivenStd = (std) =>{
         console.log("getData");
         switch (std){
+            case SIXTH:
+                console.log("ELEVENTH-Section");
+                DATA = SIXTH_CLASS_DATA;
+                console.log("SIZE:"+DATA.length);
+                NUM_OF_ROWS = Math.ceil(DATA.length/NUM_OF_COLUMN);
+                NUM_OF_COL_IN_LAST_ROW = DATA.length-(NUM_OF_ROWS-1)*NUM_OF_COLUMN;
+                this.setState({ togglingDetail: !this.state.togglingDetail });
+                break;
+            case SEVENTH:
+                console.log("TWELFTH-section");
+                DATA = SEVENTH_CLASS_DATA;
+                console.log("SIZE:"+DATA.length);
+                NUM_OF_ROWS = Math.ceil(DATA.length/NUM_OF_COLUMN);
+                NUM_OF_COL_IN_LAST_ROW = DATA.length-(NUM_OF_ROWS-1)*NUM_OF_COLUMN;
+                this.setState({ togglingDetail: !this.state.togglingDetail });
+                break;
+            case EIGHTH:
+                console.log("ALL_STD-section");
+                DATA = EIGHT_CLASS_DATA ;
+                console.log("SIZE:"+DATA.length);
+                NUM_OF_ROWS = Math.ceil(DATA.length/NUM_OF_COLUMN);
+                NUM_OF_COL_IN_LAST_ROW = DATA.length-(NUM_OF_ROWS-1)*NUM_OF_COLUMN;
+                this.setState({ togglingDetail: !this.state.togglingDetail });
+                break;
             case ELEVENTH:
                 console.log("ELEVENTH-Section");
                 DATA = ELEVENTH_CLASS_DATA;
@@ -41,7 +78,15 @@ class EductionStruct extends  Component{
                 break;
             case TWELFTH:
                 console.log("TWELFTH-section");
-                DATA = ALL_STD_DATA;
+                DATA = TWELFTH_CLASS_DATA;
+                console.log("SIZE:"+DATA.length);
+                NUM_OF_ROWS = Math.ceil(DATA.length/NUM_OF_COLUMN);
+                NUM_OF_COL_IN_LAST_ROW = DATA.length-(NUM_OF_ROWS-1)*NUM_OF_COLUMN;
+                this.setState({ togglingDetail: !this.state.togglingDetail });
+                break;
+            case CURRENT_AFFAIRS:
+                console.log("ALL_STD-section");
+                DATA = CURRENT_AFFAIRS_CLASS_DATA;
                 console.log("SIZE:"+DATA.length);
                 NUM_OF_ROWS = Math.ceil(DATA.length/NUM_OF_COLUMN);
                 NUM_OF_COL_IN_LAST_ROW = DATA.length-(NUM_OF_ROWS-1)*NUM_OF_COLUMN;
@@ -113,7 +158,7 @@ class EductionStruct extends  Component{
                             <Card.Body>
                                 <Card.Title>{DATA[i*NUM_OF_COLUMN+j].subTitle}</Card.Title>
                                 <Card.Subtitle className="mb-2 text-muted">{DATA[i*NUM_OF_COLUMN+j].subSubTitle}</Card.Subtitle>
-                                <Card.Text style={{fontSize:14}}>
+                                <Card.Text style={{fontSize:11}}>
                                     {DATA[i*NUM_OF_COLUMN+j].desc}
                                 </Card.Text>
                                 <div id="guide-button">
@@ -124,7 +169,7 @@ class EductionStruct extends  Component{
                                             </Button>
                                         </Col>
                                         <Col xs={3}>
-                                            <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10, width:60, height:20}}>
+                                            <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10, width:80, height:20}}>
                                                 <p style={{fontSize:9}}>{DATA[i*NUM_OF_COLUMN+j].fees+" "+DATA[i*NUM_OF_COLUMN+j].currency}</p>
                                             </Button>
                                         </Col>
@@ -216,7 +261,7 @@ class EductionStruct extends  Component{
                         <Card.Body>
                             <Card.Title>{DATA[i*NUM_OF_COLUMN+j].subTitle}</Card.Title>
                             <Card.Subtitle className="mb-2 text-muted">{DATA[i*NUM_OF_COLUMN+j].subSubTitle}</Card.Subtitle>
-                            <Card.Text style={{fontSize:14}}>
+                            <Card.Text style={{fontSize:11}}>
                                 {DATA[i*NUM_OF_COLUMN+j].desc}
                             </Card.Text>
                             <div id="guide-button">
@@ -227,7 +272,7 @@ class EductionStruct extends  Component{
                                         </Button>
                                     </Col>
                                     <Col xs={3}>
-                                        <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10, width:60, height:20}}>
+                                        <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10, width:80, height:20}}>
                                             <p style={{fontSize:9}}>{DATA[i*NUM_OF_COLUMN+j].fees+" "+DATA[i*NUM_OF_COLUMN+j].currency}</p>
                                         </Button>
                                     </Col>
@@ -283,13 +328,34 @@ class EductionStruct extends  Component{
                 boxShadow: "2px 2px 5px black", position:"relative",borderRadius:2
             }} >
                 <div id="select-class">
-
-                    <div style={{float:"right", borderColor:"white", borderRadius:5, borderWidth:1, borderStyle:"solid",marginRight:2,marginLeft:2, padding:5}}>
-                        <Button variant="outline-primary" size="sm" style={{marginLeft:5,marginTop:2,marginBottom:5,width:60, height:20}} onClick={()=>this.getDataForGivenStd(ALL_STD)}>
+                    <div style={{float:"left", borderColor:"white", borderRadius:5, borderWidth:1, borderStyle:"solid",marginRight:2,marginLeft:2,padding:5}}>
+                        <Button variant="outline-primary" size="sm" style={{marginLeft:5,marginRight:5,marginTop:2,marginBottom:5,width:60, height:20}} onClick={()=>this.getDataForGivenStd(ALL_STD)}>
                             <p style={{fontSize:9}}>ALL</p>
                         </Button>
+                    </div>
+
+                    <div style={{float:"right", borderColor:"white", borderRadius:5, borderWidth:1, borderStyle:"solid",marginRight:2,marginLeft:2, padding:5}}>
+                        <Button variant="outline-primary" size="sm" style={{marginLeft:5,marginTop:2,marginBottom:5,width:60, height:20}} onClick={()=>this.getDataForGivenStd(SIXTH)}>
+                            <p style={{fontSize:9}}>VI</p>
+                        </Button>
+                        <Button variant="outline-primary" size="sm" style={{marginLeft:5,marginTop:2,marginBottom:5,width:60, height:20}} onClick={()=>this.getDataForGivenStd(SEVENTH)}>
+                            <p style={{fontSize:9}}>VII</p>
+                        </Button>
+                        <Button variant="outline-primary" size="sm" style={{marginLeft:5,marginTop:2,marginBottom:5,width:60, height:20}} onClick={()=>this.getDataForGivenStd(EIGHTH)}>
+                            <p style={{fontSize:9}}>VIII</p>
+                        </Button>
+                    </div>
+                    <div style={{float:"right", borderColor:"white", borderRadius:5, borderWidth:1, borderStyle:"solid",marginRight:2,marginLeft:2, padding:5}}>
                         <Button variant="outline-primary" size="sm" style={{marginLeft:5,marginTop:2,marginBottom:5,width:60, height:20}} onClick={()=>this.getDataForGivenStd(ELEVENTH)}>
                             <p style={{fontSize:9}}>XI</p>
+                        </Button>
+                        <Button variant="outline-primary" size="sm" style={{marginLeft:5,marginTop:2,marginBottom:5,width:60, height:20}} onClick={()=>this.getDataForGivenStd(TWELFTH)}>
+                            <p style={{fontSize:9}}>XII</p>
+                        </Button>
+                    </div>
+                    <div style={{float:"right", borderColor:"white", borderRadius:5, borderWidth:1, borderStyle:"solid",marginRight:2,marginLeft:2,padding:5}}>
+                        <Button variant="outline-primary" size="sm" style={{marginLeft:5,marginRight:5,marginTop:2,marginBottom:5,width:90, height:20}} onClick={()=>this.getDataForGivenStd(CURRENT_AFFAIRS)}>
+                            <p style={{fontSize:9}}>Current-Affair</p>
                         </Button>
                     </div>
                 </div>

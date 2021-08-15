@@ -13,4 +13,6 @@ export const B_TECH = "B_TECH";
 export const BSC = "BSC";
 export const MSC = "MSC";
 
+export const CURRENT_AFFAIRS = "CURRENT_AFFAIRS";
+
 export const ALL_STD = "ALL_STD";
