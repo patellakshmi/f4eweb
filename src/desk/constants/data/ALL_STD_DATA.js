@@ -4,7 +4,7 @@ import CHEM1 from "../../../img/chemistry.jpg";
 const DATA00 = {
     img: BIO1,
     subTitle:"Physics",
-    subSubTitle:"Base-Part-I",
+    subCode:"Base-Part-I",
     desc:"We belive you are the best",
     fees:400,
     currency:"INR",
@@ -27,7 +27,7 @@ const DATA00 = {
 const DATA01 = {
     img: BIO1,
     subTitle:"Physics",
-    subSubTitle:"Base-Part-I",
+    subCode:"Base-Part-I",
     desc:"We belive you are the best",
     fees:400,
     currency:"INR",
@@ -50,7 +50,7 @@ const DATA01 = {
 const DATA02 = {
     img: BIO1,
     subTitle:"Physics",
-    subSubTitle:"Base-Part-I",
+    subCode:"Base-Part-I",
     desc:"We belive you are the best",
     fees:400,
     currency:"INR",
@@ -73,7 +73,7 @@ const DATA02 = {
 const DATA03 = {
     img: BIO1,
     subTitle:"Physics",
-    subSubTitle:"Base-Part-I",
+    subCode:"Base-Part-I",
     desc:"We belive you are the best",
     fees:400,
     currency:"INR",
@@ -96,7 +96,7 @@ const DATA03 = {
 const DATA10 = {
     img: BIO1,
     subTitle:"Physics",
-    subSubTitle:"Base-Part-I",
+    subCode:"Base-Part-I",
     desc:"We belive you are the best",
     fees:400,
     currency:"INR",
@@ -119,7 +119,7 @@ const DATA10 = {
 const DATA11 = {
     img: BIO1,
     subTitle:"Physics",
-    subSubTitle:"Base-Part-I",
+    subCode:"Base-Part-I",
     desc:"We belive you are the best",
     fees:400,
     currency:"INR",
@@ -142,7 +142,7 @@ const DATA11 = {
 const DATA12 = {
     img: BIO1,
     subTitle:"Physics",
-    subSubTitle:"Base-Part-I",
+    subCode:"Base-Part-I",
     desc:"We belive you are the best",
     fees:400,
     currency:"INR",
@@ -165,7 +165,7 @@ const DATA12 = {
 const DATA13 = {
     img: BIO1,
     subTitle:"Physics",
-    subSubTitle:"Base-Part-I",
+    subCode:"Base-Part-I",
     desc:"We belive you are the best",
     fees:400,
     currency:"INR",

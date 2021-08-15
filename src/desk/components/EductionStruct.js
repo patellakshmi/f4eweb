@@ -157,7 +157,7 @@ class EductionStruct extends  Component{
                             }
                             <Card.Body>
                                 <Card.Title>{DATA[i*NUM_OF_COLUMN+j].subTitle}</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted">{DATA[i*NUM_OF_COLUMN+j].subSubTitle}</Card.Subtitle>
+                                <Card.Subtitle className="mb-2 text-muted">{DATA[i*NUM_OF_COLUMN+j].subCode}</Card.Subtitle>
                                 <Card.Text style={{fontSize:11}}>
                                     {DATA[i*NUM_OF_COLUMN+j].desc}
                                 </Card.Text>
@@ -278,7 +278,7 @@ class EductionStruct extends  Component{
                         }
                         <Card.Body>
                             <Card.Title>{DATA[i*NUM_OF_COLUMN+j].subTitle}</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">{DATA[i*NUM_OF_COLUMN+j].subSubTitle}</Card.Subtitle>
+                            <Card.Subtitle className="mb-2 text-muted">{DATA[i*NUM_OF_COLUMN+j].subCode}</Card.Subtitle>
                             <Card.Text style={{fontSize:11}}>
                                 {DATA[i*NUM_OF_COLUMN+j].desc}
                             </Card.Text>

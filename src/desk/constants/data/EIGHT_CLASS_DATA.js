@@ -6,7 +6,7 @@ import ADV_EIGHT_SCIENCE from "../../../img/classes/eighth/AdvEigthScience.jpg";
 const DATA00 = {
     img: EIGHT_MATHS,
     subTitle:"Maths",
-    subSubTitle:"F4E-008-SBM",
+    subCode:"F4E-008-SBM",
     desc:"Basic subjective maths, core of maths",
     fees:100000,
     currency:"INR",
@@ -29,7 +29,7 @@ const DATA00 = {
 const DATA01 = {
     img: ADV_EIGHT_MATHS,
     subTitle:"Adv-Maths",
-    subSubTitle:"F4E-008-AVM",
+    subCode:"F4E-008-AVM",
     desc:"Advanced technique and formula, Adv questions",
     fees:1500,
     currency:"INR",
@@ -52,7 +52,7 @@ const DATA01 = {
 const DATA02 = {
     img: EIGHT_SCIENCE,
     subTitle:"Science",
-    subSubTitle:"F4E-008-AVM",
+    subCode:"F4E-008-AVM",
     desc:"Basic understanding the nature of science.",
     fees:9000,
     currency:"INR",
@@ -75,7 +75,7 @@ const DATA02 = {
 const DATA03 = {
     img: ADV_EIGHT_SCIENCE,
     subTitle:"Adv Science",
-    subSubTitle:"F4E-008-SBS",
+    subCode:"F4E-008-SBS",
     desc:"Adv formula, concept, scientific approach",
     fees:13000,
     currency:"INR",

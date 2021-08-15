@@ -6,7 +6,7 @@ import ADV_SIXTH_SCIENCE from "../../../img/classes/sixth/AdvSixthScience.jpg";
 const DATA00 = {
     img: SIXTH_MATHS,
     subTitle:"Maths",
-    subSubTitle:"F4E-0VI-SBM",
+    subCode:"F4E-0VI-SBM",
     desc:"Basic subjective maths, core of maths",
     fees:1000,
     currency:"INR",
@@ -29,7 +29,7 @@ const DATA00 = {
 const DATA01 = {
     img: ADV_SIXTH_MATHS,
     subTitle:"Adv. Maths",
-    subSubTitle:"F4E-0VI-AVM",
+    subCode:"F4E-0VI-AVM",
     desc:"Advanced technique and formula, Adv questions",
     fees:1500,
     currency:"INR",
@@ -52,7 +52,7 @@ const DATA01 = {
 const DATA02 = {
     img: SIXTH_SCIENCE,
     subTitle:"Science",
-    subSubTitle:"F4E-0VI-SBS",
+    subCode:"F4E-0VI-SBS",
     desc:"Basic understanding the nature of science.",
     fees:9000,
     currency:"INR",
@@ -75,7 +75,7 @@ const DATA02 = {
 const DATA03 = {
     img: ADV_SIXTH_SCIENCE,
     subTitle:"Adv Science",
-    subSubTitle:"F4E-0VI-ADS",
+    subCode:"F4E-0VI-ADS",
     desc:"Adv formula, concept, scientific approach",
     fees:13000,
     currency:"INR",

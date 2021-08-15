@@ -9,7 +9,7 @@ import ELEVENTH_JAVA_SCRIPT from "../../../img/classes/eleventh/EleventhJS.jpg";
 const DATA00 = {
     img: ELEVENTH_MATHS,
     subTitle:"Maths",
-    subSubTitle:"F4E-0VI-SBM",
+    subCode:"F4E-0VI-SBM",
     desc:"Basic subjective maths, core of maths",
     fees:1000,
     currency:"INR",
@@ -32,7 +32,7 @@ const DATA00 = {
 const DATA01 = {
     img: ELEVENTH_AVD_MATHS,
     subTitle:"Adv. Maths",
-    subSubTitle:"F4E-0VI-AVM",
+    subCode:"F4E-0VI-AVM",
     desc:"Advanced technique and formula, Adv questions",
     fees:1500,
     currency:"INR",
@@ -55,7 +55,7 @@ const DATA01 = {
 const DATA02 = {
     img: ELEVENTH_PHYSICS,
     subTitle:"Science",
-    subSubTitle:"F4E-0VI-SBS",
+    subCode:"F4E-0VI-SBS",
     desc:"Basic understanding the nature of science.",
     fees:9000,
     currency:"INR",
@@ -78,7 +78,7 @@ const DATA02 = {
 const DATA03 = {
     img: ELEVENTH_AVD_PHYSICS,
     subTitle:"Adv Science",
-    subSubTitle:"F4E-0VI-ADS",
+    subCode:"F4E-0VI-ADS",
     desc:"Adv formula, concept, scientific approach",
     fees:13000,
     currency:"INR",
@@ -101,7 +101,7 @@ const DATA03 = {
 const DATA10 = {
     img: ELEVENTH_HTML,
     subTitle:"Adv Science",
-    subSubTitle:"F4E-0VI-ADS",
+    subCode:"F4E-0VI-ADS",
     desc:"Adv formula, concept, scientific approach",
     fees:13000,
     currency:"INR",
@@ -124,7 +124,7 @@ const DATA10 = {
 const DATA11 = {
     img: ELEVENTH_REACT,
     subTitle:"Adv Science",
-    subSubTitle:"F4E-0VI-ADS",
+    subCode:"F4E-0VI-ADS",
     desc:"Adv formula, concept, scientific approach",
     fees:13000,
     currency:"INR",
@@ -146,7 +146,7 @@ const DATA11 = {
 const DATA12 = {
     img: ELEVENTH_JAVA_SCRIPT,
     subTitle:"Adv Science",
-    subSubTitle:"F4E-0VI-ADS",
+    subCode:"F4E-0VI-ADS",
     desc:"Adv formula, concept, scientific approach",
     fees:13000,
     currency:"INR",
