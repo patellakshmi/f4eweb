@@ -3,19 +3,20 @@ import KISAN_ANDOLAN from "../../../img/classes/current_affairs/KisanAndolan.jpg
 import CONSTITUTION from "../../../img/classes/current_affairs/Constitution.jpg";
 import COVID from "../../../img/classes/current_affairs/Covid.jpg";
 import ELECTION from "../../../img/classes/current_affairs/Election.jpg";
+import KISAN_ANDOLAN_GIF from "../../../img/classes/current_affairs/KisanAndolan.gif";
 
 const DATA00 = {
     img: ARTICLE_370,
     subTitle:"ARTICLE 370",
     subSubTitle:"ART370-O8M",
     desc:"Basic subjective maths, core of maths",
-    fees:1000,
+    fees:10,
     currency:"INR",
-    off:"10",
+    off:0,
     offKeyWord:"Off",
     offMode:"%",
     udemyUrl:"http://google.com",
-    youtubeUrl:"http://youtube.com",
+    youtubeUrl:null,
     details:{
         faculty:"Lakshmi S. Patel",
         duration:125,
@@ -103,7 +104,7 @@ const DATA10 = {
     desc:"Adv formula, concept, scientific approach",
     fees:13000,
     currency:"INR",
-    off:"10",
+    off:null,
     offKeyWord:"Off",
     offMode:"%",
     udemyUrl:"http://google.com",

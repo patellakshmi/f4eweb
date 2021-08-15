@@ -8,7 +8,7 @@ const DATA00 = {
     subTitle:"Maths",
     subSubTitle:"F4E-008-SBM",
     desc:"Basic subjective maths, core of maths",
-    fees:1000,
+    fees:100000,
     currency:"INR",
     off:"8000",
     offKeyWord:"Off",

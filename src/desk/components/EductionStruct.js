@@ -27,7 +27,7 @@ const MAX_ROW = 5;
 const NUM_OF_COLUMN = 4;
 let NUM_OF_ROWS = 2;
 let NUM_OF_COL_IN_LAST_ROW = 2;
-let DATA = ALL_STD_DATA;
+let DATA = CURRENT_AFFAIRS_CLASS_DATA;
 class EductionStruct extends  Component{
 
     constructor(props) {
@@ -164,43 +164,61 @@ class EductionStruct extends  Component{
                                 <div id="guide-button">
                                     <Row className="justify-content-xm-center">
                                         <Col xs={3}>
+                                            {
+                                                DATA[i*NUM_OF_COLUMN+j].off != null && DATA[i*NUM_OF_COLUMN+j].off != "0" &&
                                             <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10,width:80, height:20}}>
                                                 <p style={{fontSize:9}}>{DATA[i*NUM_OF_COLUMN+j].offKeyWord+":"+DATA[i*NUM_OF_COLUMN+j].off+DATA[i*NUM_OF_COLUMN+j].offMode}</p>
                                             </Button>
+                                            }
                                         </Col>
                                         <Col xs={3}>
-                                            <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10, width:80, height:20}}>
-                                                <p style={{fontSize:9}}>{DATA[i*NUM_OF_COLUMN+j].fees+" "+DATA[i*NUM_OF_COLUMN+j].currency}</p>
-                                            </Button>
+                                            {
+                                                DATA[i*NUM_OF_COLUMN+j].fees != null && DATA[i*NUM_OF_COLUMN+j].fees != "0" &&
+                                                <Button disabled variant="outline-primary" size="sm"
+                                                        style={{marginLeft: 10, marginTop: 10, width: 80, height: 20}}>
+                                                    <p style={{fontSize: 9}}>{DATA[i * NUM_OF_COLUMN + j].fees + " " + DATA[i * NUM_OF_COLUMN + j].currency}</p>
+                                                </Button>
+                                            }
                                         </Col>
                                         <Col xs={3}>
-                                            <Button variant="info" size="sm" style={{marginLeft:10,marginTop:10, height:20}} onClick={()=>this.toggleDetailField(i,j)}>
-                                                <p style={{fontSize:9}}>Details</p>
-                                            </Button>
+                                            {
+                                                DATA[i*NUM_OF_COLUMN+j].details != null  &&
+                                                <Button variant="info" size="sm"
+                                                        style={{marginLeft: 10, marginTop: 10, height: 20}}
+                                                        onClick={() => this.toggleDetailField(i, j)}>
+                                                    <p style={{fontSize: 9}}>Details</p>
+                                                </Button>
+                                            }
                                         </Col>
                                         <Col xs={3}>
                                             <Row className="justify-content-xm-center">
                                                 <Col xs={6}>
-                                                    <Card.Link href={DATA[i*NUM_OF_COLUMN+j].udemyUrl}>
-                                                        <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
-                                                            <img style={{ display: 'block', width: 20, height:20 }}
-                                                                 className="d-block w-100"
-                                                                 src={UDEMY}
-                                                                 alt="Image One"
-                                                            />
-                                                        </div>
-                                                    </Card.Link>
+                                                    {
+                                                        DATA[i * NUM_OF_COLUMN + j].udemyUrl != null &&
+                                                        <Card.Link href={DATA[i * NUM_OF_COLUMN + j].udemyUrl}>
+                                                            <div style={{marginLeft: 0, marginTop: 10, marginRight: 0}}>
+                                                                <img style={{display: 'block', width: 20, height: 20}}
+                                                                     className="d-block w-100"
+                                                                     src={UDEMY}
+                                                                     alt="Image One"
+                                                                />
+                                                            </div>
+                                                        </Card.Link>
+                                                    }
                                                 </Col>
                                                 <Col xs={6}>
-                                                    <Card.Link href={DATA[i*NUM_OF_COLUMN+j].youtubeUrl}>
-                                                        <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
-                                                            <img style={{ width: 20, height:20 }}
-                                                                 className="d-block w-100"
-                                                                 src={YOUTUBE}
-                                                                 alt="Image One"
-                                                            />
-                                                        </div>
-                                                    </Card.Link>
+                                                    {
+                                                        DATA[i * NUM_OF_COLUMN + j].youtubeUrl != null &&
+                                                        <Card.Link href={DATA[i * NUM_OF_COLUMN + j].youtubeUrl}>
+                                                            <div style={{marginLeft: 0, marginTop: 10, marginRight: 0}}>
+                                                                <img style={{width: 20, height: 20}}
+                                                                     className="d-block w-100"
+                                                                     src={YOUTUBE}
+                                                                     alt="Image One"
+                                                                />
+                                                            </div>
+                                                        </Card.Link>
+                                                    }
                                                 </Col>
                                             </Row>
                                         </Col>
@@ -267,43 +285,62 @@ class EductionStruct extends  Component{
                             <div id="guide-button">
                                 <Row className="justify-content-xm-center">
                                     <Col xs={3}>
-                                        <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10,width:80, height:20}}>
-                                            <p style={{fontSize:9}}>{DATA[i*NUM_OF_COLUMN+j].offKeyWord+":"+DATA[i*NUM_OF_COLUMN+j].off+DATA[i*NUM_OF_COLUMN+j].offMode}</p>
-                                        </Button>
+                                        {
+                                            DATA[i*NUM_OF_COLUMN+j].off != null && DATA[i*NUM_OF_COLUMN+j].off != "0" &&
+                                            <Button disabled variant="outline-primary" size="sm"
+                                                    style={{marginLeft: 10, marginTop: 10, width: 80, height: 20}}>
+                                                <p style={{fontSize: 9}}>{DATA[i * NUM_OF_COLUMN + j].offKeyWord + ":" + DATA[i * NUM_OF_COLUMN + j].off + DATA[i * NUM_OF_COLUMN + j].offMode}</p>
+                                            </Button>
+                                        }
                                     </Col>
                                     <Col xs={3}>
-                                        <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10, width:80, height:20}}>
-                                            <p style={{fontSize:9}}>{DATA[i*NUM_OF_COLUMN+j].fees+" "+DATA[i*NUM_OF_COLUMN+j].currency}</p>
-                                        </Button>
+                                        {
+                                            DATA[i*NUM_OF_COLUMN+j].fees != null && DATA[i*NUM_OF_COLUMN+j].fees != "0" &&
+                                            <Button disabled variant="outline-primary" size="sm"
+                                                    style={{marginLeft: 10, marginTop: 10, width: 80, height: 20}}>
+                                                <p style={{fontSize: 9}}>{DATA[i * NUM_OF_COLUMN + j].fees + " " + DATA[i * NUM_OF_COLUMN + j].currency}</p>
+                                            </Button>
+                                        }
                                     </Col>
                                     <Col xs={3}>
-                                        <Button variant="info" size="sm" style={{marginLeft:10,marginTop:10, height:20}} onClick={()=>this.toggleDetailField(i,j)}>
-                                            <p style={{fontSize:9}}>Details</p>
-                                        </Button>
+                                        {
+                                            DATA[i * NUM_OF_COLUMN + j].details != null &&
+                                            <Button variant="info" size="sm"
+                                                    style={{marginLeft: 10, marginTop: 10, height: 20}}
+                                                    onClick={() => this.toggleDetailField(i, j)}>
+                                                <p style={{fontSize: 9}}>Details</p>
+                                            </Button>
+                                        }
                                     </Col>
                                     <Col xs={3}>
                                         <Row className="justify-content-xm-center">
                                             <Col xs={6}>
-                                                <Card.Link href={DATA[i*NUM_OF_COLUMN+j].udemyUrl}>
-                                                    <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
-                                                        <img style={{ display: 'block', width: 20, height:20 }}
-                                                             className="d-block w-100"
-                                                             src={UDEMY}
-                                                             alt="Image One"
-                                                        />
-                                                    </div>
-                                                </Card.Link>
+                                                {
+                                                    DATA[i * NUM_OF_COLUMN + j].udemyUrl != null &&
+                                                    <Card.Link href={DATA[i * NUM_OF_COLUMN + j].udemyUrl}>
+                                                        <div style={{marginLeft: 0, marginTop: 10, marginRight: 0}}>
+                                                            <img style={{display: 'block', width: 20, height: 20}}
+                                                                 className="d-block w-100"
+                                                                 src={UDEMY}
+                                                                 alt="Image One"
+                                                            />
+                                                        </div>
+                                                    </Card.Link>
+                                                }
                                             </Col>
                                             <Col xs={6}>
-                                                <Card.Link href={DATA[i*NUM_OF_COLUMN+j].youtubeUrl}>
-                                                    <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
-                                                        <img style={{ width: 20, height:20 }}
-                                                             className="d-block w-100"
-                                                             src={YOUTUBE}
-                                                             alt="Image One"
-                                                        />
-                                                    </div>
-                                                </Card.Link>
+                                                {
+                                                    DATA[i * NUM_OF_COLUMN + j].youtubeUrl != null &&
+                                                    <Card.Link href={DATA[i * NUM_OF_COLUMN + j].youtubeUrl}>
+                                                        <div style={{marginLeft: 0, marginTop: 10, marginRight: 0}}>
+                                                            <img style={{width: 20, height: 20}}
+                                                                 className="d-block w-100"
+                                                                 src={YOUTUBE}
+                                                                 alt="Image One"
+                                                            />
+                                                        </div>
+                                                    </Card.Link>
+                                                }
                                             </Col>
                                         </Row>
                                     </Col>
@@ -364,587 +401,6 @@ class EductionStruct extends  Component{
                     {
                         this.giveAllRow()
                     }
-
-
-                    {/*<Row className="justify-content-xm-center">
-                        <Col xs={3}>
-                            <Card>
-                                { this.state.isPhysics &&
-                                <img style={{display: 'block', width: 100, height: 150}}
-                                     className="d-block w-100"
-                                     src={BIO1}
-                                     alt="Image One"
-                                     onClick={() => this.props.updateCentralContent(CENTRAL_CONTENT)}
-                                />
-                                }
-                                {
-                                    !this.state.isPhysics &&
-                                    <Card>
-                                        <Card.Body>
-                                            <Table striped bordered hover style={{fontSize:8, margin:0, height:100}}>
-                                                <tbody>
-                                                <tr>
-                                                    <td>Faculty</td>
-                                                    <td>Mr. Anurag Verma</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Jacob</td>
-                                                    <td>Thornton</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Larry the Bird</td>
-                                                    <td>@twitter</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Larry the Bird</td>
-                                                    <td>@twitter</td>
-                                                </tr>
-                                                </tbody>
-                                            </Table>
-                                        </Card.Body>
-                                    </Card>
-                                }
-                                <Card.Body>
-                                    <Card.Title>Physics for XII</Card.Title>
-                                    <Card.Subtitle className="mb-2 text-muted">Advanced understanding</Card.Subtitle>
-                                    <Card.Text style={{fontSize:14}}>
-                                        We believe in basic of physics, by understanding with F4E, student are able to
-                                        crack IIT exam easily.
-                                    </Card.Text>
-                                    <div id="guide-button">
-                                        <Row className="justify-content-xm-center">
-                                            <Col xs={3}>
-                                                <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10,width:60, height:20}}>
-                                                    <p style={{fontSize:9}}>Off-10%</p>
-                                                </Button>
-                                            </Col>
-                                            <Col xs={3}>
-                                                <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10, width:60, height:20}}>
-                                                    <p style={{fontSize:9}}>2400 INR</p>
-                                                </Button>
-                                            </Col>
-                                            <Col xs={3}>
-                                                <Button variant="info" size="sm" style={{marginLeft:10,marginTop:10, height:20}} onClick={this.toggleDetails}>
-                                                    <p style={{fontSize:9}}>Details</p>
-                                                </Button>
-                                            </Col>
-                                            <Col xs={3}>
-                                                <Row className="justify-content-xm-center">
-                                                    <Col xs={6}>
-                                                        <Card.Link href="#">
-                                                            <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
-                                                                <img style={{ display: 'block', width: 20, height:20 }}
-                                                                     className="d-block w-100"
-                                                                     src={UDEMY}
-                                                                     alt="Image One"
-                                                                />
-                                                            </div>
-                                                        </Card.Link>
-                                                    </Col>
-                                                    <Col xs={6}>
-                                                        <Card.Link href="#">
-                                                            <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
-                                                                <img style={{ width: 20, height:20 }}
-                                                                     className="d-block w-100"
-                                                                     src={YOUTUBE}
-                                                                     alt="Image One"
-                                                                />
-                                                            </div>
-                                                        </Card.Link>
-                                                    </Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col xs={3}>
-                            <Card>
-                                { this.state.isPhysics &&
-                                <img style={{display: 'block', width: 100, height: 150}}
-                                     className="d-block w-100"
-                                     src={BIO1}
-                                     alt="Image One"
-                                     onClick={() => this.props.updateCentralContent(CENTRAL_CONTENT)}
-                                />
-                                }
-                                {
-                                    !this.state.isPhysics &&
-                                    <Card>
-                                        <Card.Body>
-                                            <Table striped bordered hover style={{fontSize:8, margin:0, height:100}}>
-                                                <tbody>
-                                                <tr>
-                                                    <td>Faculty</td>
-                                                    <td>Mr. Anurag Verma</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Jacob</td>
-                                                    <td>Thornton</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Larry the Bird</td>
-                                                    <td>@twitter</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Larry the Bird</td>
-                                                    <td>@twitter</td>
-                                                </tr>
-                                                </tbody>
-                                            </Table>
-                                        </Card.Body>
-                                    </Card>
-                                }
-                                <Card.Body>
-                                    <Card.Title>Physics for XII</Card.Title>
-                                    <Card.Subtitle className="mb-2 text-muted">Advanced understanding</Card.Subtitle>
-                                    <Card.Text style={{fontSize:14}}>
-                                        We believe in basic of physics, by understanding with F4E, student are able to
-                                        crack IIT exam easily.
-                                    </Card.Text>
-                                    <div id="guide-button">
-                                        <Row className="justify-content-xm-center">
-                                            <Col xs={3}>
-                                                <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10,width:60, height:20}}>
-                                                    <p style={{fontSize:9}}>Off-10%</p>
-                                                </Button>
-                                            </Col>
-                                            <Col xs={3}>
-                                                <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10, width:60, height:20}}>
-                                                    <p style={{fontSize:9}}>2400 INR</p>
-                                                </Button>
-                                            </Col>
-                                            <Col xs={3}>
-                                                <Button variant="info" size="sm" style={{marginLeft:10,marginTop:10, height:20}} onClick={this.toggleDetails}>
-                                                    <p style={{fontSize:9}}>Details</p>
-                                                </Button>
-                                            </Col>
-                                            <Col xs={3}>
-                                                <Row className="justify-content-xm-center">
-                                                    <Col xs={6}>
-                                                        <Card.Link href="#">
-                                                            <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
-                                                                <img style={{ display: 'block', width: 20, height:20 }}
-                                                                     className="d-block w-100"
-                                                                     src={UDEMY}
-                                                                     alt="Image One"
-                                                                />
-                                                            </div>
-                                                        </Card.Link>
-                                                    </Col>
-                                                    <Col xs={6}>
-                                                        <Card.Link href="#">
-                                                            <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
-                                                                <img style={{ width: 20, height:20 }}
-                                                                     className="d-block w-100"
-                                                                     src={YOUTUBE}
-                                                                     alt="Image One"
-                                                                />
-                                                            </div>
-                                                        </Card.Link>
-                                                    </Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col xs={3}>
-                            <Card>
-                                { this.state.isPhysics &&
-                                <img style={{display: 'block', width: 100, height: 150}}
-                                     className="d-block w-100"
-                                     src={BIO1}
-                                     alt="Image One"
-                                     onClick={() => this.props.updateCentralContent(CENTRAL_CONTENT)}
-                                />
-                                }
-                                {
-                                    !this.state.isPhysics &&
-                                    <Card>
-                                        <Card.Body>
-                                            <Table striped bordered hover style={{fontSize:8, margin:0, height:100}}>
-                                                <tbody>
-                                                <tr>
-                                                    <td>Faculty</td>
-                                                    <td>Mr. Anurag Verma</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Jacob</td>
-                                                    <td>Thornton</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Larry the Bird</td>
-                                                    <td>@twitter</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Larry the Bird</td>
-                                                    <td>@twitter</td>
-                                                </tr>
-                                                </tbody>
-                                            </Table>
-                                        </Card.Body>
-                                    </Card>
-                                }
-                                <Card.Body>
-                                    <Card.Title>Physics for XII</Card.Title>
-                                    <Card.Subtitle className="mb-2 text-muted">Advanced understanding</Card.Subtitle>
-                                    <Card.Text style={{fontSize:14}}>
-                                        We believe in basic of physics, by understanding with F4E, student are able to
-                                        crack IIT exam easily.
-                                    </Card.Text>
-                                    <div id="guide-button">
-                                        <Row className="justify-content-xm-center">
-                                            <Col xs={3}>
-                                                <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10,width:60, height:20}}>
-                                                    <p style={{fontSize:9}}>Off-10%</p>
-                                                </Button>
-                                            </Col>
-                                            <Col xs={3}>
-                                                <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10, width:60, height:20}}>
-                                                    <p style={{fontSize:9}}>2400 INR</p>
-                                                </Button>
-                                            </Col>
-                                            <Col xs={3}>
-                                                <Button variant="info" size="sm" style={{marginLeft:10,marginTop:10, height:20}} onClick={this.toggleDetails}>
-                                                    <p style={{fontSize:9}}>Details</p>
-                                                </Button>
-                                            </Col>
-                                            <Col xs={3}>
-                                                <Row className="justify-content-xm-center">
-                                                    <Col xs={6}>
-                                                        <Card.Link href="#">
-                                                            <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
-                                                                <img style={{ display: 'block', width: 20, height:20 }}
-                                                                     className="d-block w-100"
-                                                                     src={UDEMY}
-                                                                     alt="Image One"
-                                                                />
-                                                            </div>
-                                                        </Card.Link>
-                                                    </Col>
-                                                    <Col xs={6}>
-                                                        <Card.Link href="#">
-                                                            <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
-                                                                <img style={{ width: 20, height:20 }}
-                                                                     className="d-block w-100"
-                                                                     src={YOUTUBE}
-                                                                     alt="Image One"
-                                                                />
-                                                            </div>
-                                                        </Card.Link>
-                                                    </Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col xs={3}>
-                            <Card>
-                                { this.state.isPhysics &&
-                                    <img style={{display: 'block', width: 100, height: 150}}
-                                         className="d-block w-100"
-                                         src={BIO1}
-                                         alt="Image One"
-                                         onClick={() => this.props.updateCentralContent(CENTRAL_CONTENT)}
-                                    />
-                                }
-                                {
-                                    !this.state.isPhysics &&
-                                        <Card>
-                                            <Card.Body>
-                                                <Table striped bordered hover style={{fontSize:8, margin:0, height:100}}>
-                                                    <tbody>
-                                                    <tr>
-                                                        <td>Faculty</td>
-                                                        <td>Mr. Anurag Verma</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Jacob</td>
-                                                        <td>Thornton</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                    </tbody>
-                                                </Table>
-                                            </Card.Body>
-                                        </Card>
-                                }
-                                <Card.Body>
-                                    <Card.Title>Physics for XII</Card.Title>
-                                    <Card.Subtitle className="mb-2 text-muted">Advanced understanding</Card.Subtitle>
-                                    <Card.Text style={{fontSize:14}}>
-                                        We believe in basic of physics, by understanding with F4E, student are able to
-                                        crack IIT exam easily.
-                                    </Card.Text>
-                                    <div id="guide-button">
-                                        <Row className="justify-content-xm-center">
-                                            <Col xs={3}>
-                                                <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10,width:60, height:20}}>
-                                                    <p style={{fontSize:9}}>Off-10%</p>
-                                                </Button>
-                                            </Col>
-                                            <Col xs={3}>
-                                                <Button disabled variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10, width:60, height:20}}>
-                                                    <p style={{fontSize:9}}>2400 INR</p>
-                                                </Button>
-                                            </Col>
-                                            <Col xs={3}>
-                                                <Button variant="info" size="sm" style={{marginLeft:10,marginTop:10, height:20}} onClick={this.toggleDetails}>
-                                                    <p style={{fontSize:9}}>Details</p>
-                                                </Button>
-                                            </Col>
-                                            <Col xs={3}>
-                                                <Row className="justify-content-xm-center">
-                                                    <Col xs={6}>
-                                                        <Card.Link href="#">
-                                                            <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
-                                                                <img style={{ display: 'block', width: 20, height:20 }}
-                                                                     className="d-block w-100"
-                                                                     src={UDEMY}
-                                                                     alt="Image One"
-                                                                />
-                                                            </div>
-                                                        </Card.Link>
-                                                    </Col>
-                                                    <Col xs={6}>
-                                                        <Card.Link href="#">
-                                                            <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
-                                                                <img style={{ width: 20, height:20 }}
-                                                                     className="d-block w-100"
-                                                                     src={YOUTUBE}
-                                                                     alt="Image One"
-                                                                />
-                                                            </div>
-                                                        </Card.Link>
-                                                    </Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row>
-                    <Row style={{marginTop:5}}>
-                        <Col xs={3}>
-                            <Card>
-                                <img style={{ display: 'block', width: 100, height:150 }}
-                                     className="d-block w-100"
-                                     src={PHYSICS1}
-                                     alt="Image One"
-                                     onClick={()=>this.props.updateCentralContent(CENTRAL_CONTENT)}
-                                />
-                                <Card.Body>
-                                    <Card.Title>Physics for XII</Card.Title>
-                                    <Card.Subtitle className="mb-2 text-muted">Advanced understanding</Card.Subtitle>
-                                    <Card.Text style={{fontSize:14}}>
-                                        We believe in basic of physics, by understanding with F4E, student are able to
-                                        crack IIT exam easily.
-                                    </Card.Text>
-                                    <div id="guide-button">
-                                        <Row className="justify-content-xm-center">
-                                            <Col xs={3}>
-                                                <Button variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10,width:60, height:20}}>
-                                                    <Card.Link href="#">
-                                                        <p style={{fontSize:9}}>Off-10%</p>
-                                                    </Card.Link>
-                                                </Button>
-                                            </Col>
-                                            <Col xs={3}>
-                                                <Button variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10, width:60, height:20}}>
-                                                    <Card.Link href="#">
-                                                        <p style={{fontSize:9}}>2400 INR</p>
-                                                    </Card.Link>
-                                                </Button>
-                                            </Col>
-                                            <Col xs={3}>
-                                                <Button variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10, height:20}}>
-                                                    <Card.Link href="#">
-                                                        <p style={{fontSize:9}}>Details</p>
-                                                    </Card.Link>
-                                                </Button>
-                                            </Col>
-                                            <Col xs={3}>
-                                                <Row className="justify-content-xm-center">
-                                                    <Col xs={6}>
-                                                        <Card.Link href="#">
-                                                            <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
-                                                                <img style={{ display: 'block', width: 20, height:20 }}
-                                                                     className="d-block w-100"
-                                                                     src={UDEMY}
-                                                                     alt="Image One"
-                                                                />
-                                                            </div>
-                                                        </Card.Link>
-                                                    </Col>
-                                                    <Col xs={6}>
-                                                        <Card.Link href="#">
-                                                            <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
-                                                                <img style={{ width: 20, height:20 }}
-                                                                     className="d-block w-100"
-                                                                     src={YOUTUBE}
-                                                                     alt="Image One"
-                                                                />
-                                                            </div>
-                                                        </Card.Link>
-                                                    </Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col xs={3}>
-                            <Card>
-                                <img style={{ display: 'block', width: 100, height:150 }}
-                                     className="d-block w-100"
-                                     src={PHYSICS1}
-                                     alt="Image One"
-                                     onClick={()=>this.props.updateCentralContent(CENTRAL_CONTENT)}
-                                />
-                                <Card.Body>
-                                    <Card.Title>Physics for XII</Card.Title>
-                                    <Card.Subtitle className="mb-2 text-muted">Advanced understanding</Card.Subtitle>
-                                    <Card.Text style={{fontSize:14}}>
-                                        We believe in basic of physics, by understanding with F4E, student are able to
-                                        crack IIT exam easily.
-                                    </Card.Text>
-                                    <div id="guide-button">
-                                        <Row className="justify-content-xm-center">
-                                            <Col xs={3}>
-                                                <Button variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10,width:60, height:20}}>
-                                                    <Card.Link href="#">
-                                                        <p style={{fontSize:9}}>Off-10%</p>
-                                                    </Card.Link>
-                                                </Button>
-                                            </Col>
-                                            <Col xs={3}>
-                                                <Button variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10, width:60, height:20}}>
-                                                    <Card.Link href="#">
-                                                        <p style={{fontSize:9}}>2400 INR</p>
-                                                    </Card.Link>
-                                                </Button>
-                                            </Col>
-                                            <Col xs={3}>
-                                                <Button variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10, height:20}}>
-                                                    <Card.Link href="#">
-                                                        <p style={{fontSize:9}}>Details</p>
-                                                    </Card.Link>
-                                                </Button>
-                                            </Col>
-                                            <Col xs={3}>
-                                                <Row className="justify-content-xm-center">
-                                                    <Col xs={6}>
-                                                        <Card.Link href="#">
-                                                            <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
-                                                                <img style={{ display: 'block', width: 20, height:20 }}
-                                                                     className="d-block w-100"
-                                                                     src={UDEMY}
-                                                                     alt="Image One"
-                                                                />
-                                                            </div>
-                                                        </Card.Link>
-                                                    </Col>
-                                                    <Col xs={6}>
-                                                        <Card.Link href="#">
-                                                            <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
-                                                                <img style={{ width: 20, height:20 }}
-                                                                     className="d-block w-100"
-                                                                     src={YOUTUBE}
-                                                                     alt="Image One"
-                                                                />
-                                                            </div>
-                                                        </Card.Link>
-                                                    </Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col xs={3}>
-                            <Card>
-                                <img style={{ display: 'block', width: 100, height:150 }}
-                                     className="d-block w-100"
-                                     src={PHYSICS1}
-                                     alt="Image One"
-                                     onClick={()=>this.props.updateCentralContent(CENTRAL_CONTENT)}
-                                />
-                                <Card.Body>
-                                    <Card.Title>Physics for XII</Card.Title>
-                                    <Card.Subtitle className="mb-2 text-muted">Advanced understanding</Card.Subtitle>
-                                    <Card.Text style={{fontSize:14}}>
-                                        We believe in basic of physics, by understanding with F4E, student are able to
-                                        crack IIT exam easily.
-                                    </Card.Text>
-                                    <div id="guide-button">
-                                        <Row className="justify-content-xm-center">
-                                            <Col xs={3}>
-                                                <Button variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10,width:60, height:20}}>
-                                                    <Card.Link href="#">
-                                                        <p style={{fontSize:9}}>Off-10%</p>
-                                                    </Card.Link>
-                                                </Button>
-                                            </Col>
-                                            <Col xs={3}>
-                                                <Button variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10, width:60, height:20}}>
-                                                    <Card.Link href="#">
-                                                        <p style={{fontSize:9}}>2400 INR</p>
-                                                    </Card.Link>
-                                                </Button>
-                                            </Col>
-                                            <Col xs={3}>
-                                                <Button variant="outline-primary" size="sm" style={{marginLeft:10,marginTop:10, height:20}}>
-                                                    <Card.Link href="#">
-                                                        <p style={{fontSize:9}}>Details</p>
-                                                    </Card.Link>
-                                                </Button>
-                                            </Col>
-                                            <Col xs={3}>
-                                                <Row className="justify-content-xm-center">
-                                                    <Col xs={6}>
-                                                        <Card.Link href="#">
-                                                            <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
-                                                                <img style={{ display: 'block', width: 20, height:20 }}
-                                                                     className="d-block w-100"
-                                                                     src={UDEMY}
-                                                                     alt="Image One"
-                                                                />
-                                                            </div>
-                                                        </Card.Link>
-                                                    </Col>
-                                                    <Col xs={6}>
-                                                        <Card.Link href="#">
-                                                            <div style={{marginLeft:0, marginTop:10, marginRight:0}}>
-                                                                <img style={{ width: 20, height:20 }}
-                                                                     className="d-block w-100"
-                                                                     src={YOUTUBE}
-                                                                     alt="Image One"
-                                                                />
-                                                            </div>
-                                                        </Card.Link>
-                                                    </Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row>*/}
                 </div>
             </div>
         )

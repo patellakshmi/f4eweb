@@ -2,27 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cec46672-97a5-460e-a5c3-c83c0f051027" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/desk/constants/data/Fight4EduObjective.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/desk/components/EductionStruct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/EductionStruct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/F4EObjective.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/F4EObjective.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/desk/constants/data/CURRENT_AFFAIRS_CLASS_DATA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/constants/data/CURRENT_AFFAIRS_CLASS_DATA.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/desk/constants/data/EIGHT_CLASS_DATA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/constants/data/EIGHT_CLASS_DATA.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Scroll1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/Scroll1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Scroll3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/Scroll3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Scroll4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/Scroll4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Scroll5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/Scroll5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/classes/eighth/AdvEigthMaths.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/classes/eighth/AdvEigthMaths.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/classes/eleventh/EleventhAdvMaths.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/classes/eleventh/EleventhAdvMaths.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/classes/eleventh/EleventhMaths.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/classes/eleventh/EleventhMaths.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/classes/eleventh/EleventhPhysics.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/classes/eleventh/EleventhPhysics.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/classes/seventh/AdvSeventhMaths.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/classes/seventh/AdvSeventhMaths.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/classes/sixth/AdvSixthMaths.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/classes/sixth/AdvSixthMaths.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/classes/sixth/SixthMaths.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/classes/sixth/SixthMaths.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/classes/sixth/SixthSciece.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/classes/sixth/SixthSciece.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/classes/twelth/TwelthCPP.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/classes/twelth/TwelthCPP.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/classes/twelth/TwelthPython.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/classes/twelth/TwelthPython.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +84,7 @@
       <workItem from="1628506957118" duration="171000" />
       <workItem from="1628753745918" duration="79153000" />
       <workItem from="1629002942723" duration="57000" />
-      <workItem from="1629006865399" duration="3148000" />
+      <workItem from="1629006865399" duration="6160000" />
     </task>
     <servers />
   </component>
