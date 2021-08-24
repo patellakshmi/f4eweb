@@ -10,20 +10,8 @@ import {ADMISSION_NOTICE, F4E_COURSES, F4E_SCHOLARSHIPS} from "../../constants/C
 import {CLASSES_TIME_TABLE, EXCELLENT_PERFORMER} from "../../../desk/constants/ComponentConst";
 
 let toggle = true;
-
-window.addEventListener('click', function(e){
-    if (document.getElementById('navigation_bar').contains(e.target)){
-        if( toggle == true) document.getElementById("nav-item").style.display = "inline-block";
-        else document.getElementById("nav-item").style.display = "none";
-    } else{
-        document.getElementById("nav-item").style.display = "none";
-    }
-    toggle = !toggle;
-
-});
-
-let NAV_COLORS_CODE=["#FF7F50","#6495ED","#40E0D0","#DE3163","#FFBF00","#CACFD2","#5D6D7E"];
-let NAV_COLORS_CODE_SIZE = 7;
+let NAV_COLORS_CODE=["#85C1E9"];
+let NAV_COLORS_CODE_SIZE = 1;
 const NAV_NAMES = new Map();
 NAV_NAMES.set(0, [F4E_COURSES, "Courses"]);
 NAV_NAMES.set(1, [F4E_SCHOLARSHIPS, "Scholarship"]);
@@ -35,7 +23,22 @@ class Navbar extends Component{
 
     constructor(props) {
         super(props);
+        window.addEventListener("click",(e)=>this.detectMouseClickArea(e))
+        this.detectMouseClickArea = this.detectMouseClickArea.bind(this);
     }
+
+    detectMouseClickArea(e){
+        //below function stop double call of this function after click
+        e.stopImmediatePropagation();
+        if (document.getElementById('navigation_bar').contains(e.target)){
+            if( toggle === true) document.getElementById("nav-item").style.display = "inline-block";
+            else document.getElementById("nav-item").style.display = "none";
+        } else{
+            document.getElementById("nav-item").style.display = "none";
+        }
+        toggle = !toggle;
+    }
+
 
     getNavList=()=>{
         let navList = []

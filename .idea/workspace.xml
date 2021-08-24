@@ -2,54 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cec46672-97a5-460e-a5c3-c83c0f051027" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/desk/components/css/MainStyleSheet.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/actions/Actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/components/AdmissionNotice.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/components/CentralContent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/components/ClassesAndTimeTable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/components/EductionStruct.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/components/ExcellentPerformer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/components/F4EObjective.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/components/F4EScholarships.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/components/GeniusOfMonth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/components/ImageScroller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/components/ResultAndAward.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/components/footer/Address.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/components/home/Home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/components/navbar/Navbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/components/navbar/NavbarStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/constants/ClassLevelConst.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/constants/ComponentConst.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/constants/Constants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/constants/data/ALL_STD_DATA.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/constants/data/CURRENT_AFFAIRS_CLASS_DATA.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/constants/data/EIGHT_CLASS_DATA.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/constants/data/ELEVENTH_CLASS_DATA.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/constants/data/Fight4EduObjective.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/constants/data/SEVENTH_CLASS_DATA.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/constants/data/SIXTH_CLASS_DATA.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/constants/data/TWELFTH_CLASS_DATA.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mob/reducer/mobReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/AdmissionNotice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/AdmissionNotice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/CentralContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/CentralContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/ClassesAndTimeTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/ClassesAndTimeTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/EductionStruct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/EductionStruct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/ExcellentPerformer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/ExcellentPerformer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/F4EScholarships.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/F4EScholarships.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/GeniusOfMonth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/GeniusOfMonth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/ResultAndAward.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/ResultAndAward.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/constants/data/CURRENT_AFFAIRS_CLASS_DATA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/constants/data/CURRENT_AFFAIRS_CLASS_DATA.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/components/footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mob/components/navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/navbar/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mob/components/navbar/NavbarStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/navbar/NavbarStyle.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +94,7 @@
       <workItem from="1629501146472" duration="289000" />
       <workItem from="1629501492520" duration="296000" />
       <workItem from="1629501809444" duration="7011000" />
-      <workItem from="1629519274954" duration="27537000" />
+      <workItem from="1629519274954" duration="31591000" />
     </task>
     <servers />
   </component>
