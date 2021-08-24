@@ -27,7 +27,7 @@ const MAX_ROW = 5;
 const NUM_OF_COLUMN = 4;
 let NUM_OF_ROWS = 2;
 let NUM_OF_COL_IN_LAST_ROW = 2;
-let DATA = CURRENT_AFFAIRS_CLASS_DATA;
+let DATA = ALL_STD_DATA;
 class EductionStruct extends  Component{
 
     constructor(props) {

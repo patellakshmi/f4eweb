@@ -1,0 +1,50 @@
+#humBerger{
+    position: absolute;
+    z-index: 10;
+    top:0;
+}
+
+#navigation_bar{
+    position: absolute;
+    z-index: 10;
+}
+
+#menu{
+    cursor:pointer;
+    width:33px;
+    height:30px;
+}
+.bar{
+    margin: 0px;
+    height:4px;
+    margin:1px;
+    background-color:red;
+    transition:.3s ease;
+    border-radius: 5px;
+}
+
+#nav-item{
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    background-color: #01579B ;
+    display: none;
+    top:0;
+    position: absolute;
+}
+
+.nav-li-item{
+    background-color: #29B6F6;
+    margin-bottom: 1px;
+    border-image-width: 2px;
+}
+
+.nav-li-element-detail {
+    background-color: #03A9F4;
+    box-shadow: 0px 1px 0px white;
+    padding-left: 5px;
+}
+
+ul {
+    list-style-type: none;
+}

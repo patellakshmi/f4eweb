@@ -10,7 +10,7 @@ const DATA00 = {
     subTitle:"ARTICLE 370",
     subCode:"ART370-O8M",
     desc:"Basic subjective maths, core of maths",
-    fees:10,
+    fees:null,
     currency:"INR",
     off:0,
     offKeyWord:"Off",

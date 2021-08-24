@@ -7,7 +7,6 @@ class CentralContent extends  Component{
         return (
             <div id={"main-contain"} style={{ height: window.innerHeight-14, width: window.innerWidth-262,marginTop:2,
                 backgroundColor:"#AEB6BF",marginBottom:2, marginLeft:0, padding:0,borderRadius:0, boxShadow: "2px 2px 5px black"}}>
-
                 <div>
                     <ImageScroller/>
                     <F4EObjective/>

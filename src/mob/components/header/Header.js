@@ -1,33 +1,22 @@
-import {Component } from 'react';
-import { StyleSheet, css } from 'aphrodite';
-import Button from "../util/Button";
+import {Component} from 'react';
+import Fight4EduWall from '../../../img/FacebookWall.png';
+import F4EWithName from '../../../img/F4EWithName.png';
 
+class Header extends  Component{
 
-
-class Header extends Component{
-    constructor(props) {
-        super();
-        this.width = window.innerWidth;
-        this.height = 50;
-    }
     render() {
         return (
-            <div className={css(styles.headerAttr)} >
-                <Button></Button>
+            <div>
+                <div style={{ height: 90, width:window.innerWidth, textAlign:"center",
+                    backgroundColor: "#1F384D", backgroundImage: {Fight4EduWall}}} >
+                    <img src={F4EWithName} style={{ height:60, width:100 ,marginLeft:30, marginTop:13}}/>
+                </div>
+                <div style={{ height: 3, marginTop:2, width:window.innerWidth, textAlign:"center",
+                    backgroundColor: "#1F384D", backgroundImage: {Fight4EduWall}}} >
+                </div>
             </div>
-        );
+        )
     }
 }
-
-
-const styles = StyleSheet.create({
-    headerAttr: {
-        backgroundColor: 'red',
-        height: 50,
-        marginTop: 0,
-        paddingTop: 0
-    }
-});
-
 
 export default Header;
