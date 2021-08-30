@@ -49,7 +49,7 @@ class AdmissionNotice extends  Component{
     render() {
         return (
             <div id={"main-contain"} style={{ height: window.innerHeight-14, width: window.innerWidth-262,marginTop:2,
-                backgroundColor:"#D6DBDF",marginBottom:2, marginLeft:0, padding:0,borderRadius:0, boxShadow: "2px 2px 5px black"}}>
+                marginBottom:2, marginLeft:0, padding:0,borderRadius:0, boxShadow: "0px 0px 8px black"}}>
                 <div style={{float:"right", marginTop:10, marginRight:10}}>
                     <img style={{ display: 'block', width: 30, height:30 }}
                          className="d-block w-100"

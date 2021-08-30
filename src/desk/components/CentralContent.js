@@ -5,10 +5,11 @@ import F4EObjective from "./F4EObjective";
 class CentralContent extends  Component{
     render() {
         return (
-            <div id={"main-contain"} style={{ height: window.innerHeight-14, width: window.innerWidth-262,marginTop:2,
-                backgroundColor:"#AEB6BF",marginBottom:2, marginLeft:0, padding:0,borderRadius:0, boxShadow: "2px 2px 5px black"}}>
+            <div id={"main-contain-center"} style={{ width: window.innerWidth-262,marginTop:2,marginBottom:2, marginLeft:0, padding:0,borderRadius:3, boxShadow: "0px 0px 6px black"}}>
                 <div>
                     <ImageScroller/>
+                </div>
+                <div>
                     <F4EObjective/>
                 </div>
             </div>

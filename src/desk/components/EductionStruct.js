@@ -120,7 +120,7 @@ class EductionStruct extends  Component{
             for(let j = 0; j < 4; j++){
                 column.push(
                     <Col xs={3}>
-                        <Card>
+                        <Card style={{borderWidth:1, borderColor:"black", borderStyle:"dotted"}}>
                             { !this.state.details[i*NUM_OF_COLUMN+j] &&
                             <img style={{display: 'block', width: 100, height: 150}}
                                  className="d-block w-100"
@@ -240,7 +240,7 @@ class EductionStruct extends  Component{
         for(let j = 0; j < NUM_OF_COL_IN_LAST_ROW; j++){
             lastRowColumn.push(
                 <Col xs={3}>
-                    <Card>
+                    <Card style={{borderWidth:1, borderColor:"black", borderStyle:"dotted"}}>
                         {console.log("GettingIndex:"+i*NUM_OF_COLUMN+j)}
                         { !this.state.details[i*NUM_OF_COLUMN+j] &&
                         <img style={{display: 'block', width: 100, height: 150}}
@@ -361,8 +361,8 @@ class EductionStruct extends  Component{
         console.log("render again-->");
         return (
             <div style={{ width:window.innerWidth-5, alignContent:"center",
-                marginTop:2,marginLeft:2, marginBottom:2, padding:5, alignItems:"center", backgroundColor:"#AEB6BF",
-                boxShadow: "2px 2px 5px black", position:"relative",borderRadius:2
+                marginTop:10,marginLeft:2, marginBottom:2, padding:5, alignItems:"center",
+                boxShadow: "2px 2px 8px black", position:"relative",borderRadius:2
             }} >
                 <div id="select-class">
                     <div style={{float:"left", borderColor:"white", borderRadius:5, borderWidth:1, borderStyle:"solid",marginRight:2,marginLeft:2,padding:5}}>

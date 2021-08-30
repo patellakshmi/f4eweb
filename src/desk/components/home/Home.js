@@ -34,11 +34,11 @@ class Home extends  Component{
         return (
             <div>
                 <Header/>
-                <div>
+                <div style={{ backgroundColor:"red"}}>
                     <div style={{float:"left"}}>
                         <Sidebar/>
                     </div>
-                    <div style={{float:"left"}}>
+                    <div id="central-container-panel" style={{float:"left"}}>
                         { this.props.centralContent === F4E_SCHOLARSHIPS && <F4EScholarships/>}
                         { this.props.centralContent === ADMISSION_NOTICE && <AdmissionNotice/>}
                         { this.props.centralContent === CENTRAL_CONTENT && <CentralContent/>}
