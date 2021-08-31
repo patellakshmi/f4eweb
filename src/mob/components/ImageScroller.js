@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Carousel from 'react-bootstrap/Carousel';
-import Image1 from '../../img/Scroll1.jpg';
-import Image2 from '../../img/Scroll2.jpg';
-import Image3 from '../../img/Scroll3.jpg';
-import Image4 from '../../img/Scroll4.jpg';
-import Image5 from '../../img/Scroll5.jpg';
-import Image6 from '../../img/Scroll6.jpg';
+import Image1 from '../../img/scrollar/Scroll1.jpg';
+import Image2 from '../../img/scrollar/Scroll2.jpg';
+import Image3 from '../../img/scrollar/Scroll3.jpg';
+import Image4 from '../../img/scrollar/Scroll4.jpg';
+import Image5 from '../../img/scrollar/Scroll5.jpg';
+import Image6 from '../../img/scrollar/Scroll6.jpg';
 
 
 const images = [

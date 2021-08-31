@@ -1,6 +1,6 @@
 import {Component} from 'react';
-import Fight4EduWall from '../../../img/FacebookWall.png';
-import F4EWithName from '../../../img/F4EWithName.png';
+import Fight4EduWall from '../../../img/social-media/FacebookWall.png';
+import F4EWithName from '../../../img/logos/F4EWithName.png';
 
 class Header extends  Component{
 

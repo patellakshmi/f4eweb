@@ -11,7 +11,7 @@ import {
     GENIUS_OF_MONTH,
     RESULT_AWARD
 } from "../../constants/ComponentConst";
-import RTHome from "../../../img/ReturnHome.png";
+import RTHome from "../../../img/home/ReturnHome.png";
 import {CENTRAL_CONTENT} from "../../constants/Constants";
 
 class Sidebar extends  Component{

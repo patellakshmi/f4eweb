@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import RTHome from "../../img/ReturnHome.png";
+import RTHome from "../../img/home/ReturnHome.png";
 import {updateCentralContent} from "../actions/Actions";
 import {connect} from "react-redux";
 import {CENTRAL_CONTENT} from "../constants/Constants";
@@ -7,8 +7,8 @@ import {Card, Col, Container, Dropdown, Row, Table} from "react-bootstrap";
 import {SCHOLARSHIPS} from "../../constants/SCHOLARSHIPS";
 
 import Button from "react-bootstrap/Button";
-import UDEMY from "../../img/udemy.png";
-import YOUTUBE from "../../img/youtube.png";
+import UDEMY from "../../img/social-media/udemy.png";
+import YOUTUBE from "../../img/social-media/youtube.png";
 import {TableBody} from "@material-ui/core";
 
 class F4EScholarships extends  Component{

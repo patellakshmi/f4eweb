@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Card, Col, Row} from 'react-bootstrap'
 import Button from "react-bootstrap/Button";
-import YOUTUBE from "../../img/youtube.png";
-import UDEMY from "../../img/udemy.png";
+import YOUTUBE from "../../img/social-media/youtube.png";
+import UDEMY from "../../img/social-media/udemy.png";
 import {Table} from 'react-bootstrap'
 import {ELEVENTH_CLASS_DATA} from "../../../src/constants/ELEVENTH_CLASS_DATA";
 import {TWELFTH_CLASS_DATA} from "../../../src/constants/TWELFTH_CLASS_DATA";
@@ -21,7 +21,7 @@ import {SIXTH_CLASS_DATA} from "../../../src/constants/SIXTH_CLASS_DATA";
 import {SEVENTH_CLASS_DATA} from "../../../src/constants/SEVENTH_CLASS_DATA";
 import {EIGHT_CLASS_DATA} from "../../../src/constants/EIGHT_CLASS_DATA";
 import {CURRENT_AFFAIRS_CLASS_DATA} from "../../../src/constants/CURRENT_AFFAIRS_CLASS_DATA";
-import RTHome from "../../img/ReturnHome.png";
+import RTHome from "../../img/home/ReturnHome.png";
 import {CENTRAL_CONTENT} from "../../desk/constants/Constants";
 import {updateCentralContent} from "../../desk/actions/Actions";
 import {connect} from "react-redux";

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import RTHome from "../../img/ReturnHome.png";
+import RTHome from "../../img/home/ReturnHome.png";
 import {updateCentralContent} from "../actions/Actions";
 import {connect} from "react-redux";
 import {CENTRAL_CONTENT} from "../constants/Constants";

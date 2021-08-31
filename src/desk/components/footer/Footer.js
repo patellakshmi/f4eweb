@@ -1,9 +1,9 @@
 import  React,  {  Component  }  from  'react';
-import VNS_ADD from "../../../img/Varanasi.png";
-import BLR_ADD from "../../../img/Banglore.png";
-import FACEBOOK from "../../../img/facebook.png";
-import YOUTUBE from "../../../img/youtube.png";
-import UDEMY from "../../../img/udemy.png";
+import VNS_ADD from "../../../img/address/Varanasi.png";
+import BLR_ADD from "../../../img/address/Banglore.png";
+import FACEBOOK from "../../../img/social-media/facebook.png";
+import YOUTUBE from "../../../img/social-media/youtube.png";
+import UDEMY from "../../../img/social-media/udemy.png";
 import Button from "react-bootstrap/Button";
 
 class Footer extends  Component{
