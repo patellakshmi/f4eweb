@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Card from 'react-bootstrap/Card';
-import {Fight4EducObj} from '../constants/data/Fight4EduObjective';
+import {Fight4EducObj} from '../../constants/Fight4EduObjective';
 
 class F4EObjective extends  Component{
     render() {

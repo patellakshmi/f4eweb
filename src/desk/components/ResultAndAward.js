@@ -3,8 +3,8 @@ import RTHome from "../../img/ReturnHome.png";
 import {CENTRAL_CONTENT} from "../constants/Constants";
 import {updateCentralContent} from "../actions/Actions";
 import {connect} from "react-redux";
-import {Dropdown, Table, Form} from "react-bootstrap";
-import {SCHOLARSHIPS} from "../constants/data/SCHOLARSHIPS";
+import {Dropdown, Table, Form, Card} from "react-bootstrap";
+import {SCHOLARSHIPS} from "../../constants/SCHOLARSHIPS";
 
 class ResultAndAward extends  Component{
 
@@ -40,7 +40,7 @@ class ResultAndAward extends  Component{
         </tr>
         </thead>
         let tableBody =  <tbody>{rows}</tbody>
-        let tableMain = <Table responsive striped bordered hover>{tableHead}{tableBody}</Table>
+        let tableMain = <Table responsive striped borderless hover>{tableHead}{tableBody}</Table>
         return tableMain;
     }
     wow=(result)=>{
@@ -74,12 +74,24 @@ class ResultAndAward extends  Component{
                             </Dropdown.Menu>
                         </Dropdown>
 
-                        <div id="tableHead" style={{textAlign:"left"}}>
-                            <h3>Result And Award</h3>
+                        <div id="clearer" style={{clear:"both"}}>
                         </div>
-                        <div style={{overflow:"scroll", height: window.innerHeight*.7}}>
-                            { this.getResultAndAwardDetail() }
+
+                        <div id="table-container"  style={{marginTop:5}}>
+                            <div id="container"  style={{overflow:"scroll", height: window.innerHeight*.7}}>
+                                <Card>
+                                    <Card.Header>
+                                        <Card.Text style={{fontSize:16, fontFace:"bold"}}>
+                                            RESULT & AWARD
+                                        </Card.Text>
+                                    </Card.Header>
+                                    <Card.Body>
+                                        {this.getResultAndAwardDetail()}
+                                    </Card.Body>
+                                </Card>
+                            </div>
                         </div>
+
                     </div>
                 </div>
 

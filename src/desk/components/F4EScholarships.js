@@ -3,8 +3,8 @@ import RTHome from "../../img/ReturnHome.png";
 import {updateCentralContent} from "../actions/Actions";
 import {connect} from "react-redux";
 import {CENTRAL_CONTENT} from "../constants/Constants";
-import {Card, Col, Container, Row, Table} from "react-bootstrap";
-import {SCHOLARSHIPS} from "../constants/data/SCHOLARSHIPS";
+import {Card, Col, Container, Dropdown, Row, Table} from "react-bootstrap";
+import {SCHOLARSHIPS} from "../../constants/SCHOLARSHIPS";
 
 import Button from "react-bootstrap/Button";
 import UDEMY from "../../img/udemy.png";
@@ -45,7 +45,7 @@ class F4EScholarships extends  Component{
                             </tr>
                         </thead>
         let tableBody =  <tbody>{rows}</tbody>
-        let tableMain = <Table responsive striped bordered hover>{tableHead}{tableBody}</Table>
+        let tableMain = <Table responsive striped borderless hover>{tableHead}{tableBody}</Table>
         return tableMain;
     }
     render() {
@@ -64,12 +64,35 @@ class F4EScholarships extends  Component{
 
                 <div id="F4EScholarships">
                     <div id="container" style={{marginLeft:"10%", marginTop:"3%", width:"80%"}}>
-                        <div id="tableHead" style={{textAlign:"left"}}>
-                            <h3>Scholarship</h3>
+                        <Dropdown id="result-select-button" style={{marginTop:0, float:"right"}}>
+                            <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic">
+                                Select Res
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                <Dropdown.Item href="#/action-1" onSelect={()=>this.wow("ACTION-1")}>Action</Dropdown.Item>
+                                <Dropdown.Item href="#/action-2" onSelect={()=>this.wow("ACTION-2")}>Another action</Dropdown.Item>
+                                <Dropdown.Item href="#/action-3" onSelect={()=>this.wow("ACTION-3")}>Something else</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+
+                        <div id="clearer" style={{clear:"both"}}>
                         </div>
-                        <div style={{overflow:"scroll", height: window.innerHeight*.7}}>
-                            { this.getScholarshipsDetail() }
+
+                        <div id="table-container"  style={{marginTop:5}}>
+                            <div id="container"  style={{overflow:"scroll", height: window.innerHeight*.7}}>
+                                <Card>
+                                    <Card.Header>
+                                        <Card.Text style={{fontSize:16, fontFace:"bold"}}>
+                                            SCHOLARSHIPS
+                                        </Card.Text>
+                                    </Card.Header>
+                                    <Card.Body>
+                                        {this.getScholarshipsDetail()}
+                                    </Card.Body>
+                                </Card>
+                            </div>
                         </div>
+
                     </div>
                 </div>
 

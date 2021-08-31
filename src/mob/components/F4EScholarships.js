@@ -4,7 +4,7 @@ import {updateCentralContent} from "../actions/Actions";
 import {connect} from "react-redux";
 import {CENTRAL_CONTENT} from "../constants/Constants";
 import {Card, Container, Table, Row, Col} from "react-bootstrap";
-import { SCHOLARSHIPS} from "../../desk/constants/data/SCHOLARSHIPS";
+import { SCHOLARSHIPS} from "../../constants/SCHOLARSHIPS";
 
 class F4EScholarships extends  Component{
 
@@ -74,11 +74,17 @@ class F4EScholarships extends  Component{
 
                 <div id="separator" style={{clear:"both"}}></div>
                 <div id="table-container"  style={{marginTop:5}}>
-                    <div><h5 style={{fontSize:10, fontFace:"bold"}}>SCHOLARSHIPS</h5></div>
                     <div id="container"  style={{overflow:"scroll", height: window.innerHeight*.7}}>
-                        {
-                            this.getAdmissionDetail()
-                        }
+                        <Card>
+                            <Card.Header>
+                                <Card.Text style={{fontSize:10, fontFace:"bold"}}>
+                                    SCHOLARSHIPS
+                                </Card.Text>
+                            </Card.Header>
+                            <Card.Body>
+                                {this.getAdmissionDetail()}
+                            </Card.Body>
+                        </Card>
                     </div>
                 </div>
             </div>

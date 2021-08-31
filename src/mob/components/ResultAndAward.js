@@ -4,7 +4,7 @@ import {CENTRAL_CONTENT} from "../constants/Constants";
 import {updateCentralContent} from "../actions/Actions";
 import {connect} from "react-redux";
 import {Dropdown, Table, Form, Col, Row} from "react-bootstrap";
-import {SCHOLARSHIPS} from "../../desk/constants/data/SCHOLARSHIPS";
+import {SCHOLARSHIPS} from "../../constants/SCHOLARSHIPS";
 
 class ResultAndAward extends  Component{
 

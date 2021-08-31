@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cec46672-97a5-460e-a5c3-c83c0f051027" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/desk/constants/data/ADMISSION_NOTICE.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/desk/constants/data/EXCELLENT_PERFORMER.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/desk/constants/data/SCHOLARSHIPS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/constants/ADMISSION_NOTICE.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/constants/TIMETABLE.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/desk/components/AdmissionNotice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/AdmissionNotice.js" afterDir="false" />
@@ -15,17 +14,30 @@
       <change beforePath="$PROJECT_DIR$/src/desk/components/F4EScholarships.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/F4EScholarships.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/desk/components/GeniusOfMonth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/GeniusOfMonth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/desk/components/ResultAndAward.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/ResultAndAward.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/sidebar/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/constants/ComponentConst.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/constants/ComponentConst.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/constants/data/ADMISSION_NOTICE.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/constants/data/ALL_STD_DATA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/ALL_STD_DATA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/constants/data/CURRENT_AFFAIRS_CLASS_DATA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/CURRENT_AFFAIRS_CLASS_DATA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/constants/data/EIGHT_CLASS_DATA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/EIGHT_CLASS_DATA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/constants/data/ELEVENTH_CLASS_DATA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/ELEVENTH_CLASS_DATA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/constants/data/EXCELLENT_PERFORMER.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/EXCELLENT_PERFORMER.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/constants/data/Fight4EduObjective.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/Fight4EduObjective.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/constants/data/SCHOLARSHIPS.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/SCHOLARSHIPS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/constants/data/SEVENTH_CLASS_DATA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/SEVENTH_CLASS_DATA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/constants/data/SIXTH_CLASS_DATA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/SIXTH_CLASS_DATA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/constants/data/TWELFTH_CLASS_DATA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/TWELFTH_CLASS_DATA.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mob/components/AdmissionNotice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/AdmissionNotice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/components/CentralContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/CentralContent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mob/components/ClassesAndTimeTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/ClassesAndTimeTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mob/components/EductionStruct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/EductionStruct.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mob/components/ExcellentPerformer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/ExcellentPerformer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mob/components/F4EScholarships.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/F4EScholarships.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/components/GeniusOfMonth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/GeniusOfMonth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mob/components/ResultAndAward.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/ResultAndAward.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/components/navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/navbar/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mob/constants/data/ALL_STD_DATA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mob/constants/data/CURRENT_AFFAIRS_CLASS_DATA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mob/constants/data/EIGHT_CLASS_DATA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mob/constants/data/ELEVENTH_CLASS_DATA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mob/constants/data/SEVENTH_CLASS_DATA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mob/constants/data/SIXTH_CLASS_DATA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mob/constants/data/TWELFTH_CLASS_DATA.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +88,7 @@
       <recent name="$PROJECT_DIR$/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/constants" />
       <recent name="$PROJECT_DIR$/src/desk" />
       <recent name="$PROJECT_DIR$/src/desk/reducer" />
       <recent name="$PROJECT_DIR$/src/desk/components" />
@@ -118,7 +131,10 @@
       <workItem from="1630308375180" duration="1621000" />
       <workItem from="1630320417456" duration="5191000" />
       <workItem from="1630330335186" duration="361000" />
-      <workItem from="1630331885520" duration="17053000" />
+      <workItem from="1630331885520" duration="17146000" />
+      <workItem from="1630410215770" duration="246000" />
+      <workItem from="1630415055045" duration="32000" />
+      <workItem from="1630416646259" duration="4305000" />
     </task>
     <servers />
   </component>
@@ -147,8 +163,13 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/desk/components/EductionStruct.js</url>
           <line>124</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/desk/components/AdmissionNotice.js</url>
+          <line>59</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

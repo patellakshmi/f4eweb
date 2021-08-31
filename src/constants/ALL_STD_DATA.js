@@ -1,5 +1,5 @@
-import BIO1 from "../../../img/biology.jpg";
-import CHEM1 from "../../../img/chemistry.jpg";
+import BIO1 from "../img/biology.jpg";
+import CHEM1 from "../img/chemistry.jpg";
 
 const DATA00 = {
     img: BIO1,

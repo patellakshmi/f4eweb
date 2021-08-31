@@ -1,10 +1,10 @@
-import ELEVENTH_MATHS from "../../../img/classes/eleventh/EleventhMaths.jpg";
-import ELEVENTH_AVD_MATHS from "../../../img/classes/eleventh/EleventhAdvMaths.jpg";
-import ELEVENTH_PHYSICS from "../../../img/classes/eleventh/EleventhPhysics.jpg";
-import ELEVENTH_AVD_PHYSICS from "../../../img/classes/eleventh/EleventhAdvPhysics.jpg";
-import ELEVENTH_HTML from "../../../img/classes/eleventh/EleventhHtml.jpg";
-import ELEVENTH_REACT from "../../../img/classes/eleventh/EleventhReact.jpg";
-import ELEVENTH_JAVA_SCRIPT from "../../../img/classes/eleventh/EleventhJS.jpg";
+import ELEVENTH_MATHS from "../img/classes/eleventh/EleventhMaths.jpg";
+import ELEVENTH_AVD_MATHS from "../img/classes/eleventh/EleventhAdvMaths.jpg";
+import ELEVENTH_PHYSICS from "../img/classes/eleventh/EleventhPhysics.jpg";
+import ELEVENTH_AVD_PHYSICS from "../img/classes/eleventh/EleventhAdvPhysics.jpg";
+import ELEVENTH_HTML from "../img/classes/eleventh/EleventhHtml.jpg";
+import ELEVENTH_REACT from "../img/classes/eleventh/EleventhReact.jpg";
+import ELEVENTH_JAVA_SCRIPT from "../img/classes/eleventh/EleventhJS.jpg";
 
 const DATA00 = {
     img: ELEVENTH_MATHS,

@@ -4,8 +4,8 @@ import Button from "react-bootstrap/Button";
 import YOUTUBE from "../../img/youtube.png";
 import UDEMY from "../../img/udemy.png";
 import {Table} from 'react-bootstrap'
-import {ELEVENTH_CLASS_DATA} from "../constants/data/ELEVENTH_CLASS_DATA";
-import {TWELFTH_CLASS_DATA} from "../constants/data/TWELFTH_CLASS_DATA";
+import {ELEVENTH_CLASS_DATA} from "../../constants/ELEVENTH_CLASS_DATA";
+import {TWELFTH_CLASS_DATA} from "../../constants/TWELFTH_CLASS_DATA";
 import {
     ALL_STD,
     CURRENT_AFFAIRS,
@@ -17,10 +17,10 @@ import {
     TENTH,
     TWELFTH
 } from "../constants/ClassLevelConst";
-import {SIXTH_CLASS_DATA} from "../constants/data/SIXTH_CLASS_DATA";
-import {SEVENTH_CLASS_DATA} from "../constants/data/SEVENTH_CLASS_DATA";
-import {EIGHT_CLASS_DATA} from "../constants/data/EIGHT_CLASS_DATA";
-import {CURRENT_AFFAIRS_CLASS_DATA} from "../constants/data/CURRENT_AFFAIRS_CLASS_DATA";
+import {SIXTH_CLASS_DATA} from "../../constants/SIXTH_CLASS_DATA";
+import {SEVENTH_CLASS_DATA} from "../../constants/SEVENTH_CLASS_DATA";
+import {EIGHT_CLASS_DATA} from "../../constants/EIGHT_CLASS_DATA";
+import {CURRENT_AFFAIRS_CLASS_DATA} from "../../constants/CURRENT_AFFAIRS_CLASS_DATA";
 import RTHome from "../../img/ReturnHome.png";
 import {CENTRAL_CONTENT} from "../constants/Constants";
 import {updateCentralContent} from "../actions/Actions";

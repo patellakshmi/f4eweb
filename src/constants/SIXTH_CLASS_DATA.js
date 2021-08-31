@@ -1,12 +1,12 @@
-import SEVENTH_MATHS from "../../../img/classes/seventh/SeventhMaths.jpg"
-import ADV_SEVENTH_MATHS from "../../../img/classes/seventh/AdvSeventhMaths.jpg";
-import SEVENTH_SCIENCE from "../../../img/classes/seventh/SeventhScience.jpg";
-import ADV_SEVENTH_SCIENCE from "../../../img/classes/seventh/AdvSeventhScience.jpg";
+import SIXTH_MATHS from "../img/classes/sixth/SixthMaths.jpg"
+import ADV_SIXTH_MATHS from "../img/classes/sixth/AdvSixthMaths.jpg";
+import SIXTH_SCIENCE from "../img/classes/sixth/SixthSciece.jpg";
+import ADV_SIXTH_SCIENCE from "../img/classes/sixth/AdvSixthScience.jpg";
 
 const DATA00 = {
-    img: SEVENTH_MATHS,
+    img: SIXTH_MATHS,
     subTitle:"Maths",
-    subCode:"F4E-VII-SBM",
+    subCode:"F4E-0VI-SBM",
     desc:"Basic subjective maths, core of maths",
     fees:1000,
     currency:"INR",
@@ -27,9 +27,9 @@ const DATA00 = {
 }
 
 const DATA01 = {
-    img: ADV_SEVENTH_MATHS,
-    subTitle:"Adv-Maths",
-    subCode:"F4E-VII-AVM",
+    img: ADV_SIXTH_MATHS,
+    subTitle:"Adv. Maths",
+    subCode:"F4E-0VI-AVM",
     desc:"Advanced technique and formula, Adv questions",
     fees:1500,
     currency:"INR",
@@ -50,9 +50,9 @@ const DATA01 = {
 }
 
 const DATA02 = {
-    img: SEVENTH_SCIENCE,
+    img: SIXTH_SCIENCE,
     subTitle:"Science",
-    subCode:"F4E-VII-SBS",
+    subCode:"F4E-0VI-SBS",
     desc:"Basic understanding the nature of science.",
     fees:9000,
     currency:"INR",
@@ -73,9 +73,9 @@ const DATA02 = {
 }
 
 const DATA03 = {
-    img: ADV_SEVENTH_SCIENCE,
+    img: ADV_SIXTH_SCIENCE,
     subTitle:"Adv Science",
-    subCode:"F4E-VII-AVS",
+    subCode:"F4E-0VI-ADS",
     desc:"Adv formula, concept, scientific approach",
     fees:13000,
     currency:"INR",
@@ -96,6 +96,6 @@ const DATA03 = {
 }
 
 
-export const SEVENTH_CLASS_DATA=[
+export const SIXTH_CLASS_DATA=[
     DATA00,DATA01,DATA02,DATA03
 ];

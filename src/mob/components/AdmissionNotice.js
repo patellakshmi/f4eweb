@@ -3,10 +3,10 @@ import RTHome from "../../img/ReturnHome.png";
 import {updateCentralContent} from "../actions/Actions";
 import {connect} from "react-redux";
 import {CENTRAL_CONTENT} from "../constants/Constants";
-import {Col, FormControl, InputGroup, Row, Table} from "react-bootstrap";
+import {Card, Col, FormControl, InputGroup, Row, Table} from "react-bootstrap";
 import {Dropdown} from "react-bootstrap";
-import {ADMISSION_NOTICE} from "../../desk/constants/data/ADMISSION_NOTICE";
-import {SCHOLARSHIPS} from "../../desk/constants/data/SCHOLARSHIPS";
+import {ADMISSION_NOTICE} from "../../constants/ADMISSION_NOTICE";
+import {SCHOLARSHIPS} from "../../constants/SCHOLARSHIPS";
 
 class AdmissionNotice extends  Component{
 
@@ -78,11 +78,17 @@ class AdmissionNotice extends  Component{
 
                 <div id="separator" style={{clear:"both"}}></div>
                 <div id="table-container"  style={{marginTop:5}}>
-                    <div><h5 style={{fontSize:10, fontFace:"bold"}}>Admission Notice</h5></div>
                     <div id="container"  style={{overflow:"scroll", height: window.innerHeight*.7}}>
-                        {
-                            this.getAdmissionDetail()
-                        }
+                        <Card>
+                            <Card.Header>
+                                <Card.Text style={{fontSize:10, fontFace:"bold"}}>
+                                    ADMISSION
+                                </Card.Text>
+                            </Card.Header>
+                            <Card.Body>
+                                {this.getAdmissionDetail()}
+                            </Card.Body>
+                        </Card>
                     </div>
                 </div>
             </div>

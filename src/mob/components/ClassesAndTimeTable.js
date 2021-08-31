@@ -3,19 +3,24 @@ import RTHome from "../../img/ReturnHome.png";
 import {CENTRAL_CONTENT} from "../constants/Constants";
 import {updateCentralContent} from "../actions/Actions";
 import {connect} from "react-redux";
-import {Dropdown, Table,InputGroup,FormControl,Row, Col} from "react-bootstrap";
+import {Dropdown, Table, InputGroup, FormControl, Row, Col, Card} from "react-bootstrap";
+import {ADMISSION_NOTICE} from "../../constants/ADMISSION_NOTICE";
+import {TIMETABLE} from "../../constants/TIMETABLE";
 
 class classesAndTimeTable extends  Component{
     getTimeAndTable=()=>{
         let rows = [];
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < TIMETABLE.length; i++) {
             let column = [];
             for(let j = 0; j < 5; j++){
                 let localTD
-                if(j == 0 )
-                    localTD = <td style={{fontSize:7}}>{i+1}</td>
-                else
-                    localTD = <td style={{fontSize:7}}>{j}</td>
+                switch (j){
+                    case 0:  localTD = <td style={{fontSize:7}}>{i+1}</td>; break;
+                    case 1:  localTD = <td style={{fontSize:7, margin:0, padding:0}}>{TIMETABLE[i].courseCode}</td> ; break;
+                    case 2:  localTD = <td style={{fontSize:7, margin:0, padding:0}}>{TIMETABLE[i].courseName}</td> ; break;
+                    case 3:  localTD = <td style={{fontSize:7, margin:0, padding:0}}>{TIMETABLE[i].days}</td> ; break;
+                    case 4:  localTD = <td style={{fontSize:7, margin:0, padding:0}}>{TIMETABLE[i].time}</td> ; break;
+                }
 
                 column.push(localTD);
             }
@@ -32,8 +37,8 @@ class classesAndTimeTable extends  Component{
             <th style={{fontSize:7}}>Timing</th>
         </tr>
         </thead>
-        let tableBody =  <tbody style={{overflowY:true, height:200 }}>{rows}</tbody>
-        let tableMain = <Table style={{ height:500}} responsive striped borderless hover size="sm">{tableHead}{tableBody}</Table>
+        let tableBody =  <tbody style={{overflowY:true}}>{rows}</tbody>
+        let tableMain = <Table responsive striped borderless hover size="sm">{tableHead}{tableBody}</Table>
         return tableMain;
 
     }
@@ -66,11 +71,17 @@ class classesAndTimeTable extends  Component{
 
                 <div id="separator" style={{clear:"both"}}></div>
                 <div id="table-container"  style={{marginTop:5}}>
-                    <div><h5 style={{fontSize:10, fontFace:"bold"}}>TimeTables</h5></div>
                     <div id="container"  style={{overflow:"scroll", height: window.innerHeight*.7}}>
-                        {
-                            this.getTimeAndTable()
-                        }
+                        <Card>
+                            <Card.Header>
+                                <Card.Text style={{fontSize:10, fontFace:"bold"}}>
+                                    TIME TABLE
+                                </Card.Text>
+                            </Card.Header>
+                            <Card.Body>
+                                {this.getTimeAndTable()}
+                            </Card.Body>
+                        </Card>
                     </div>
                 </div>
             </div>

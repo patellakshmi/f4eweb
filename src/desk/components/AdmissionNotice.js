@@ -3,9 +3,9 @@ import RTHome from "../../img/ReturnHome.png";
 import {updateCentralContent} from "../actions/Actions";
 import {connect} from "react-redux";
 import {CENTRAL_CONTENT} from "../constants/Constants";
-import {FormControl, InputGroup, Table} from "react-bootstrap";
+import {Card, FormControl, InputGroup, Table} from "react-bootstrap";
 import {Dropdown} from "react-bootstrap";
-import {ADMISSION_NOTICE} from "../constants/data/ADMISSION_NOTICE";
+import {ADMISSION_NOTICE} from "../../constants/ADMISSION_NOTICE";
 
 class AdmissionNotice extends  Component{
 
@@ -90,11 +90,23 @@ class AdmissionNotice extends  Component{
                                 aria-describedby="basic-addon1"
                             />
                         </InputGroup>
-                        <div id="tableHead" style={{textAlign:"left"}}>
-                            <h3>Admission Notice</h3>
+
+                        <div id="clearer" style={{clear:"both"}}>
                         </div>
-                        <div style={{overflow:"scroll", height: window.innerHeight*.7}}>
-                            { this.getAdmissionDetail() }
+
+                        <div id="table-container"  style={{marginTop:5}}>
+                            <div id="container"  style={{overflow:"scroll", height: window.innerHeight*.7}}>
+                                <Card>
+                                    <Card.Header>
+                                        <Card.Text style={{fontSize:16, fontFace:"bold"}}>
+                                            ADMISSION
+                                        </Card.Text>
+                                    </Card.Header>
+                                    <Card.Body>
+                                        {this.getAdmissionDetail()}
+                                    </Card.Body>
+                                </Card>
+                            </div>
                         </div>
                     </div>
                 </div>

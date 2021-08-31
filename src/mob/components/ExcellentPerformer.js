@@ -4,8 +4,8 @@ import {CENTRAL_CONTENT} from "../constants/Constants";
 import {updateCentralContent} from "../actions/Actions";
 import {connect} from "react-redux";
 import {Dropdown, FormControl, InputGroup, Table, Row, Col} from "react-bootstrap";
-import {EXCELLENT_PERFORMER } from "../../desk/constants/data/EXCELLENT_PERFORMER";
-import {SCHOLARSHIPS} from "../../desk/constants/data/SCHOLARSHIPS";
+import {EXCELLENT_PERFORMER } from "../../constants/EXCELLENT_PERFORMER";
+import {SCHOLARSHIPS} from "../../constants/SCHOLARSHIPS";
 
 class ExcellentPerformer extends  Component{
 

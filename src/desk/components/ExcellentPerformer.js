@@ -3,8 +3,8 @@ import RTHome from "../../img/ReturnHome.png";
 import {CENTRAL_CONTENT} from "../constants/Constants";
 import {updateCentralContent} from "../actions/Actions";
 import {connect} from "react-redux";
-import {Dropdown, FormControl, InputGroup, Table} from "react-bootstrap";
-import { EXCELLENT_PERFORMER } from "../constants/data/EXCELLENT_PERFORMER";
+import {Card, Dropdown, FormControl, InputGroup, Table} from "react-bootstrap";
+import { EXCELLENT_PERFORMER } from "../../constants/EXCELLENT_PERFORMER";
 
 class ExcellentPerformer extends  Component{
 
@@ -40,7 +40,7 @@ class ExcellentPerformer extends  Component{
         </tr>
         </thead>
         let tableBody =  <tbody>{rows}</tbody>
-        let tableMain = <Table responsive striped bordered hover>{tableHead}{tableBody}</Table>
+        let tableMain = <Table responsive striped borderless hover>{tableHead}{tableBody}</Table>
         return tableMain;
     }
     wow=(result)=>{
@@ -81,12 +81,26 @@ class ExcellentPerformer extends  Component{
                                 aria-describedby="basic-addon1"
                             />
                         </InputGroup>
-                        <div id="tableHead" style={{textAlign:"left"}}>
-                            <h3>Excellent Performer</h3>
+
+                        <div id="clearer" style={{clear:"both"}}>
                         </div>
-                        <div style={{overflow:"scroll", height: window.innerHeight*.7}}>
-                            { this.getExcellentPerformerDetail() }
+
+                        <div id="table-container"  style={{marginTop:5}}>
+                            <div id="container"  style={{overflow:"scroll", height: window.innerHeight*.7}}>
+                                <Card>
+                                    <Card.Header>
+                                        <Card.Text style={{fontSize:16, fontFace:"bold"}}>
+                                            EXCELLENT PERFORMER
+                                        </Card.Text>
+                                    </Card.Header>
+                                    <Card.Body>
+                                        {this.getExcellentPerformerDetail()}
+                                    </Card.Body>
+                                </Card>
+                            </div>
                         </div>
+
+
                     </div>
                 </div>
 

@@ -3,26 +3,23 @@ import RTHome from "../../img/ReturnHome.png";
 import {CENTRAL_CONTENT} from "../constants/Constants";
 import {updateCentralContent} from "../actions/Actions";
 import {connect} from "react-redux";
-import {Dropdown, Table,InputGroup,FormControl} from "react-bootstrap";
-import {SCHOLARSHIPS} from "../constants/data/SCHOLARSHIPS";
+import {Dropdown, Table, InputGroup, FormControl, Card} from "react-bootstrap";
+import {TIMETABLE} from "../../constants/TIMETABLE";
 
 class classesAndTimeTable extends  Component{
     getTimeTableDetail=()=>{
         let rows = [];
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < TIMETABLE.length; i++) {
             let column = [];
             for(let j = 0; j < 5; j++){
                 let localTD
                 switch (j){
                     case 0:  localTD = <td>{i+1}</td>; break;
-                    case 1:  localTD = <td>{SCHOLARSHIPS[i].name}</td> ; break;
-                    case 2:  localTD = <td>{SCHOLARSHIPS[i].minEligibility}</td> ; break;
-                    case 3:  localTD = <td>{SCHOLARSHIPS[i].award}</td> ; break;
-                    case 4:  localTD = <td>{SCHOLARSHIPS[i].date}</td> ; break;
-                    case 5:  localTD = <td>{SCHOLARSHIPS[i].detail}</td> ; break;
-                    default: localTD = <td>j</td>; break;
+                    case 1:  localTD = <td>{TIMETABLE[i].courseCode}</td> ; break;
+                    case 2:  localTD = <td>{TIMETABLE[i].courseName}</td> ; break;
+                    case 3:  localTD = <td>{TIMETABLE[i].days}</td> ; break;
+                    case 4:  localTD = <td>{TIMETABLE[i].time}</td> ; break;
                 }
-
                 column.push(localTD);
             }
 
@@ -39,7 +36,7 @@ class classesAndTimeTable extends  Component{
         </tr>
         </thead>
         let tableBody =  <tbody>{rows}</tbody>
-        let tableMain = <Table responsive striped bordered hover>{tableHead}{tableBody}</Table>
+        let tableMain = <Table responsive striped borderless hover>{tableHead}{tableBody}</Table>
         return tableMain;
     }
     wow=(result)=>{
@@ -47,7 +44,8 @@ class classesAndTimeTable extends  Component{
     }
     render() {
         return (
-            <div id={"main-contain"} style={{ height: window.innerHeight-14, width: window.innerWidth-262,marginTop:2,marginBottom:2, marginLeft:0, padding:0,borderRadius:0, boxShadow: "0px 0px 8px black"}}>
+            <div id={"main-contain"} style={{ height: window.innerHeight-14, width: window.innerWidth-262,marginTop:2,
+                marginBottom:2, marginLeft:0, padding:0,borderRadius:0, boxShadow: "0px 0px 8px black"}}>
                 <div style={{float:"right", marginTop:10, marginRight:10}}>
                     <img style={{ display: 'block', width: 30, height:30 }}
                          className="d-block w-100"
@@ -79,11 +77,23 @@ class classesAndTimeTable extends  Component{
                                 aria-describedby="basic-addon1"
                             />
                         </InputGroup>
-                        <div id="tableHead" style={{textAlign:"left"}}>
-                            <h3>Time Table</h3>
+
+                        <div id="clearer" style={{clear:"both"}}>
                         </div>
-                        <div style={{overflow:"scroll", height: window.innerHeight*.7}}>
-                            { this.getTimeTableDetail() }
+
+                        <div id="table-container"  style={{marginTop:5}}>
+                            <div id="container"  style={{overflow:"scroll", height: window.innerHeight*.7}}>
+                                <Card>
+                                    <Card.Header>
+                                        <Card.Text style={{fontSize:16, fontFace:"bold"}}>
+                                            TIME TABLE
+                                        </Card.Text>
+                                    </Card.Header>
+                                    <Card.Body>
+                                        {this.getTimeTableDetail()}
+                                    </Card.Body>
+                                </Card>
+                            </div>
                         </div>
                     </div>
                 </div>

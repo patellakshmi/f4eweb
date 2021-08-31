@@ -3,8 +3,8 @@ import RTHome from "../../img/ReturnHome.png";
 import {CENTRAL_CONTENT} from "../constants/Constants";
 import {updateCentralContent} from "../actions/Actions";
 import {connect} from "react-redux";
-import {Dropdown, Table} from "react-bootstrap";
-import {SCHOLARSHIPS} from "../constants/data/SCHOLARSHIPS";
+import {Card, Dropdown, Table} from "react-bootstrap";
+import {SCHOLARSHIPS} from "../../constants/SCHOLARSHIPS";
 
 class GeniusOfMonth extends  Component{
 
@@ -40,7 +40,7 @@ class GeniusOfMonth extends  Component{
         </tr>
         </thead>
         let tableBody =  <tbody>{rows}</tbody>
-        let tableMain = <Table responsive striped bordered hover>{tableHead}{tableBody}</Table>
+        let tableMain = <Table responsive striped borderless hover>{tableHead}{tableBody}</Table>
         return tableMain;
     }
     wow=(result)=>{
@@ -73,12 +73,25 @@ class GeniusOfMonth extends  Component{
                                 <Dropdown.Item href="#/action-3" onSelect={()=>this.wow("ACTION-3")}>Something else</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
-                        <div id="tableHead" style={{textAlign:"left"}}>
-                            <h3>Genius</h3>
+
+                        <div id="clearer" style={{clear:"both"}}>
                         </div>
-                        <div style={{overflow:"scroll", height: window.innerHeight*.7}}>
-                            { this.getGeniusOfMindDetail() }
+
+                        <div id="table-container"  style={{marginTop:5}}>
+                            <div id="container"  style={{overflow:"scroll", height: window.innerHeight*.7}}>
+                                <Card>
+                                    <Card.Header>
+                                        <Card.Text style={{fontSize:16, fontFace:"bold"}}>
+                                            GENIUS
+                                        </Card.Text>
+                                    </Card.Header>
+                                    <Card.Body>
+                                        {this.getGeniusOfMindDetail()}
+                                    </Card.Body>
+                                </Card>
+                            </div>
                         </div>
+
                     </div>
                 </div>
 

@@ -1,7 +1,7 @@
-import SIXTH_MATHS from "../../../img/classes/sixth/SixthMaths.jpg"
-import ADV_SIXTH_MATHS from "../../../img/classes/sixth/AdvSixthMaths.jpg";
-import SIXTH_SCIENCE from "../../../img/classes/sixth/SixthSciece.jpg";
-import ADV_SIXTH_SCIENCE from "../../../img/classes/sixth/AdvSixthScience.jpg";
+import SIXTH_MATHS from "../img/classes/sixth/SixthMaths.jpg"
+import ADV_SIXTH_MATHS from "../img/classes/sixth/AdvSixthMaths.jpg";
+import SIXTH_SCIENCE from "../img/classes/sixth/SixthSciece.jpg";
+import ADV_SIXTH_SCIENCE from "../img/classes/sixth/AdvSixthScience.jpg";
 
 const DATA00 = {
     img: SIXTH_MATHS,
