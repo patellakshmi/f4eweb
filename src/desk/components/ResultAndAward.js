@@ -4,19 +4,25 @@ import {CENTRAL_CONTENT} from "../constants/Constants";
 import {updateCentralContent} from "../actions/Actions";
 import {connect} from "react-redux";
 import {Dropdown, Table, Form} from "react-bootstrap";
+import {SCHOLARSHIPS} from "../constants/data/SCHOLARSHIPS";
 
 class ResultAndAward extends  Component{
 
     getResultAndAwardDetail=()=>{
         let rows = [];
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < SCHOLARSHIPS.length; i++) {
             let column = [];
             for(let j = 0; j < 5; j++){
                 let localTD
-                if(j == 0 )
-                    localTD = <td>{i+1}</td>
-                else
-                    localTD = <td>{j}</td>
+                switch (j){
+                    case 0:  localTD = <td>{i+1}</td>; break;
+                    case 1:  localTD = <td>{SCHOLARSHIPS[i].name}</td> ; break;
+                    case 2:  localTD = <td>{SCHOLARSHIPS[i].minEligibility}</td> ; break;
+                    case 3:  localTD = <td>{SCHOLARSHIPS[i].award}</td> ; break;
+                    case 4:  localTD = <td>{SCHOLARSHIPS[i].date}</td> ; break;
+                    case 5:  localTD = <td>{SCHOLARSHIPS[i].detail}</td> ; break;
+                    default: localTD = <td>j</td>; break;
+                }
 
                 column.push(localTD);
             }

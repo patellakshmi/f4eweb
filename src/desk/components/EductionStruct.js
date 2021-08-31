@@ -21,6 +21,11 @@ import {SIXTH_CLASS_DATA} from "../constants/data/SIXTH_CLASS_DATA";
 import {SEVENTH_CLASS_DATA} from "../constants/data/SEVENTH_CLASS_DATA";
 import {EIGHT_CLASS_DATA} from "../constants/data/EIGHT_CLASS_DATA";
 import {CURRENT_AFFAIRS_CLASS_DATA} from "../constants/data/CURRENT_AFFAIRS_CLASS_DATA";
+import RTHome from "../../img/ReturnHome.png";
+import {CENTRAL_CONTENT} from "../constants/Constants";
+import {updateCentralContent} from "../actions/Actions";
+import {connect} from "react-redux";
+import {F4E_COURSES} from "../constants/ComponentConst";
 
 let ALL_STD_DATA = ELEVENTH_CLASS_DATA.concat(TWELFTH_CLASS_DATA).concat(SIXTH_CLASS_DATA).concat(SEVENTH_CLASS_DATA).concat(EIGHT_CLASS_DATA);
 const MAX_ROW = 5;
@@ -364,6 +369,18 @@ class EductionStruct extends  Component{
                 marginTop:10,marginLeft:2, marginBottom:2, padding:5, alignItems:"center",
                 boxShadow: "2px 2px 8px black", position:"relative",borderRadius:2
             }} >
+                {
+                    this.props.centralContent == F4E_COURSES &&
+                    <div style={{float: "right", marginTop: 5, marginRight: 10}}>
+                        <img style={{display: 'block', width: 30, height: 30}}
+                             className="d-block w-100"
+                             src={RTHome}
+                             alt="Image One"
+                             onClick={() => this.props.updateCentralContent(CENTRAL_CONTENT)}
+                        />
+                    </div>
+                }
+
                 <div id="select-class">
                     <div style={{float:"left", borderColor:"white", borderRadius:5, borderWidth:1, borderStyle:"solid",marginRight:2,marginLeft:2,padding:5}}>
                         <Button variant="outline-primary" size="sm" style={{marginLeft:5,marginRight:5,marginTop:2,marginBottom:5,width:60, height:20}} onClick={()=>this.getDataForGivenStd(ALL_STD)}>
@@ -407,4 +424,13 @@ class EductionStruct extends  Component{
     }
 }
 
-export default EductionStruct;
+const mapDispatchToProps=dispatch=>({
+    updateCentralContent:data=>dispatch(updateCentralContent(data))
+})
+
+const mapStateToProps=state=>({
+    centralContent: state.deskReducer.centralContent,
+    patel:console.log(state)
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(EductionStruct);

@@ -4,20 +4,25 @@ import {CENTRAL_CONTENT} from "../constants/Constants";
 import {updateCentralContent} from "../actions/Actions";
 import {connect} from "react-redux";
 import {Dropdown, FormControl, InputGroup, Table} from "react-bootstrap";
+import { EXCELLENT_PERFORMER } from "../constants/data/EXCELLENT_PERFORMER";
 
 class ExcellentPerformer extends  Component{
 
     getExcellentPerformerDetail=()=>{
         let rows = [];
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < EXCELLENT_PERFORMER.length; i++) {
             let column = [];
             for(let j = 0; j < 6; j++){
                 let localTD
-                if(j == 0 )
-                    localTD = <td>{i+1}</td>
-                else
-                    localTD = <td>{j}</td>
-
+                switch (j){
+                    case 0:  localTD = <td>{i+1}</td>; break;
+                    case 1:  localTD = <td>{EXCELLENT_PERFORMER[i].id}</td> ; break;
+                    case 2:  localTD = <td>{EXCELLENT_PERFORMER[i].name}</td> ; break;
+                    case 3:  localTD = <td>{EXCELLENT_PERFORMER[i].courseId}</td> ; break;
+                    case 4:  localTD = <td>{EXCELLENT_PERFORMER[i].courseName}</td> ; break;
+                    case 5:  localTD = <td>{EXCELLENT_PERFORMER[i].score}</td> ; break;
+                    default: localTD = <td>j</td>; break;
+                }
                 column.push(localTD);
             }
 

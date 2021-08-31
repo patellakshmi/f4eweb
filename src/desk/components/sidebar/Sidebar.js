@@ -7,7 +7,7 @@ import {updateBook, updateCentralContent} from "../../actions/Actions";
 import {
     ADMISSION_NOTICE,
     CLASSES_TIME_TABLE,
-    EXCELLENT_PERFORMER, F4E_SCHOLARSHIPS,
+    EXCELLENT_PERFORMER, F4E_COURSES, F4E_SCHOLARSHIPS,
     GENIUS_OF_MONTH,
     RESULT_AWARD
 } from "../../constants/ComponentConst";
@@ -47,11 +47,12 @@ class Sidebar extends  Component{
 
                 <div style={{ width: 250, marginTop:5, boxShadow: "2px 2px 5px black",backgroundColor:"white", borderRadius:5, backgroundImage:`url(${ClassRoom})` }}>
                     <ul style={{paddingTop: 10, paddingBottom:10}}>
-                        <li onClick={()=>this.props.updateCentralContent(F4E_SCHOLARSHIPS)}  style={{ paddingTop: 10}}><Button variant="outline-primary">F4E's Scholarship</Button></li>
+                        <li onClick={()=>this.props.updateCentralContent(F4E_COURSES)}  style={{ paddingTop: 10}}><Button variant="outline-info">Courses Details</Button></li>
+                        <li onClick={()=>this.props.updateCentralContent(F4E_SCHOLARSHIPS)}  style={{ paddingTop: 10}}><Button variant="outline-primary">Scholarships</Button></li>
                         <li onClick={()=>this.props.updateCentralContent(ADMISSION_NOTICE)}  style={{ paddingTop: 10}}><Button variant="outline-secondary">Admission Notice</Button></li>
-                        <li onClick={()=>this.props.updateCentralContent(CLASSES_TIME_TABLE)} style={{ paddingTop: 10}}><Button variant="outline-warning">Classes & Time table</Button></li>
-                        <li onClick={()=>this.props.updateCentralContent(RESULT_AWARD)} style={{ paddingTop: 10}}><Button variant="outline-info">Result and Award</Button></li>
-                        <li onClick={()=>this.props.updateCentralContent(GENIUS_OF_MONTH)}  style={{ paddingTop: 10}}><Button variant="outline-success">Genius of months</Button></li>
+                        <li onClick={()=>this.props.updateCentralContent(CLASSES_TIME_TABLE)} style={{ paddingTop: 10}}><Button variant="outline-warning">Time Table</Button></li>
+                        <li onClick={()=>this.props.updateCentralContent(RESULT_AWARD)} style={{ paddingTop: 10}}><Button variant="outline-info">Result & Award</Button></li>
+                        <li onClick={()=>this.props.updateCentralContent(GENIUS_OF_MONTH)}  style={{ paddingTop: 10}}><Button variant="outline-success">Genius Of months</Button></li>
                         <li onClick={()=>this.props.updateCentralContent(EXCELLENT_PERFORMER)}  style={{ paddingTop: 10}}><Button variant="outline-danger">Excellent-Performer</Button></li>
                     </ul>
                 </div>

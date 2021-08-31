@@ -17,7 +17,7 @@ import {
     CENTRAL_CONTENT,
     CLASSES_TIME_TABLE,
     EXCELLENT_PERFORMER, F4E_SCHOLARSHIPS, GENIUS_OF_MONTH,
-    RESULT_AWARD
+    RESULT_AWARD,F4E_COURSES
 } from "../../constants/ComponentConst";
 import {updateCentralContent} from "../../actions/Actions";
 import GeniusOfMonth from "../GeniusOfMonth";
@@ -29,6 +29,11 @@ class Home extends  Component{
         super(props);
     }
 
+    scrollUp=()=>{
+        window.scroll(0,150);
+        return true;
+    }
+
     render() {
         console.log(this.props);
         return (
@@ -36,7 +41,7 @@ class Home extends  Component{
                 <Header/>
                 <div style={{ backgroundColor:"red"}}>
                     <div style={{float:"left"}}>
-                        <Sidebar/>
+                        { this.props.centralContent != F4E_COURSES && <Sidebar/> }
                     </div>
                     <div id="central-container-panel" style={{float:"left"}}>
                         { this.props.centralContent === F4E_SCHOLARSHIPS && <F4EScholarships/>}
@@ -46,6 +51,7 @@ class Home extends  Component{
                         { this.props.centralContent === RESULT_AWARD && <ResultAndAward/>}
                         { this.props.centralContent === GENIUS_OF_MONTH && <GeniusOfMonth/>}
                         { this.props.centralContent === EXCELLENT_PERFORMER && <ExcellentPerformer/>}
+
                     </div>
                 </div>
                 <div id={"main-contain"} style={{clear:"both"}}>

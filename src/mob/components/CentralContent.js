@@ -5,8 +5,7 @@ import F4EObjective from "./F4EObjective";
 class CentralContent extends  Component{
     render() {
         return (
-            <div id={"main-contain"} style={{width: window.innerWidth,marginTop:2,
-                backgroundColor:"#AEB6BF",marginBottom:2, marginLeft:0, padding:0,borderRadius:0, boxShadow: "2px 2px 5px black"}}>
+            <div id={"main-contain"} style={{width: window.innerWidth,marginTop:2,marginBottom:2, marginLeft:0, padding:0,borderRadius:0, boxShadow: "2px 2px 5px black"}}>
                 <div>
                     <ImageScroller/>
                     <F4EObjective/>

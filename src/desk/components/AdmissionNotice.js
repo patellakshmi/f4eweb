@@ -5,19 +5,26 @@ import {connect} from "react-redux";
 import {CENTRAL_CONTENT} from "../constants/Constants";
 import {FormControl, InputGroup, Table} from "react-bootstrap";
 import {Dropdown} from "react-bootstrap";
+import {ADMISSION_NOTICE} from "../constants/data/ADMISSION_NOTICE";
 
 class AdmissionNotice extends  Component{
 
     getAdmissionDetail=()=>{
         let rows = [];
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < ADMISSION_NOTICE.length; i++) {
             let column = [];
             for(let j = 0; j < 7; j++){
                 let localTD
-                if(j == 0 )
-                    localTD = <td>{i+1}</td>
-                else
-                    localTD = <td>{j}</td>
+                switch (j){
+                    case 0:  localTD = <td>{i+1}</td>; break;
+                    case 1:  localTD = <td>{ADMISSION_NOTICE[i].code}</td> ; break;
+                    case 2:  localTD = <td>{ADMISSION_NOTICE[i].name}</td> ; break;
+                    case 3:  localTD = <td>{ADMISSION_NOTICE[i].field}</td> ; break;
+                    case 4:  localTD = <td>{ADMISSION_NOTICE[i].who}</td> ; break;
+                    case 5:  localTD = <td>{ADMISSION_NOTICE[i].date}</td> ; break;
+                    case 6:  localTD = <td>{ADMISSION_NOTICE[i].detail}</td> ; break;
+                    default: localTD = <td>j</td>; break;
+                }
 
                 column.push(localTD);
             }
@@ -36,8 +43,8 @@ class AdmissionNotice extends  Component{
             <th>Detail</th>
         </tr>
         </thead>
-        let tableBody =  <tbody style={{overflowY:true, height:200 }}>{rows}</tbody>
-        let tableMain = <Table style={{ height:500}} responsive striped borderless hover>{tableHead}{tableBody}</Table>
+        let tableBody =  <tbody style={{overflowY:true}}>{rows}</tbody>
+        let tableMain = <Table  responsive striped borderless hover>{tableHead}{tableBody}</Table>
         return tableMain;
 
     }
@@ -86,7 +93,7 @@ class AdmissionNotice extends  Component{
                         <div id="tableHead" style={{textAlign:"left"}}>
                             <h3>Admission Notice</h3>
                         </div>
-                        <div style={{overflow:"scroll", height: window.innerHeight*.77}}>
+                        <div style={{overflow:"scroll", height: window.innerHeight*.7}}>
                             { this.getAdmissionDetail() }
                         </div>
                     </div>

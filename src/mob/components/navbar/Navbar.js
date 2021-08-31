@@ -6,18 +6,19 @@ import ImageScroller from "../ImageScroller";
 import F4EObjective from "../F4EObjective";
 import "./NavbarStyle.css";
 import {updateCentralContent} from "../../../desk/actions/Actions";
-import {ADMISSION_NOTICE, F4E_COURSES, F4E_SCHOLARSHIPS} from "../../constants/ComponentConst";
+import {ADMISSION_NOTICE, F4E_COURSES, F4E_SCHOLARSHIPS, RESULT_AWARD} from "../../constants/ComponentConst";
 import {CLASSES_TIME_TABLE, EXCELLENT_PERFORMER} from "../../../desk/constants/ComponentConst";
 
 let toggle = true;
 let NAV_COLORS_CODE=["#85C1E9"];
 let NAV_COLORS_CODE_SIZE = 1;
 const NAV_NAMES = new Map();
-NAV_NAMES.set(0, [F4E_COURSES, "Courses"]);
-NAV_NAMES.set(1, [F4E_SCHOLARSHIPS, "Scholarship"]);
-NAV_NAMES.set(2, [CLASSES_TIME_TABLE, "Time Tables"]);
+NAV_NAMES.set(0, [F4E_COURSES, "Courses Details"]);
+NAV_NAMES.set(1, [F4E_SCHOLARSHIPS, "F4E-Scholarships"]);
+NAV_NAMES.set(2, [CLASSES_TIME_TABLE, "Time & Tables"]);
 NAV_NAMES.set(3, [ADMISSION_NOTICE, "Admission Notice"]);
 NAV_NAMES.set(4, [EXCELLENT_PERFORMER, "Excellent Performer"]);
+NAV_NAMES.set(4, [RESULT_AWARD, "Result & Award"]);
 
 class Navbar extends Component{
 
@@ -47,14 +48,14 @@ class Navbar extends Component{
             if( j == 0) {
                 navListItem = <li className="nav-li-item" style={{marginTop: 90}}
                                   onClick={() => this.props.updateCentralContent(NAV_NAMES.get(j)[0])}>
-                    <div className="nav-li-element-detail" style={{backgroundColor: NAV_COLORS_CODE[j%NAV_COLORS_CODE_SIZE] }}>
+                    <div className="nav-li-element-detail" style={{backgroundColor: NAV_COLORS_CODE[j%NAV_COLORS_CODE_SIZE], fontFamily: "Arial, Helvetica, sans-serif"}}>
                         {NAV_NAMES.get(j)[1]}
                     </div>
                 </li>;
             }else{
                 navListItem = <li className="nav-li-item" style={{marginTop: 0}}
                                   onClick={() => this.props.updateCentralContent(NAV_NAMES.get(j)[0])}>
-                    <div className="nav-li-element-detail" style={{backgroundColor: NAV_COLORS_CODE[j%NAV_COLORS_CODE_SIZE] }}>
+                    <div className="nav-li-element-detail" style={{backgroundColor: NAV_COLORS_CODE[j%NAV_COLORS_CODE_SIZE], fontFamily: "Arial, Helvetica, sans-serif"}}>
                         {NAV_NAMES.get(j)[1]}
                     </div>
                 </li>;
