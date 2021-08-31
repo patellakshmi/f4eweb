@@ -4,49 +4,9 @@
     <list default="true" id="cec46672-97a5-460e-a5c3-c83c0f051027" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/AdmissionNotice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/AdmissionNotice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/ClassesAndTimeTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/ClassesAndTimeTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/EductionStruct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/EductionStruct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/ExcellentPerformer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/ExcellentPerformer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/F4EScholarships.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/F4EScholarships.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/GeniusOfMonth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/GeniusOfMonth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/EXCELLENT_PERFORMER.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/EXCELLENT_PERFORMER.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/desk/components/ImageScroller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/ImageScroller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/ResultAndAward.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/ResultAndAward.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/sidebar/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Banglore.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/address/Banglore.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/F4E.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/icons/F4E.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/F4E.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/logos/F4E.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/F4EWithName.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/logos/F4EWithName.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/FacebookWall.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/social-media/FacebookWall.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/GenralText.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/logos/GenralText.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/NoticeWW.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/ReturnHome.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/home/ReturnHome.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Scroll1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/scrollar/Scroll1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Scroll2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/scrollar/Scroll2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Scroll3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/scrollar/Scroll3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Scroll4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/scrollar/Scroll4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Scroll5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/scrollar/Scroll5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Scroll6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/scrollar/Scroll6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Untitled-1.cdr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Varanasi.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/address/Varanasi.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/ceo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/personnel/ceo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/facebook.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/social-media/facebook.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/facebook.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/social-media/facebook.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/maths1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/udemy.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/social-media/udemy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/youtube.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/social-media/youtube.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/components/AdmissionNotice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/AdmissionNotice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/components/ClassesAndTimeTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/ClassesAndTimeTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/components/EductionStruct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/EductionStruct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/components/ExcellentPerformer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/ExcellentPerformer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/components/F4EScholarships.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/F4EScholarships.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/components/GeniusOfMonth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/GeniusOfMonth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mob/components/ImageScroller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/ImageScroller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/components/ResultAndAward.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/ResultAndAward.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/components/footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/header/Header.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +105,7 @@
       <workItem from="1630410215770" duration="246000" />
       <workItem from="1630415055045" duration="32000" />
       <workItem from="1630416646259" duration="4646000" />
-      <workItem from="1630436784405" duration="1460000" />
+      <workItem from="1630436784405" duration="2274000" />
     </task>
     <servers />
   </component>
