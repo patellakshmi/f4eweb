@@ -1,6 +1,6 @@
 export const Fight4EducObj =
 
-    "Fight For Education Corp. Ltd. provide instruction and teaching in some subjects of engineering and science,"+
+    "Fight For Education provide instruction and teaching in some subjects of engineering and science,"+
     "current-affairs and arts for the advancement of learning and dissemination of knowledge in specific branches."+
     "We also provide lectures and online-tuition/coaching for the students for get the jobs, enter into IIT, DRO/ISRO."+
     "To raise their level of comprehension of basic subjects to provide a stronger foundation for further academic work"+
