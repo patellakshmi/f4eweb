@@ -108,7 +108,7 @@ class EductionStruct extends  Component{
             for(let j = 0; j < 4; j++){
                 column.push(
                     <Col xs={12} style={{marginTop:10}}>
-                        <Card>
+                        <Card style={{borderWidth:1, borderColor:"black", borderStyle:"dotted"}}>
                             { !this.state.details[i*NUM_OF_COLUMN+j] &&
                             <img style={{display: 'block', width: window.innerWidth, height: 150}}
                                  className="d-block w-100"
@@ -228,7 +228,7 @@ class EductionStruct extends  Component{
         for(let j = 0; j < NUM_OF_COL_IN_LAST_ROW; j++){
             lastRowColumn.push(
                 <Col xs={12} style={{marginTop:10}}>
-                    <Card>
+                    <Card style={{borderWidth:1, borderColor:"black", borderStyle:"dotted"}}>
                         { !this.state.details[i*NUM_OF_COLUMN+j] &&
                         <img style={{display: 'block', width: window.innerWidth, height: 150}}
                              className="d-block w-100"
