@@ -13,6 +13,7 @@ import {
 } from "../../constants/ComponentConst";
 import RTHome from "../../../img/home/ReturnHome.png";
 import {CENTRAL_CONTENT} from "../../constants/Constants";
+import RandomTextGenerator from 'react-scrolling-text';
 
 class Sidebar extends  Component{
 
@@ -46,7 +47,7 @@ class Sidebar extends  Component{
                 </div>
 
                 <div style={{ width: 250, marginTop:5, boxShadow: "2px 2px 5px black",backgroundColor:"white", borderRadius:5, backgroundImage:`url(${ClassRoom})` }}>
-                    <ul style={{paddingTop: 10, paddingBottom:10}}>
+                    <ul style={{paddingTop: 10, paddingBottom:80}}>
                         <li onClick={()=>this.props.updateCentralContent(F4E_COURSES)}  style={{ paddingTop: 10}}><Button variant="outline-info">Courses Details</Button></li>
                         <li onClick={()=>this.props.updateCentralContent(F4E_SCHOLARSHIPS)}  style={{ paddingTop: 10}}><Button variant="outline-primary">Scholarships</Button></li>
                         <li onClick={()=>this.props.updateCentralContent(ADMISSION_NOTICE)}  style={{ paddingTop: 10}}><Button variant="outline-secondary">Admission Notice</Button></li>
@@ -56,7 +57,6 @@ class Sidebar extends  Component{
                         <li onClick={()=>this.props.updateCentralContent(EXCELLENT_PERFORMER)}  style={{ paddingTop: 10}}><Button variant="outline-danger">Excellent-Performer</Button></li>
                     </ul>
                 </div>
-
             </div>
         )
     }

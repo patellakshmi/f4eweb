@@ -9,6 +9,7 @@ import Image5 from '../../img/scrollar/Scroll5.jpg';
 import Image6 from '../../img/scrollar/Scroll6.jpg';
 import Image7 from '../../img/scrollar/Scroll7.jpg';
 import Image8 from '../../img/scrollar/Scroll8.jpg';
+import Image9 from '../../img/scrollar/Scroll9.jpg';
 
 
 const images = [
@@ -22,8 +23,8 @@ const images = [
 class ImageScroller extends  Component{
     render() {
         return (
-            <div style={{paddingTop:10, paddingLeft:(window.outerWidth-260-window.outerWidth*.6)/2}}>
-                <div style={{ display: 'block', marginLeft:0, width: window.outerWidth*.6, paddingLeft: 30, paddingBottom:10 }}>
+            <div style={{paddingTop:10, paddingLeft:(window.outerWidth-260-window.outerWidth*.8)/2}}>
+                <div style={{ display: 'block', marginLeft:0, width: window.outerWidth*.8, paddingLeft: 30, paddingBottom:10 }}>
                     <Carousel>
                         <Carousel.Item interval={1500}>
                             <img
@@ -78,6 +79,13 @@ class ImageScroller extends  Component{
                             <img
                                 className="d-block w-100"
                                 src={Image8}
+                                alt="Image Two"
+                            />
+                        </Carousel.Item>
+                        <Carousel.Item interval={1500}>
+                            <img
+                                className="d-block w-100"
+                                src={Image9}
                                 alt="Image Two"
                             />
                         </Carousel.Item>
