@@ -28,7 +28,7 @@ class Header extends  Component{
                 {
                     this.state.login == true &&
                     <div id="login-page">
-                        <div id="central-login-form"  style={{ top: window.outerHeight/2-100, left: 15, width: 350, height: 230}}>
+                        <div id="central-login-form"  style={{ top: (window.innerHeight-230)/2, left: (window.innerWidth-350)/2, width: 350, height: 230}}>
                             <div style={{float:"right", marginRight:0}} onClick={()=>this.doLoginLogoutAction()}>
                                 <img style={{display: 'block', width: 20, height: 20}}
                                      className="d-block w-100"
@@ -46,7 +46,7 @@ class Header extends  Component{
                                         <Form.Control type="password" placeholder="Password" />
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                        <Form.Check type="checkbox" label="SignUp" />
+                                        <Form.Check type="checkbox" label="Is it first time for you ?" />
                                     </Form.Group>
                                     <Button variant="primary" type="submit">
                                         Submit
