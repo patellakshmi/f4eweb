@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cec46672-97a5-460e-a5c3-c83c0f051027" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/desk/components/header/ScrollText.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/desk/components/header/LoginPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mob/components/header/LoginPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/F4EObjective.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/F4EObjective.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/ImageScroller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/ImageScroller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/desk/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/sidebar/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/scrollar/Scroll2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/scrollar/Scroll2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/scrollar/Scroll4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/scrollar/Scroll4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/components/ImageScroller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/ImageScroller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/components/header/ScrollText.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/header/ScrollText.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mob/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/header/Header.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +38,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/mob/components/header" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -59,6 +54,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/mob/components/header" />
       <recent name="$PROJECT_DIR$/src/mob/components" />
       <recent name="$PROJECT_DIR$/src/mob" />
       <recent name="$PROJECT_DIR$/public" />
@@ -112,7 +108,7 @@
       <workItem from="1630410215770" duration="246000" />
       <workItem from="1630415055045" duration="32000" />
       <workItem from="1630416646259" duration="4646000" />
-      <workItem from="1630436784405" duration="8360000" />
+      <workItem from="1630436784405" duration="16658000" />
     </task>
     <servers />
   </component>

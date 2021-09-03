@@ -1,0 +1,24 @@
+#login-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(33, 47, 60,.99);
+    z-index: 25;
+
+}
+
+#central-login-form{
+    position: relative;
+    width: 450px;
+    height: 275px;
+    background-color: lightgrey;
+    z-index: 26;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+#login-form-div{
+
+}
