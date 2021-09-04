@@ -8,31 +8,53 @@ import NoticeBoard from "../../../img/NoticeWW.png";
 import Login from "../../../img/home/login.png";
 import Logout from "../../../img/home/logout.png";
 import CloseButton from "../../../img/home/closebutton.png";
+import removeLoginFailedMsg from "../../../img/home/remove-login-failed-error.png";
+import loginFailedErrMsg from "../../../img/home/loginFailedErrMsg.png";
 
 import {CENTRAL_CONTENT} from "../../constants/Constants";
 import {Form, Button} from "react-bootstrap";
+import $ from 'jquery';
+import {Card,Badge} from "react-bootstrap";
+
 
 class Header extends  Component{
 
     constructor() {
         super();
         this.state ={
-            login:false
+            login:false,
+            showLoginPage: false,
+            loginFailedMessage: false
         }
     }
 
-    doLoginLogoutAction=()=>{
-        this.setState({ login: !this.state.login });
+    showLoginPageAndLogout=()=>{
+        if(this.state.login == false) this.setState({showLoginPage: true});
+        else this.setState({login: false});
+    }
+
+    hideLoginPage=()=>{
+        this.setState({showLoginPage: false,loginFailedMessage:false});
+    }
+
+    hideOutLoginFailedMessage=()=>{
+        this.setState({loginFailedMessage:false});
+    }
+
+    onSubmitTheForm=()=>{
+        let status = false;
+        if( status ) this.setState({login:true,showLoginPage: false});
+        else this.setState({showLoginPage: true,loginFailedMessage:true});
     }
 
     render() {
         return (
             <div>
                 {
-                    this.state.login == true &&
+                    this.state.showLoginPage == true &&
                     <div id="login-page">
                         <div id="central-login-form"  style={{ top: (window.innerHeight-250)/2, left: (window.innerWidth-450)/2}}>
-                            <div style={{float:"right", marginRight:0}} onClick={()=>this.doLoginLogoutAction()}>
+                            <div style={{float:"right", marginRight:0}} onClick={()=>this.hideLoginPage()}>
                                 <img style={{display: 'block', width: 20, height: 20}}
                                      className="d-block w-100"
                                      src={CloseButton}
@@ -43,17 +65,32 @@ class Header extends  Component{
                             <div id="login-form-div"  style={{marginLeft:90, marginTop: 15, borderRadius: 12, borderWidth:5, borderColor:"black" ,width:250, height: 200}}>
                                 <Form>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                                        <Form.Control type="text" placeholder="Enter email or Mobile" />
+                                        <Form.Control type="text" id="emailId" placeholder="Enter email or Mobile" />
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                                        <Form.Control type="password" placeholder="Password" />
+                                        <Form.Control type="password" id="passwordId" placeholder="Password" />
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                        <Form.Check type="checkbox" label="Is it first time for you ?" />
+                                        <Form.Check type="checkbox" id="checkboxId" label="Is it first time for you ?" />
                                     </Form.Group>
-                                    <Button variant="primary" type="submit">
+                                    <Button variant="primary" onClick={()=>this.onSubmitTheForm()}>
                                         Submit
                                     </Button>
+                                    {
+                                        this.state.loginFailedMessage == true &&
+                                        <div style={{marginTop:13, marginLeft:0, alignItems:"center"}}>
+                                            <div style={{clear:"both"}}></div>
+                                            <Badge bg="danger">
+                                               You have entered wrong password
+                                            </Badge>
+                                            <div style={{float:"right", marginTop:4}} onClick={()=>this.hideOutLoginFailedMessage()}>
+                                                <img style={{display: 'block', width: 20, height: 20}}
+                                                     src={loginFailedErrMsg}
+                                                     alt="Image One"
+                                                />
+                                            </div>
+                                        </div>
+                                    }
                                 </Form>
                             </div>
                         </div>
@@ -76,7 +113,7 @@ class Header extends  Component{
                                      className="d-block w-100"
                                      src={this.state.login == true ? Logout : Login}
                                      alt="Image One"
-                                     onClick={() => this.doLoginLogoutAction()}
+                                     onClick={()=>this.showLoginPageAndLogout()}
                                 />
                             </div>
                         </div>
