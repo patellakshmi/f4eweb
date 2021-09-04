@@ -15,6 +15,9 @@ import {CENTRAL_CONTENT} from "../../constants/Constants";
 import {Form, Button} from "react-bootstrap";
 import $ from 'jquery';
 import {Card,Badge} from "react-bootstrap";
+import {updateCentralContent, updateLoginInfo} from "../../actions/Actions";
+import {connect} from "react-redux";
+import {LOGIN_INFO} from "../../constants/ComponentConst";
 
 
 class Header extends  Component{
@@ -22,15 +25,19 @@ class Header extends  Component{
     constructor() {
         super();
         this.state ={
-            login:false,
+            showLoginButton:true,
             showLoginPage: false,
             loginFailedMessage: false
         }
     }
 
     showLoginPageAndLogout=()=>{
-        if(this.state.login == false) this.setState({showLoginPage: true});
-        else this.setState({login: false});
+        if(this.state.showLoginButton == true) this.setState({showLoginPage: true});
+        else {
+            this.setState({showLoginButton: true});
+            this.props.updateLoginInfo({loginStatus:false, userEmail:""});
+            this.props.updateCentralContent(CENTRAL_CONTENT)
+        }
     }
 
     hideLoginPage=()=>{
@@ -42,9 +49,11 @@ class Header extends  Component{
     }
 
     onSubmitTheForm=()=>{
-        let status = false;
-        if( status ) this.setState({login:true,showLoginPage: false});
+        let status = true;
+        if( status ) this.setState({showLoginButton:false,showLoginPage: false});
         else this.setState({showLoginPage: true,loginFailedMessage:true});
+        this.props.updateLoginInfo({loginStatus:true, userEmail: $("#emailId").val()});
+        this.props.updateCentralContent(LOGIN_INFO)
     }
 
     render() {
@@ -111,7 +120,7 @@ class Header extends  Component{
                             <div style={{float: "right", marginTop: 85, marginRight: 3}}>
                                 <img style={{display: 'block', width: 30, height: 30}}
                                      className="d-block w-100"
-                                     src={this.state.login == true ? Logout : Login}
+                                     src={this.state.showLoginButton == true ? Login : Logout }
                                      alt="Image One"
                                      onClick={()=>this.showLoginPageAndLogout()}
                                 />
@@ -145,4 +154,14 @@ class Header extends  Component{
     }
 }
 
-export default Header;
+
+const mapDispatchToProps=dispatch=>({
+    updateLoginInfo:data=>dispatch(updateLoginInfo(data)),
+    updateCentralContent:data=>dispatch(updateCentralContent(data))
+})
+
+const mapStateToProps=state=>({
+    centralContent: state.deskReducer.centralContent,
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(Header);

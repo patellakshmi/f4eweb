@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cec46672-97a5-460e-a5c3-c83c0f051027" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/desk/components/UserHome.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/actions/Actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/actions/Actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/desk/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/header/LoginPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/header/LoginPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/components/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/components/sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/sidebar/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/constants/ComponentConst.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/constants/ComponentConst.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/constants/Constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/constants/Constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desk/reducer/deskReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/reducer/deskReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -109,6 +113,7 @@
       <workItem from="1630415055045" duration="32000" />
       <workItem from="1630416646259" duration="4646000" />
       <workItem from="1630436784405" duration="18484000" />
+      <workItem from="1630787183961" duration="3837000" />
     </task>
     <servers />
   </component>

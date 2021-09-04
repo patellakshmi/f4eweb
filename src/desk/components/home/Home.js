@@ -17,10 +17,11 @@ import {
     CENTRAL_CONTENT,
     CLASSES_TIME_TABLE,
     EXCELLENT_PERFORMER, F4E_SCHOLARSHIPS, GENIUS_OF_MONTH,
-    RESULT_AWARD,F4E_COURSES
+    RESULT_AWARD, F4E_COURSES, LOGIN_INFO
 } from "../../constants/ComponentConst";
 import {updateCentralContent} from "../../actions/Actions";
 import GeniusOfMonth from "../GeniusOfMonth";
+import UserHome from "../UserHome";
 
 
 class Home extends  Component{
@@ -44,6 +45,7 @@ class Home extends  Component{
                         { this.props.centralContent != F4E_COURSES && <Sidebar/> }
                     </div>
                     <div id="central-container-panel" style={{float:"left"}}>
+                        { this.props.centralContent === LOGIN_INFO && <UserHome/> }
                         { this.props.centralContent === F4E_SCHOLARSHIPS && <F4EScholarships/>}
                         { this.props.centralContent === ADMISSION_NOTICE && <AdmissionNotice/>}
                         { this.props.centralContent === CENTRAL_CONTENT && <CentralContent/>}
@@ -71,7 +73,7 @@ const mapDispatchToProps=dispatch=>({
 
 const mapStateToProps=state=>({
       centralContent: state.deskReducer.centralContent,
-      patel:console.log(state)
+      loginInfo: state.deskReducer.loginInfo
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(Home);

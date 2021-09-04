@@ -12,7 +12,8 @@ import {
     RESULT_AWARD
 } from "../../constants/ComponentConst";
 import RTHome from "../../../img/home/ReturnHome.png";
-import {CENTRAL_CONTENT} from "../../constants/Constants";
+import ProfilePhoto from "../../../img/home/Profile-ICon.png";
+import {CENTRAL_CONTENT, LOGIN_INFO} from "../../constants/Constants";
 import RandomTextGenerator from 'react-scrolling-text';
 
 class Sidebar extends  Component{
@@ -34,17 +35,61 @@ class Sidebar extends  Component{
             <div style={{ width:260, height:this.getHeightOfCentralContainer, alignContent:"center",
                 marginTop:2, marginBottom:2, padding:5, alignItems:"center", position:"relative",borderRadius:2
             }} >
-                <div style={{ width: 250,height: 70,boxShadow: "2px 2px 5px black",backgroundColor:"white", borderRadius:5, backgroundImage:`url(${NoticeBoard})` }}>
-                    <div style={{float:"right", marginTop:22, marginRight:10}}>
-                        <img style={{ display: 'block', width: 30, height:30 }}
-                             className="d-block w-100"
-                             src={RTHome}
-                             alt="Image One"
-                             onClick={()=>this.props.updateCentralContent(CENTRAL_CONTENT)}
-                        />
+                {
+                    this.props.loginInfo.loginStatus == false &&
+                    <div style={{
+                        width: 250,
+                        height: 70,
+                        boxShadow: "2px 2px 5px black",
+                        backgroundColor: "white",
+                        borderRadius: 5,
+                        backgroundImage: `url(${NoticeBoard})`
+                    }}>
+                        <div style={{float: "right", marginTop: 22, marginRight: 10}}>
+                            <img style={{display: 'block', width: 30, height: 30}}
+                                 className="d-block w-100"
+                                 src={RTHome}
+                                 alt="Image One"
+                                 onClick={() => this.props.updateCentralContent(CENTRAL_CONTENT)}
+                            />
+                        </div>
+                        <h4 style={{
+                            textAlign: "center",
+                            paddingTop: 20,
+                            font: "arial",
+                            color: "royalblue",
+                            textShadow: "1px 1px black"
+                        }}>Board</h4>
                     </div>
-                    <h4 style={{textAlign:"center", paddingTop: 20, font:"arial", color:"royalblue", textShadow:"1px 1px black"}}>Board</h4>
-                </div>
+                }
+
+                {
+                    this.props.loginInfo.loginStatus == true &&
+                    <div style={{
+                        width: 250,
+                        height: 70,
+                        boxShadow: "2px 2px 5px black",
+                        backgroundColor: "white",
+                        borderRadius: 5,
+                        backgroundImage: `url(${NoticeBoard})`
+                    }}>
+                        <div style={{float: "right", marginTop: 22, marginRight: 10}}>
+                            <img style={{display: 'block', width: 30, height: 30}}
+                                 className="d-block w-100"
+                                 src={ProfilePhoto}
+                                 alt="Image One"
+                                 onClick={() => this.props.updateCentralContent(LOGIN_INFO)}
+                            />
+                        </div>
+                        <h4 style={{
+                            textAlign: "center",
+                            paddingTop: 20,
+                            font: "arial",
+                            color: "royalblue",
+                            textShadow: "1px 1px black"
+                        }}>{this.props.loginInfo.userEmail}</h4>
+                    </div>
+                }
 
                 <div style={{ width: 250, marginTop:5, boxShadow: "2px 2px 5px black",backgroundColor:"white", borderRadius:5, backgroundImage:`url(${ClassRoom})` }}>
                     <ul style={{paddingTop: 10, paddingBottom:80}}>
@@ -67,7 +112,7 @@ const mapDispatchToProps=dispatch=>({
 })
 
 const mapStateToProps=state=>({
-    centralContent:state.centralContent
+    loginInfo:state.deskReducer.loginInfo
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(Sidebar);
