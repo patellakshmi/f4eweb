@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cec46672-97a5-460e-a5c3-c83c0f051027" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/mob/components/UserHome.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/desk/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/desk/components/header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/actions/Actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/actions/Actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mob/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/components/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/components/navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/components/navbar/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/constants/ComponentConst.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/constants/ComponentConst.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/constants/Constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/constants/Constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mob/reducer/mobReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mob/reducer/mobReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +105,7 @@
       <workItem from="1630415055045" duration="32000" />
       <workItem from="1630416646259" duration="4646000" />
       <workItem from="1630436784405" duration="18484000" />
-      <workItem from="1630787183961" duration="7651000" />
+      <workItem from="1630787183961" duration="7760000" />
     </task>
     <servers />
   </component>

@@ -110,7 +110,7 @@ class Header extends  Component{
                                 marginTop: 13
                             }}/>
                             <div style={{float: "left", marginTop: 65, marginLeft: 10}}>
-                                <img style={{display: 'block', width: 40, height: 20}}
+                                <img style={{display: 'block', width: 50, height: 20}}
                                      src={this.state.showLoginButton == true ? Login : Logout }
                                      alt="Image One"
                                      onClick={()=>this.showLoginPageAndLogout()}
