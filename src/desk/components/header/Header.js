@@ -64,8 +64,7 @@ class Header extends  Component{
                     <div id="login-page">
                         <div id="central-login-form"  style={{ top: (window.innerHeight-250)/2, left: (window.innerWidth-450)/2}}>
                             <div style={{float:"right", marginRight:0}} onClick={()=>this.hideLoginPage()}>
-                                <img style={{display: 'block', width: 20, height: 20}}
-                                     className="d-block w-100"
+                                <img style={{ width: 20, height: 20}}
                                      src={CloseButton}
                                      alt="Image One"
                                 />
@@ -93,7 +92,7 @@ class Header extends  Component{
                                                You have entered wrong password
                                             </Badge>
                                             <div style={{float:"right", marginTop:4}} onClick={()=>this.hideOutLoginFailedMessage()}>
-                                                <img style={{display: 'block', width: 20, height: 20}}
+                                                <img style={{width: 20, height: 20}}
                                                      src={loginFailedErrMsg}
                                                      alt="Image One"
                                                 />
@@ -118,8 +117,7 @@ class Header extends  Component{
                                 marginTop: 13
                             }}/>
                             <div style={{float: "right", marginTop: 85, marginRight: 3}}>
-                                <img style={{display: 'block', width: 30, height: 30}}
-                                     className="d-block w-100"
+                                <img style={{width: 70, height: 30}}
                                      src={this.state.showLoginButton == true ? Login : Logout }
                                      alt="Image One"
                                      onClick={()=>this.showLoginPageAndLogout()}

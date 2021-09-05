@@ -5,7 +5,7 @@ import {
     ADMISSION_NOTICE,
     CENTRAL_CONTENT,
     CLASSES_TIME_TABLE, EXCELLENT_PERFORMER, F4E_COURSES,
-    F4E_SCHOLARSHIPS, GENIUS_OF_MONTH, RESULT_AWARD
+    F4E_SCHOLARSHIPS, GENIUS_OF_MONTH, RESULT_AWARD, LOGIN_INFO
 } from "../../constants/ComponentConst"
 import F4EScholarships from "../F4EScholarships"
 import AdmissionNotice from "../AdmissionNotice";
@@ -18,6 +18,7 @@ import Navbar from "../navbar/Navbar";
 import {updateCentralContent} from "../../../desk/actions/Actions";
 import Footer from "../../components/footer/Footer";
 import EductionStruct from "../EductionStruct";
+import UserHome from "../UserHome";
 
 class Home extends  Component{
 
@@ -31,6 +32,7 @@ class Home extends  Component{
                 <Header/>
                 <Navbar style={{zIndex:10000}}></Navbar>
                 <div style={{float:"left"}}>
+                    { this.props.centralContent === LOGIN_INFO && <UserHome/>}
                     { this.props.centralContent === F4E_COURSES && <EductionStruct/>}
                     { this.props.centralContent === F4E_SCHOLARSHIPS && <F4EScholarships/>}
                     { this.props.centralContent === ADMISSION_NOTICE && <AdmissionNotice/>}
