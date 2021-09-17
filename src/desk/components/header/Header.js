@@ -50,6 +50,21 @@ class Header extends  Component{
 
     onSubmitTheForm=()=>{
         let status = true;
+
+        (async () => {
+            const rawResponse = await fetch('http://localhost:8080/f4e/public/v1/login', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({username: 'lakshmi', b: 'lakshmi@123'})
+            });
+            const content = await rawResponse.json();
+
+            console.log(content);
+        })();
+
         if( status ) this.setState({showLoginButton:false,showLoginPage: false});
         else this.setState({showLoginPage: true,loginFailedMessage:true});
         this.props.updateLoginInfo({loginStatus:true, userEmail: $("#emailId").val()});

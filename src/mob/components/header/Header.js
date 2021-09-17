@@ -12,6 +12,7 @@ import {LOGIN_INFO} from "../../../desk/constants/ComponentConst";
 import loginFailedErrMsg from "../../../img/home/loginFailedErrMsg.png";
 import {updateCentralContent, updateLoginInfo} from "../../actions/Actions";
 import {connect} from "react-redux";
+import axios from "axios";
 
 class Header extends  Component{
 
@@ -20,8 +21,10 @@ class Header extends  Component{
         this.state ={
             showLoginButton:true,
             showLoginPage: false,
-            loginFailedMessage: false
+            loginFailedMessage: false,
+            signupFailedMessage: false
         }
+
     }
 
     showLoginPageAndLogout=()=>{
@@ -41,12 +44,65 @@ class Header extends  Component{
         this.setState({loginFailedMessage:false});
     }
 
+   fetchFunction=()=>{
+
+    }
+
+
+
     onSubmitTheForm=()=>{
         let status = true;
-        if( status ) this.setState({showLoginButton:false,showLoginPage: false});
-        else this.setState({showLoginPage: true,loginFailedMessage:true});
-        this.props.updateLoginInfo({loginStatus:true, userEmail: $("#emailId").val()});
-        this.props.updateCentralContent(LOGIN_INFO)
+        var checkboxValue = $('#checkboxId').prop('checked');
+        let isFirstTime = document.getElementById("checkboxId").value;
+        let userId = document.getElementById("userId").value;
+        let password = document.getElementById("password").value;
+
+        console.log("UserId: "+userId.trim());
+        console.log("Password: "+password.trim());
+        console.log("isFirstTime: "+isFirstTime);
+        console.log("checkboxValue: "+checkboxValue);
+
+
+        if( checkboxValue ){
+            fetch('/f4e/public/v1/signup', {
+                mode:"no-cors",
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({username: userId, password: password})
+            }).then(response => response.json())
+                .then(data => console.log("DATA:"+data) );
+
+        }else {
+             fetch('/f4e/public/v1/login', {
+                mode:"no-cors",
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({username: userId, password: password})
+            }) .then((response) => {
+                 if (response.status == 200) {   // *** This can be just `if (response.ok) {`
+                     console.log(response);      // *** This is premature
+                     return response.json();
+                 }
+                 else
+                 {
+                     throw `error with status ${response.status}`;
+                 }
+             })
+                 .then(assignment => {               // ***
+                     // ...use `assignment` here...  // ***
+                 })                                  // ***
+                 .catch((exception) => {
+                     console.log(exception);
+                 });
+        }
+
+
     }
 
     render() {
@@ -66,13 +122,13 @@ class Header extends  Component{
                             <div id="login-form-div"  style={{marginLeft:40, marginTop: 5, borderRadius: 12, borderWidth:5, borderColor:"black" ,width:250, height: 200}}>
                                 <Form>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                                        <Form.Control type="text" placeholder="Enter email or Mobile" />
+                                        <Form.Control id="userId" type="text" placeholder="Enter email or Mobile" />
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                                        <Form.Control type="password" placeholder="Password" />
+                                        <Form.Control id="password" type="password" placeholder="Password" />
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                        <Form.Check type="checkbox" label="Is it first time for you ?" />
+                                        <Form.Check  id="checkboxId" type="checkbox" label="Is it first time for you ?" />
                                     </Form.Group>
                                     <Button variant="primary" onClick={()=>this.onSubmitTheForm()}>
                                         Submit
