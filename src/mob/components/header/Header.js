@@ -8,22 +8,32 @@ import CloseButton from "../../../img/home/closebutton.png";
 import {CENTRAL_CONTENT} from "../../constants/Constants";
 import {Form, Button, Badge} from "react-bootstrap";
 import $ from "jquery";
-import {LOGIN_INFO} from "../../../desk/constants/ComponentConst";
+import * as ApiUrl from "../../../api-url/ApiUrl";
 import loginFailedErrMsg from "../../../img/home/loginFailedErrMsg.png";
-import {updateCentralContent, updateLoginInfo} from "../../actions/Actions";
+import {updateCentralContent, updateF4EAuth, updateLoginInfo} from "../../actions/Actions";
 import {connect} from "react-redux";
 import axios from "axios";
+import { instanceOf } from "prop-types";
+import { withCookies, Cookies } from "react-cookie";
 
 class Header extends  Component{
 
-    constructor() {
-        super();
+    static propTypes = {
+        cookies: instanceOf(Cookies).isRequired
+    };
+
+    constructor(props) {
+        super(props);
+
+        const { cookies } = props;
         this.state ={
             showLoginButton:true,
             showLoginPage: false,
             loginFailedMessage: false,
-            signupFailedMessage: false
+            signupFailedMessage: false,
+            f4e_auth: cookies.get('f4e_auth') || null
         }
+
 
     }
 
@@ -44,62 +54,53 @@ class Header extends  Component{
         this.setState({loginFailedMessage:false});
     }
 
-   fetchFunction=()=>{
-
-    }
-
-
-
     onSubmitTheForm=()=>{
         let status = true;
-        var checkboxValue = $('#checkboxId').prop('checked');
+        let checkboxValue = $('#checkboxId').prop('checked');
         let isFirstTime = document.getElementById("checkboxId").value;
         let userId = document.getElementById("userId").value;
         let password = document.getElementById("password").value;
 
-        console.log("UserId: "+userId.trim());
-        console.log("Password: "+password.trim());
-        console.log("isFirstTime: "+isFirstTime);
-        console.log("checkboxValue: "+checkboxValue);
 
+        let myauth = null;
+        if( this.props.cookies.get('f4e_auth') != null)
+            myauth = this.props.cookies.get('f4e_auth');
+
+
+        const headers = {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'f4e_auth':myauth
+        }
 
         if( checkboxValue ){
-            fetch('/f4e/public/v1/signup', {
-                mode:"no-cors",
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({username: userId, password: password})
-            }).then(response => response.json())
-                .then(data => console.log("DATA:"+data) );
+            axios.post( ApiUrl.TEST_API, { username: userId, password: password},{ headers:headers })
+                .then(function(response) {
+                if (response.status === 200) {
+                    console.log("data create successfully")
+                    console.log("Response:"+JSON.stringify(response.data));
+                }else {
+                    throw new Error("Bad response from server");
+                }
+            }).catch(function(err) {
+                console.log(err)
+            });
 
         }else {
-             fetch('/f4e/public/v1/login', {
-                mode:"no-cors",
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({username: userId, password: password})
-            }) .then((response) => {
-                 if (response.status == 200) {   // *** This can be just `if (response.ok) {`
-                     console.log(response);      // *** This is premature
-                     return response.json();
-                 }
-                 else
-                 {
-                     throw `error with status ${response.status}`;
-                 }
-             })
-                 .then(assignment => {               // ***
-                     // ...use `assignment` here...  // ***
-                 })                                  // ***
-                 .catch((exception) => {
-                     console.log(exception);
-                 });
+
+            axios.post(ApiUrl.LOGIN_API, {
+                username: userId,
+                password: password
+            }).then(response=> {
+                if (response.status === 200) {
+                   this.props.updateF4EAuth(response.headers.f4e_auth);
+                    console.log("Cookies is going to set");
+                    this.props.cookies.set('f4e_auth', response.headers.f4e_auth, { path: '/' });
+
+                }else { throw new Error("Bad response from server"); }
+            }).catch(err=>{
+                console.log(err)
+            });
         }
 
 
@@ -187,11 +188,13 @@ class Header extends  Component{
 
 const mapDispatchToProps=dispatch=>({
     updateLoginInfo:data=>dispatch(updateLoginInfo(data)),
-    updateCentralContent:data=>dispatch(updateCentralContent(data))
+    updateCentralContent:data=>dispatch(updateCentralContent(data)),
+    updateF4EAuth:data=>dispatch(updateF4EAuth(data))
 })
 
 const mapStateToProps=state=>({
     centralContent: state.mobReducer.centralContent,
+    f4e_auth: state.mobReducer.f4e_auth,
 })
 
-export default connect(mapStateToProps,mapDispatchToProps)(Header);
+export default connect(mapStateToProps,mapDispatchToProps)(withCookies(Header));

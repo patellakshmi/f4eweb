@@ -1,4 +1,4 @@
-import {BUY_BOOK, CENTRAL_CONTENT} from "../constants/Constants";
+import {BUY_BOOK, CENTRAL_CONTENT,F4E_AUTH} from "../constants/Constants";
 import {LOGIN_INFO} from "../../desk/constants/Constants";
 
 export const updateCentralContent=(data)=>{
@@ -22,5 +22,13 @@ export const updateBook=(data)=>{
     return {
         type:BUY_BOOK,
         bookCount:data
+    }
+}
+
+
+export const updateF4EAuth=(data)=>{
+    return {
+        type:F4E_AUTH,
+        f4e_auth:data
     }
 }
