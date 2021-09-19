@@ -10,7 +10,6 @@ ReactDOM.render(
     <CookiesProvider>
       <React.StrictMode>
           <Provider store={store}>
-
                 <App />
           </Provider>
       </React.StrictMode>
