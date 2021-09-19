@@ -6,7 +6,6 @@ import "./LoginPage.css";
 import Login from "../../../img/home/login.png";
 import Logout from "../../../img/home/logout.png";
 import CloseButton from "../../../img/home/closebutton.png";
-import loginFailedErrMsg from "../../../img/home/loginFailedErrMsg.png";
 
 import {Form, Button} from "react-bootstrap";
 import $ from 'jquery';
@@ -15,8 +14,8 @@ import {updateCentralContent, updateLoginInfo} from "../../actions/Actions";
 import {connect} from "react-redux";
 import {instanceOf} from "prop-types";
 import { withCookies, Cookies } from "react-cookie";
-import axios from "axios";
 import * as ApiUrl from "../../../api-url/ApiUrl";
+import axios from "axios";
 
 
 class Header extends  Component{
@@ -33,8 +32,8 @@ class Header extends  Component{
             f4e_auth: cookies.get('f4e_auth') || null,
             showLoginButton:cookies.get('f4e_auth') != null ? cookies.get('f4e_auth'): true,
             showLoginPage: false,
-            loginInfo: { status:false, msg:""},
-            signupInfo: { status:false, msg:""}
+            loginInfo: { errorStatus:false, msg:""},
+            signupInfo: { errorStatus:false, msg:""}
         }
 
     }
@@ -54,78 +53,57 @@ class Header extends  Component{
 
 
     hideLoginAndLogoutPage=()=>{
-        this.setState({showLoginPage: false,loginInfo: {status:false, msg:""}});
+        this.setState({showLoginPage: false,loginInfo: {errorStatus:false, msg:""}});
     }
 
     hideOutLoginFailedMessage=()=>{
-        this.setState({loginInfo: {status:false, msg:""}});
+        this.setState({loginInfo: {errorStatus:false, msg:""}});
     }
 
     onSubmitTheForm=()=>{
-        let status = true;
         let checkboxValue = $('#checkboxId').prop('checked');
-        let isFirstTime = document.getElementById("checkboxId").value;
         let userId = document.getElementById("userId").value;
         let password = document.getElementById("password").value;
 
-
-        let myauth = null;
-        if( this.props.cookies.get('f4e_auth') != null)
-            myauth = this.props.cookies.get('f4e_auth');
-
-
-        const headers = {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-        }
-
         if( checkboxValue ){
-
-            fetch(ApiUrl.SIGNUP_API, {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({username: userId, password: password})
-            }).then(response => {
-                    if (response.status === 200) {
-                        console.log("Cookies is going to set");
-                        this.props.cookies.set('f4e_auth', response.headers.f4e_auth, );
-                        this.setState({showLoginPage: false});
-                        this.setState({showLoginButton: false});
-                    }else {
-
-                        this.setState({signupInfo: {status:true, msg:"wow"}});
-                        setTimeout(() => {
-                            console.log("Calling time out ");
-                            this.setState({signupInfo: {status:false, msg:"wow"}});
-                        }, 3000)
-                    }
+            axios.post(ApiUrl.SIGNUP_API, {
+                username: userId,
+                password: password
+            }).then(response=> {
+                let data = response.data.status;
+                console.log("Staus:"+data);
+                if (response.status === 200) {
+                    this.props.cookies.set('f4e_auth', response.headers.f4e_auth,{path:"/"} );
+                    this.setState({showLoginPage: false});
+                    this.setState({showLoginButton: false});
+                }else { throw new Error("Bad response from server"); }
+            }).catch((err)=>{
+                this.setState({signupInfo: {errorStatus:true, msg:"wow"}});
+                setTimeout(() => {
+                    console.log("Calling time out ");
+                    this.setState({signupInfo: {errorStatus:false, msg:"wow"}});
+                }, 3000)
             });
 
         }else {
-
-            fetch(ApiUrl.LOGIN_API, {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({username: userId, password: password})
-            }).then(response => {
-                    if (response.status === 200) {
-                        console.log("Cookies is going to set");
-                        this.props.cookies.set('f4e_auth', response.headers.f4e_auth, );
-                        this.setState({showLoginPage: false});
-                        this.setState({showLoginButton: false});
-                    }else{
-                        this.setState({loginInfo:{status:true, msg:"wow"}});
-                        setTimeout(() => {
-                            console.log("Calling time out ");
-                            this.setState({loginInfo:{status:false, msg:"wow"}});
-                        }, 3000)
-                    }
+            axios.post(ApiUrl.LOGIN_API, {
+                username: userId,
+                password: password
+            }).then(response=> {
+                let data = response.data.status;
+                console.log("Staus:"+data);
+                if (response.status === 200) {
+                    console.log("Cookies is going to set");
+                    this.props.cookies.set('f4e_auth', response.headers.f4e_auth,{path:'/'} );
+                    this.setState({showLoginPage: false});
+                    this.setState({showLoginButton: false});
+                }else { throw new Error("Bad response from server"); }
+            }).catch((err)=>{
+                this.setState({loginInfo:{errorStatus:true, msg:"wow"}});
+                setTimeout(() => {
+                    console.log("Calling time out ");
+                    this.setState({loginInfo:{errorStatus:false, msg:"wow"}});
+                }, 3000)
             });
         }
     }
@@ -133,9 +111,9 @@ class Header extends  Component{
     giveErrorMsgDiv=(loginInfo, signupInfo)=>{
 
         let displayErrorMsg = "Sorry for inconvenient, try after sometimes";
-        if( loginInfo.status == true){
+        if( loginInfo.errorStatus == true){
             displayErrorMsg = "Please use correct username & password";
-        }else if(signupInfo.status == true ){
+        }else if(signupInfo.errorStatus == true ){
             displayErrorMsg = "Sorry for inconvenient, try after sometimes";
         }else{
             return;
@@ -212,21 +190,6 @@ class Header extends  Component{
                             </div>
                         </div>
 
-                        {/* <div style={{ height: 1, marginTop:0, width:window.outerWidth, textAlign:"center",
-                        backgroundColor: "white"}}>
-                    </div>
-                    <div style={{height:30, backgroundColor: "#1F384D", color:"#AAB7B8", fontFamily: "Times New Roman", fontSize:20, textAlign:"center"}}>
-                        <div id="demo-1">
-                            <h3>Education is power to build yourself but the knowledge is material to define yourself - Aditya Patel ( B.Tech - CSE )</h3>
-                        </div>
-
-                        <RandomTextGenerator
-                            charList={['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']}
-                            text={'Education is power to build yourself but the knowledge is material to define yourself - Aditya Patel ( B.Tech - CSE )'}
-                            interval={30}
-                            timePerChar={30}
-                        />
-                    </div>*/}
                         <div style={{
                             height: 3, marginTop: 2, width: window.outerWidth, textAlign: "center",
                             backgroundColor: "#1F384D", backgroundImage: {Fight4EduWall}
