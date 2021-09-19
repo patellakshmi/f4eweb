@@ -27,26 +27,33 @@ class Header extends  Component{
 
         const { cookies } = props;
         this.state ={
-            showLoginButton:true,
+            f4e_auth: cookies.get('f4e_auth') || null,
+            showLoginButton:cookies.get('f4e_auth') != null ? cookies.get('f4e_auth'): true,
             showLoginPage: false,
             loginFailedMessage: false,
-            signupFailedMessage: false,
-            f4e_auth: cookies.get('f4e_auth') || null
+            signupFailedMessage: false
+
         }
 
 
     }
 
-    showLoginPageAndLogout=()=>{
-        if(this.state.showLoginButton == true) this.setState({showLoginPage: true});
-        else {
-            this.setState({showLoginButton: true});
-            this.props.updateLoginInfo({loginStatus:false, userEmail:""});
-            this.props.updateCentralContent(CENTRAL_CONTENT)
-        }
+    /**
+     * This function executes when login/logout button will be pressed
+     * LoginAndLogoutButton action performing function
+     */
+    doActionOnLoginAndLogout=()=>{
+        if( this.state.showLoginButton == true ){
+            this.setState({showLoginPage: true});
+        }else{
+           this.props.cookies.remove("f4e_auth");
+           this.setState({showLoginButton: true});
+       }
     }
 
-    hideLoginPage=()=>{
+
+
+    hideLoginAndLogoutPage=()=>{
         this.setState({showLoginPage: false,loginFailedMessage:false});
     }
 
@@ -70,20 +77,26 @@ class Header extends  Component{
         const headers = {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            'f4e_auth':myauth
         }
 
         if( checkboxValue ){
-            axios.post( ApiUrl.TEST_API, { username: userId, password: password},{ headers:headers })
-                .then(function(response) {
+
+            axios.post(ApiUrl.SIGNUP_API, {
+                username: userId,
+                password: password
+            }).then(response=> {
                 if (response.status === 200) {
-                    console.log("data create successfully")
-                    console.log("Response:"+JSON.stringify(response.data));
-                }else {
-                    throw new Error("Bad response from server");
-                }
-            }).catch(function(err) {
-                console.log(err)
+                    console.log("Cookies is going to set");
+                    this.props.cookies.set('f4e_auth', response.headers.f4e_auth, );
+                    this.setState({showLoginPage: false});
+                    this.setState({showLoginButton: false});
+
+                }else { throw new Error("Bad response from server"); }
+            }).catch(err=>{
+                this.setState({signupFailedMessage:true});
+                setTimeout(() => {
+                    this.setState({signupFailedMessage:false});
+                }, 3000)
             });
 
         }else {
@@ -95,14 +108,47 @@ class Header extends  Component{
                 if (response.status === 200) {
                    this.props.updateF4EAuth(response.headers.f4e_auth);
                     console.log("Cookies is going to set");
-                    this.props.cookies.set('f4e_auth', response.headers.f4e_auth, { path: '/' });
-
-                }else { throw new Error("Bad response from server"); }
+                    this.props.cookies.set('f4e_auth', response.headers.f4e_auth, );
+                    this.setState({showLoginPage: false});
+                    this.setState({showLoginButton: false});
+                }else{
+                    throw new Error("Bad response from server");
+                }
             }).catch(err=>{
-                console.log(err)
+                this.setState({loginFailedMessage:true});
+                setTimeout(() => {
+                    console.log("Calling time out ");
+                    this.setState({loginFailedMessage:false});
+                }, 3000)
             });
         }
+    }
 
+    giveErrorMsgDiv=(loginFailedMessage, signupFailedMessage)=>{
+
+        let displayErrorMsg = "Sorry for inconvenient, try after sometimes";
+        if( loginFailedMessage == true){
+            displayErrorMsg = "Please user correct Username & Password";
+        }else if(signupFailedMessage == true ){
+            displayErrorMsg = "Sorry for inconvenient, try after sometimes";
+        }else{
+            return;
+        }
+
+        let body =  <div style={{marginTop:13, marginLeft:0, alignItems:"center"}}>
+                        <div style={{clear:"both"}}></div>
+                        <Badge bg="danger">
+                            {displayErrorMsg}
+                        </Badge>
+                        <div style={{float:"right", marginTop:4}} onClick={()=>this.hideOutLoginFailedMessage()}>
+                            <img style={{ width: 20, height: 20}}
+                                 src={loginFailedErrMsg}
+                                 alt="Image One"
+                            />
+                        </div>
+                    </div>;
+
+        return body;
 
     }
 
@@ -113,7 +159,7 @@ class Header extends  Component{
                     this.state.showLoginPage == true &&
                     <div id="login-page">
                         <div id="central-login-form"  style={{ top: (window.innerHeight-230)/2, left: (window.innerWidth-350)/2, width: 350, height: 230}}>
-                            <div style={{float:"right", marginRight:0}} onClick={()=>this.hideLoginPage()}>
+                            <div style={{float:"right", marginRight:0}} onClick={()=>this.hideLoginAndLogoutPage()}>
                                 <img style={{ width: 20, height: 20}}
                                      src={CloseButton}
                                      alt="Image One"
@@ -135,19 +181,7 @@ class Header extends  Component{
                                         Submit
                                     </Button>
                                     {
-                                        this.state.loginFailedMessage == true &&
-                                        <div style={{marginTop:13, marginLeft:0, alignItems:"center"}}>
-                                            <div style={{clear:"both"}}></div>
-                                            <Badge bg="danger">
-                                                You have entered wrong password
-                                            </Badge>
-                                            <div style={{float:"right", marginTop:4}} onClick={()=>this.hideOutLoginFailedMessage()}>
-                                                <img style={{ width: 20, height: 20}}
-                                                     src={loginFailedErrMsg}
-                                                     alt="Image One"
-                                                />
-                                            </div>
-                                        </div>
+                                        this.giveErrorMsgDiv(this.state.loginFailedMessage, this.state.signupFailedMessage)
                                     }
                                 </Form>
                             </div>
@@ -170,7 +204,7 @@ class Header extends  Component{
                                 <img style={{display: 'block', width: 50, height: 20}}
                                      src={this.state.showLoginButton == true ? Login : Logout }
                                      alt="Image One"
-                                     onClick={()=>this.showLoginPageAndLogout()}
+                                     onClick={()=>this.doActionOnLoginAndLogout()}
                                 />
                             </div>
                         </div>
