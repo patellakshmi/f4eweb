@@ -4,7 +4,7 @@ import F4EWithName from '../../../img/logos/F4EWithName.png';
 import Logout from "../../../img/home/logout.png";
 import Login from "../../../img/home/login.png";
 import CloseButton from "../../../img/home/closebutton.png";
-
+import { USER_INFO, CENTRAL_CONTENT} from '../../constants/ComponentConst';
 import {Form, Button, Badge} from "react-bootstrap";
 import $ from "jquery";
 import * as ApiUrl from "../../../api-url/ApiUrl";
@@ -43,7 +43,9 @@ class Header extends  Component{
             this.setState({showLoginPage: true});
         }else{
             this.props.cookies.remove("f4e_auth");
+            this.props.updateCentralContent(CENTRAL_CONTENT);
             this.setState({showLoginButton: true});
+            this.props.updateLoginInfo({loginStatus:false});
         }
     }
 
@@ -57,22 +59,9 @@ class Header extends  Component{
     }
 
     onSubmitTheForm=()=>{
-        let status = true;
         let checkboxValue = $('#checkboxId').prop('checked');
-        let isFirstTime = document.getElementById("checkboxId").value;
         let userId = document.getElementById("userId").value;
         let password = document.getElementById("password").value;
-
-
-        let myauth = null;
-        if( this.props.cookies.get('f4e_auth') != null)
-            myauth = this.props.cookies.get('f4e_auth');
-
-
-        const headers = {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-        }
 
         if( checkboxValue ){
             axios.post(ApiUrl.SIGNUP_API, {
@@ -80,18 +69,18 @@ class Header extends  Component{
                 password: password
             }).then(response=> {
                 let data = response.data.status;
-                console.log("Staus:"+data);
                 if (response.status === 200) {
                     this.props.cookies.set('f4e_auth', response.headers.f4e_auth,{path:"/"} );
+                    this.props.updateCentralContent(USER_INFO);
+                    this.props.updateLoginInfo({loginStatus: true,email:"xyz"});
                     this.setState({showLoginPage: false});
                     this.setState({showLoginButton: false});
                 }else { throw new Error("Bad response from server"); }
             }).catch((err)=>{
-                this.setState({signupInfo: {errorStatus:true, msg:"wow"}});
+                this.setState({signupInfo: {errorStatus:true, msg:err.response.data.message}});
                 setTimeout(() => {
-                    console.log("Calling time out ");
-                    this.setState({signupInfo: {errorStatus:false, msg:"wow"}});
-                }, 3000)
+                    this.setState({signupInfo: {errorStatus:false, msg:err.response.data.message}});
+                }, 4000)
             });
 
         }else {
@@ -100,28 +89,27 @@ class Header extends  Component{
                 password: password
             }).then(response=> {
                 if (response.status === 200) {
-                    console.log("Cookies is going to set");
                     this.props.cookies.set('f4e_auth', response.headers.f4e_auth,{path:'/'} );
+                    this.props.updateCentralContent(USER_INFO);
+                    this.props.updateLoginInfo({loginStatus: true,email:"xyz"});
                     this.setState({showLoginPage: false});
                     this.setState({showLoginButton: false});
                 }else { throw new Error("Bad response from server"); }
             }).catch((err)=>{
                 this.setState({loginInfo:{errorStatus:true, msg:"wow"}});
                 setTimeout(() => {
-                    console.log("Calling time out ");
                     this.setState({loginInfo:{errorStatus:false, msg:"wow"}});
-                }, 3000)
+                }, 4000)
             });
         }
     }
 
     giveErrorMsgDiv=(loginInfo, signupInfo)=>{
-
         let displayErrorMsg = "Sorry for inconvenient, try after sometimes";
         if( loginInfo.errorStatus == true){
             displayErrorMsg = "Please use correct username & password";
         }else if(signupInfo.errorStatus == true ){
-            displayErrorMsg = "Sorry for inconvenient, try after sometimes";
+            displayErrorMsg = signupInfo.msg;
         }else{
             return;
         }
@@ -156,7 +144,7 @@ class Header extends  Component{
                             <div id="login-form-div"  style={{marginLeft:40, marginTop: 5, borderRadius: 12, borderWidth:5, borderColor:"black" ,width:250, height: 200}}>
                                 <Form>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                                        <Form.Control id="userId" type="text" placeholder="Enter email or Mobile" />
+                                        <Form.Control id="userId" type="text" placeholder="Enter user name" />
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
                                         <Form.Control id="password" type="password" placeholder="Password" />
@@ -210,7 +198,8 @@ class Header extends  Component{
 const mapDispatchToProps=dispatch=>({
     updateLoginInfo:data=>dispatch(updateLoginInfo(data)),
     updateCentralContent:data=>dispatch(updateCentralContent(data)),
-    updateF4EAuth:data=>dispatch(updateF4EAuth(data))
+    updateF4EAuth:data=>dispatch(updateF4EAuth(data)),
+
 })
 
 const mapStateToProps=state=>({

@@ -5,7 +5,7 @@ import {
     ADMISSION_NOTICE,
     CENTRAL_CONTENT,
     CLASSES_TIME_TABLE, EXCELLENT_PERFORMER, F4E_COURSES,
-    F4E_SCHOLARSHIPS, GENIUS_OF_MONTH, RESULT_AWARD, LOGIN_INFO
+    F4E_SCHOLARSHIPS, GENIUS_OF_MONTH, RESULT_AWARD, LOGIN_INFO,USER_INFO
 } from "../../constants/ComponentConst"
 import F4EScholarships from "../F4EScholarships"
 import AdmissionNotice from "../AdmissionNotice";
@@ -19,11 +19,19 @@ import {updateCentralContent} from "../../../desk/actions/Actions";
 import Footer from "../../components/footer/Footer";
 import EductionStruct from "../EductionStruct";
 import UserHome from "../UserHome";
+import {instanceOf} from "prop-types";
+import {withCookies, Cookies} from "react-cookie";
 
 class Home extends  Component{
 
+    static propTypes = {
+        cookies: instanceOf(Cookies).isRequired
+    };
+
     constructor(props) {
         super(props);
+        const { cookies } = props;
+        this.props.updateCentralContent(( cookies.get('f4e_auth') != null ) ? USER_INFO: CENTRAL_CONTENT);
     }
 
     render() {
@@ -32,6 +40,7 @@ class Home extends  Component{
                 <Header/>
                 <Navbar style={{zIndex:10000}}></Navbar>
                 <div style={{float:"left"}}>
+                    { ( this.props.centralContent === USER_INFO ) && <UserHome/>}
                     { this.props.centralContent === LOGIN_INFO && <UserHome/>}
                     { this.props.centralContent === F4E_COURSES && <EductionStruct/>}
                     { this.props.centralContent === F4E_SCHOLARSHIPS && <F4EScholarships/>}
@@ -59,4 +68,4 @@ const mapStateToProps=state=>({
     patel:console.log(state)
 })
 
-export default connect(mapStateToProps,mapDispatchToProps)(Home);
+export default connect(mapStateToProps,mapDispatchToProps)(withCookies(Home));

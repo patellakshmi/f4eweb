@@ -6,7 +6,7 @@ import "./LoginPage.css";
 import Login from "../../../img/home/login.png";
 import Logout from "../../../img/home/logout.png";
 import CloseButton from "../../../img/home/closebutton.png";
-
+import { USER_INFO } from "../../constants/ComponentConst";
 import {Form, Button} from "react-bootstrap";
 import $ from 'jquery';
 import {Card,Badge} from "react-bootstrap";
@@ -16,6 +16,7 @@ import {instanceOf} from "prop-types";
 import { withCookies, Cookies } from "react-cookie";
 import * as ApiUrl from "../../../api-url/ApiUrl";
 import axios from "axios";
+import {CENTRAL_CONTENT} from "../../../mob/constants/ComponentConst";
 
 
 class Header extends  Component{
@@ -47,6 +48,7 @@ class Header extends  Component{
             this.setState({showLoginPage: true});
         }else{
             this.props.cookies.remove("f4e_auth");
+            this.props.updateCentralContent(CENTRAL_CONTENT);
             this.setState({showLoginButton: true});
         }
     }
@@ -71,18 +73,17 @@ class Header extends  Component{
                 password: password
             }).then(response=> {
                 let data = response.data.status;
-                console.log("Staus:"+data);
                 if (response.status === 200) {
                     this.props.cookies.set('f4e_auth', response.headers.f4e_auth,{path:"/"} );
+                    this.props.updateCentralContent(USER_INFO);
                     this.setState({showLoginPage: false});
                     this.setState({showLoginButton: false});
                 }else { throw new Error("Bad response from server"); }
             }).catch((err)=>{
-                this.setState({signupInfo: {errorStatus:true, msg:"wow"}});
+                this.setState({signupInfo: {errorStatus:true, msg:err.response.data.message}});
                 setTimeout(() => {
-                    console.log("Calling time out ");
-                    this.setState({signupInfo: {errorStatus:false, msg:"wow"}});
-                }, 3000)
+                    this.setState({signupInfo: {errorStatus:false, msg:err.response.data.message}});
+                }, 4000)
             });
 
         }else {
@@ -91,19 +92,17 @@ class Header extends  Component{
                 password: password
             }).then(response=> {
                 let data = response.data.status;
-                console.log("Staus:"+data);
                 if (response.status === 200) {
-                    console.log("Cookies is going to set");
                     this.props.cookies.set('f4e_auth', response.headers.f4e_auth,{path:'/'} );
+                    this.props.updateCentralContent(USER_INFO);
                     this.setState({showLoginPage: false});
                     this.setState({showLoginButton: false});
                 }else { throw new Error("Bad response from server"); }
             }).catch((err)=>{
-                this.setState({loginInfo:{errorStatus:true, msg:"wow"}});
+                this.setState({loginInfo:{errorStatus:true, msg:err.response.data.message}});
                 setTimeout(() => {
-                    console.log("Calling time out ");
-                    this.setState({loginInfo:{errorStatus:false, msg:"wow"}});
-                }, 3000)
+                    this.setState({loginInfo:{errorStatus:false, msg:err.response.data.message}});
+                }, 4000)
             });
         }
     }
@@ -114,7 +113,7 @@ class Header extends  Component{
         if( loginInfo.errorStatus == true){
             displayErrorMsg = "Please use correct username & password";
         }else if(signupInfo.errorStatus == true ){
-            displayErrorMsg = "Sorry for inconvenient, try after sometimes";
+            displayErrorMsg = signupInfo.msg;
         }else{
             return;
         }
@@ -150,7 +149,7 @@ class Header extends  Component{
                             <div id="login-form-div"  style={{marginLeft:90, marginTop: 15, borderRadius: 12, borderWidth:5, borderColor:"black" ,width:250, height: 200}}>
                                 <Form>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                                        <Form.Control id="userId" type="text" placeholder="Enter email or Mobile" />
+                                        <Form.Control id="userId" type="text" placeholder="Enter user name" />
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
                                         <Form.Control id="password" type="password" placeholder="Password" />

@@ -7,3 +7,4 @@ export const EXCELLENT_PERFORMER = "EXCELLENT_PERFORMER";
 export const F4E_SCHOLARSHIPS = "F4E_SCHOLARSHIPS";
 export const F4E_COURSES = "F4E_COURSES";
 export const LOGIN_INFO = "LOGIN_INFO";
+export const USER_INFO = "USER_INFO";

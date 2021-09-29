@@ -9,6 +9,8 @@ import {updateCentralContent} from "../../../desk/actions/Actions";
 import {ADMISSION_NOTICE, F4E_COURSES, F4E_SCHOLARSHIPS, RESULT_AWARD} from "../../constants/ComponentConst";
 import {CLASSES_TIME_TABLE, EXCELLENT_PERFORMER} from "../../../desk/constants/ComponentConst";
 import {LOGIN_INFO} from "../../constants/Constants";
+import {instanceOf} from "prop-types";
+import {withCookies, Cookies} from "react-cookie";
 
 let toggle = true;
 let NAV_COLORS_CODE=["#85C1E9"];
@@ -24,10 +26,18 @@ NAV_NAMES.set(6, [RESULT_AWARD, "Result & Award"]);
 
 class Navbar extends Component{
 
+    static propTypes = {
+        cookies: instanceOf(Cookies).isRequired
+    };
+
     constructor(props) {
         super(props);
         window.addEventListener("click",(e)=>this.detectMouseClickArea(e))
         this.detectMouseClickArea = this.detectMouseClickArea.bind(this);
+        const { cookies } = props;
+        this.state ={
+            showUserDetailPage:cookies.get('f4e_auth') != null ? true: false
+        }
     }
 
     detectMouseClickArea(e){
@@ -46,7 +56,7 @@ class Navbar extends Component{
     getNavList=()=>{
         let navList = []
 
-        if( this.props.loginInfo.loginStatus == true){
+        if( this.props.loginInfo.loginStatus == true || this.state.showUserDetailPage){
             let navListItem = <li className="nav-li-item" style={{marginTop: 90}}
                               onClick={() => this.props.updateCentralContent(NAV_NAMES.get(0)[0])}>
                 <div className="nav-li-element-detail" style={{backgroundColor: NAV_COLORS_CODE[0], fontFamily: "Arial, Helvetica, sans-serif"}}>
@@ -62,7 +72,7 @@ class Navbar extends Component{
             if( j == 1) {
                 let marginTop={ marginTop: 90}
 
-                if( this.props.loginInfo.loginStatus == true) marginTop.marginTop = 0;
+                if( this.props.loginInfo.loginStatus == true || this.state.showUserDetailPage ) marginTop.marginTop = 0;
 
                 navListItem = <li className="nav-li-item" style={marginTop}
                                   onClick={() => this.props.updateCentralContent(NAV_NAMES.get(j)[0])}>
@@ -119,4 +129,4 @@ const mapStateToProps=state=>({
     loginInfo: state.mobReducer.loginInfo,
 })
 
-export default connect(mapStateToProps,mapDispatchToProps)(Navbar);
+export default connect(mapStateToProps,mapDispatchToProps)(withCookies(Navbar));

@@ -17,17 +17,25 @@ import {
     CENTRAL_CONTENT,
     CLASSES_TIME_TABLE,
     EXCELLENT_PERFORMER, F4E_SCHOLARSHIPS, GENIUS_OF_MONTH,
-    RESULT_AWARD, F4E_COURSES, LOGIN_INFO
+    RESULT_AWARD, F4E_COURSES, LOGIN_INFO, USER_INFO
 } from "../../constants/ComponentConst";
 import {updateCentralContent} from "../../actions/Actions";
 import GeniusOfMonth from "../GeniusOfMonth";
 import UserHome from "../UserHome";
+import {instanceOf} from "prop-types";
+import {withCookies, Cookies} from "react-cookie";
 
 
 class Home extends  Component{
 
+    static propTypes = {
+        cookies: instanceOf(Cookies).isRequired
+    };
+
     constructor(props) {
         super(props);
+        const { cookies } = props;
+        this.props.updateCentralContent(( cookies.get('f4e_auth') != null ) ? USER_INFO: CENTRAL_CONTENT);
     }
 
     scrollUp=()=>{
@@ -45,6 +53,7 @@ class Home extends  Component{
                         { this.props.centralContent != F4E_COURSES && <Sidebar/> }
                     </div>
                     <div id="central-container-panel" style={{float:"left"}}>
+                        { ( this.props.centralContent === USER_INFO ) && <UserHome/> }
                         { this.props.centralContent === LOGIN_INFO && <UserHome/> }
                         { this.props.centralContent === F4E_SCHOLARSHIPS && <F4EScholarships/>}
                         { this.props.centralContent === ADMISSION_NOTICE && <AdmissionNotice/>}
@@ -76,4 +85,4 @@ const mapStateToProps=state=>({
       loginInfo: state.deskReducer.loginInfo
 })
 
-export default connect(mapStateToProps,mapDispatchToProps)(Home);
+export default connect(mapStateToProps,mapDispatchToProps)(withCookies(Home));
