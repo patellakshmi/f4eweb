@@ -5,6 +5,7 @@ import Header from "../header/Header";
 import Sidebar from "../sidebar/Sidebar";
 
 import  "../../css/HomeStyle.css";
+
 import CentralContent from "../CentralContent";
 import EductionStruct from "../EductionStruct";
 import AdmissionNotice from "../AdmissionNotice";
@@ -66,6 +67,8 @@ class Home extends  Component{
                     </div>
                 </div>
                 <div id={"main-contain"} style={{clear:"both"}}>
+                </div>
+                <div id="education-struct">
                     <EductionStruct/>
                 </div>
                 <div style={{float:"left"}}>

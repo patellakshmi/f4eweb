@@ -7,7 +7,48 @@ import {Card, FormControl, InputGroup, Table} from "react-bootstrap";
 import {Dropdown} from "react-bootstrap";
 import {ADMISSION_NOTICE} from "../../constants/ADMISSION_NOTICE";
 
+import Chart from 'chart.js/auto';
+
 class UserHome extends  Component{
+    chartRef = React.createRef();
+
+	componentDidMount() {
+		const ctx = this.chartRef.current.getContext("2d");
+		
+		new Chart(ctx, {
+			type: "line",
+			data: {
+				labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+				datasets: [{ 
+					data: [86,114,106,106,107,111,133],
+					label: "Total",
+					borderColor: "#3e95cd",
+					backgroundColor: "#7bb6dd",
+					fill: false,
+				}, { 
+					data: [70,90],
+					label: "Accepted",
+					borderColor: "#3cba9f",
+					backgroundColor: "#71d1bd",
+					fill: false,
+				}, { 
+					data: [10,21,60,44,17,21,17],
+					label: "Pending",
+					borderColor: "#ffa500",
+					backgroundColor:"#ffc04d",
+					fill: false,
+				}, { 
+					data: [6,3,2,2,7,0,16],
+					label: "Rejected",
+					borderColor: "#c45850",
+					backgroundColor:"#d78f89",
+					fill: false,
+				}
+				]
+			},
+		});
+	}
+
 
 
     render() {
@@ -19,7 +60,12 @@ class UserHome extends  Component{
 
                 <div id="USER_HOME">
                     <div id="UserName" style={{marginLeft:200}}>
-                        <h2>{this.props.loginInfo.userEmail}</h2>
+                        <div>
+                            <canvas
+                            id="myChart"
+                            ref={this.chartRef}
+                            />
+                        </div> 
                     </div>
                 </div>
             </div>

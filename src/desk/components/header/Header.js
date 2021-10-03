@@ -45,11 +45,14 @@ class Header extends  Component{
      */
     doActionOnLoginAndLogout=()=>{
         if( this.state.showLoginButton == true ){
+            console.log("showLoginPage")
             this.setState({showLoginPage: true});
         }else{
             this.props.cookies.remove("f4e_auth");
             this.props.updateCentralContent(CENTRAL_CONTENT);
             this.setState({showLoginButton: true});
+            this.props.updateLoginInfo({loginStatus:false});
+            console.log("ShowLoginButton")
         }
     }
 
@@ -76,6 +79,7 @@ class Header extends  Component{
                 if (response.status === 200) {
                     this.props.cookies.set('f4e_auth', response.headers.f4e_auth,{path:"/"} );
                     this.props.updateCentralContent(USER_INFO);
+                    this.props.updateLoginInfo({loginStatus:true});
                     this.setState({showLoginPage: false});
                     this.setState({showLoginButton: false});
                 }else { throw new Error("Bad response from server"); }
@@ -95,6 +99,7 @@ class Header extends  Component{
                 if (response.status === 200) {
                     this.props.cookies.set('f4e_auth', response.headers.f4e_auth,{path:'/'} );
                     this.props.updateCentralContent(USER_INFO);
+                    this.props.updateLoginInfo({loginStatus:true});
                     this.setState({showLoginPage: false});
                     this.setState({showLoginButton: false});
                 }else { throw new Error("Bad response from server"); }
